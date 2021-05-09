@@ -3,7 +3,6 @@ CREATE DATABASE TSTBKhachSan
 GO
 USE TSTBKhachSan
 GO
-USE QLCF
 
 ------------------------------------  Function TimKiemGanDung ----------------------------------------------------------
 CREATE FUNCTION dbo.fuConvertToUnsign1 ( @strInput NVARCHAR(4000) ) 
@@ -286,7 +285,6 @@ END
 GO
 EXEC USP_SelectATaiKhoan
 GO
-
 CREATE PROC USP_UpdateTaiKhoan
 	@TenTK NVARCHAR(100),
 	@TenHienThi NVARCHAR(100),

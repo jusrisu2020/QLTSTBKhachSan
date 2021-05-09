@@ -41,9 +41,7 @@ namespace QLTSTBKhachSan.UI
         void AddLoadToolTip()
         {
             ToolTip tt = new ToolTip();
-            tt.SetToolTip(btnSetting, "Setting\n(Ctrl + S)");
-            tt.SetToolTip(btnNotification, "Setting\n(Ctrl + N)");
-            tt.SetToolTip(btnHelp, "Help\n(Ctrl + H)");
+          
         }
        
         void LoadDisPlayName(string tenhienthi)

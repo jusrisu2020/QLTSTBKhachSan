@@ -56,21 +56,7 @@ namespace QLTSTBKhachSan
             }
         }
 
-        private void btnTaoTaiKhoan_Click(object sender, EventArgs e)
-        {
-            string manv = cbMaNV.Text;
-            string macv = cbMaCV.Text;
-            string tentk = txtTenTK.Text;
-            string pass = txtPass.Text;
-            if (TaiKhoanDAO.Instance.InsertAccount(manv,tentk,pass, macv))
-            {
-                MessageBox.Show("Thành công");
-            }
-            else
-            {
-                MessageBox.Show("không Thành công");
-            }
-        }
+        
 
        
     }

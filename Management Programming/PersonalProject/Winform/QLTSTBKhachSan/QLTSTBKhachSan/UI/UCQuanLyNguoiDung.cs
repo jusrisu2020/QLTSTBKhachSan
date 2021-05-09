@@ -14,6 +14,7 @@ namespace QLTSTBKhachSan.UI
 {
     public partial class UCQuanLyNguoiDung : UserControl
     {
+        BindingSource bin = new BindingSource();
         public UCQuanLyNguoiDung()
         {
             InitializeComponent();
@@ -26,9 +27,9 @@ namespace QLTSTBKhachSan.UI
         void LoadData()
         {
             LoadListAccount();
-            AddBinding();
+            LoadCBMaNV();
             LoadCBChucVu();
-            pnShowChucVu.Visible = false;
+            AddBinding();
         }
 
         void LoadListAccount()
@@ -43,29 +44,33 @@ namespace QLTSTBKhachSan.UI
             dtgvQLND.Columns["Macv"].HeaderText = "Chức Vụ";
         }
 
+        void LoadCBMaNV()
+        {
+            List<NhanVienDTO> NhanVienList = NhanVienDAO.Instance.LoadNhanVien();
+            cbMaNV.DataSource = NhanVienList;
+            cbMaNV.DisplayMember = "MaNV";
+        }
+
         void LoadCBChucVu()
         {
+            pnShowChucVu.Visible = false;
             List<ChucVuDTO> ChucVuList = ChucVuDAO.Instance.LoadChucVu();
             cbMaCV.DataSource = ChucVuList;
-            cbMaCV.DisplayMember = "TenCV";
+            cbMaCV.DisplayMember = "MaCV";
             dtgvChucVu.DataSource = ChucVuList;
             dtgvChucVu.Columns[0].Visible = false;
+            dtgvChucVu.Columns[1].HeaderText = "Mã chức vụ";
+            dtgvChucVu.Columns[2].HeaderText = "Tên chức vụ";
         }
 
         void AddBinding()
         {
-            txtManv.DataBindings.Add(new Binding("Text", dtgvQLND.DataSource, "MaNV", true, DataSourceUpdateMode.Never));
-            txtTenTK.DataBindings.Add(new Binding("Text", dtgvQLND.DataSource, "TenTK", true, DataSourceUpdateMode.Never));
-            txtPass.DataBindings.Add(new Binding("Text", dtgvQLND.DataSource, "Pass", true, DataSourceUpdateMode.Never));
+            cbMaNV.DataBindings.Add(new Binding("Text",dtgvQLND.DataSource,"MaNV",true,DataSourceUpdateMode.Never));
+            cbMaCV.DataBindings.Add(new Binding("Text", dtgvQLND.DataSource, "MaCV", true, DataSourceUpdateMode.Never));
+            txtMaTK.DataBindings.Add(new Binding("Text", dtgvQLND.DataSource, "MaTK", true, DataSourceUpdateMode.Never));
         }
-        #endregion
 
-        #region Event
-        private void btnThemTaiKhoan_Click(object sender, EventArgs e)
-        {
-            FTaoTaiKhoan ttk = new FTaoTaiKhoan();
-            ttk.Show();
-        }
+
         private void btnShowChucVu_Click(object sender, EventArgs e)
         {
             if (pnShowChucVu.Visible == true)
@@ -77,6 +82,52 @@ namespace QLTSTBKhachSan.UI
                 pnShowChucVu.Visible = true;
             }
         }
+        void ObjectText()
+        {
+            string manv = cbMaNV.Text;
+            string macv = cbMaCV.Text;
+            string tentk = txtPass.Text;
+            string tenhienthi = txtTenHienThi.Text;
+            string pass = txtPass.Text;
+        }
+        #endregion
+
+        #region Event
+        private void btnThemTaiKhoan_Click(object sender, EventArgs e)
+        {
+            string manv = cbMaNV.Text;
+            string macv = cbMaCV.Text;
+            string tentk = txtPass.Text;
+            string tenhienthi = txtTenHienThi.Text;
+            string pass = txtPass.Text;
+            if (TaiKhoanDAO.Instance.InsertAccount(manv, tentk, tenhienthi, pass, macv))
+            {
+                MessageBox.Show("Saved");
+                LoadListAccount();
+            }
+            else
+            {
+                MessageBox.Show("Không thành công");
+            }
+        }
+       
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string matk = txtMaTK.Text;
+            
+            if (TaiKhoanDAO.Instance.DeleteAccount(matk))
+            {
+                MessageBox.Show("Đã xóa");
+                LoadListAccount();
+            }
+            else
+            {
+                MessageBox.Show("Không thành công");
+            }
+        }
+
+
+
 
         /*private void btnTimKiem_Click(object sender, EventArgs e)
         {
@@ -94,5 +145,7 @@ namespace QLTSTBKhachSan.UI
             }
         }*/
         #endregion
+
+
     }
 }

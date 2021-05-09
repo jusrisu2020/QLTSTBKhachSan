@@ -47,7 +47,6 @@ namespace QLTSTBKhachSan
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
-            this.pnShowChucVu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChucVu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -57,18 +56,20 @@ namespace QLTSTBKhachSan
             this.panel3.Controls.Add(this.groupBox3);
             this.panel3.Controls.Add(this.groupBox4);
             this.panel3.Controls.Add(this.groupBox5);
-            this.panel3.Location = new System.Drawing.Point(9, 10);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(12, 12);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(294, 125);
+            this.panel3.Size = new System.Drawing.Size(392, 154);
             this.panel3.TabIndex = 16;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.cbMaNV);
-            this.groupBox2.Location = new System.Drawing.Point(10, 11);
+            this.groupBox2.Location = new System.Drawing.Point(13, 14);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(130, 52);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(173, 64);
             this.groupBox2.TabIndex = 10;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Mã Nhân Viên";
@@ -76,51 +77,60 @@ namespace QLTSTBKhachSan
             // cbMaNV
             // 
             this.cbMaNV.FormattingEnabled = true;
-            this.cbMaNV.Location = new System.Drawing.Point(6, 19);
+            this.cbMaNV.Location = new System.Drawing.Point(8, 23);
+            this.cbMaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbMaNV.Name = "cbMaNV";
-            this.cbMaNV.Size = new System.Drawing.Size(106, 21);
+            this.cbMaNV.Size = new System.Drawing.Size(140, 24);
             this.cbMaNV.TabIndex = 13;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtPass);
-            this.groupBox3.Location = new System.Drawing.Point(152, 69);
+            this.groupBox3.Location = new System.Drawing.Point(203, 85);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(130, 52);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(173, 64);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "pass";
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(6, 19);
+            this.txtPass.Location = new System.Drawing.Point(8, 23);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(100, 20);
+            this.txtPass.Size = new System.Drawing.Size(132, 22);
             this.txtPass.TabIndex = 0;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.txtTenTK);
-            this.groupBox4.Location = new System.Drawing.Point(10, 69);
+            this.groupBox4.Location = new System.Drawing.Point(13, 85);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(130, 52);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Size = new System.Drawing.Size(173, 64);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tên Tài Khoản";
             // 
             // txtTenTK
             // 
-            this.txtTenTK.Location = new System.Drawing.Point(6, 19);
+            this.txtTenTK.Location = new System.Drawing.Point(8, 23);
+            this.txtTenTK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenTK.Name = "txtTenTK";
-            this.txtTenTK.Size = new System.Drawing.Size(100, 20);
+            this.txtTenTK.Size = new System.Drawing.Size(132, 22);
             this.txtTenTK.TabIndex = 0;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.cbMaCV);
-            this.groupBox5.Location = new System.Drawing.Point(152, 11);
+            this.groupBox5.Location = new System.Drawing.Point(203, 14);
+            this.groupBox5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(116, 52);
+            this.groupBox5.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox5.Size = new System.Drawing.Size(155, 64);
             this.groupBox5.TabIndex = 10;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Chức Vụ";
@@ -128,42 +138,41 @@ namespace QLTSTBKhachSan
             // cbMaCV
             // 
             this.cbMaCV.FormattingEnabled = true;
-            this.cbMaCV.Location = new System.Drawing.Point(6, 19);
+            this.cbMaCV.Location = new System.Drawing.Point(8, 23);
+            this.cbMaCV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbMaCV.Name = "cbMaCV";
-            this.cbMaCV.Size = new System.Drawing.Size(100, 21);
+            this.cbMaCV.Size = new System.Drawing.Size(132, 24);
             this.cbMaCV.TabIndex = 12;
             // 
             // pnShowChucVu
             // 
-            this.pnShowChucVu.Controls.Add(this.dtgvChucVu);
-            this.pnShowChucVu.Location = new System.Drawing.Point(308, 62);
-            this.pnShowChucVu.Margin = new System.Windows.Forms.Padding(2);
+            this.pnShowChucVu.Location = new System.Drawing.Point(411, 76);
+            this.pnShowChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnShowChucVu.Name = "pnShowChucVu";
-            this.pnShowChucVu.Size = new System.Drawing.Size(223, 114);
+            this.pnShowChucVu.Size = new System.Drawing.Size(297, 140);
             this.pnShowChucVu.TabIndex = 20;
             // 
             // dtgvChucVu
             // 
             this.dtgvChucVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvChucVu.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtgvChucVu.Location = new System.Drawing.Point(0, 0);
-            this.dtgvChucVu.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgvChucVu.Location = new System.Drawing.Point(399, 231);
+            this.dtgvChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgvChucVu.Name = "dtgvChucVu";
             this.dtgvChucVu.ReadOnly = true;
             this.dtgvChucVu.RowHeadersVisible = false;
             this.dtgvChucVu.RowHeadersWidth = 51;
             this.dtgvChucVu.RowTemplate.Height = 24;
             this.dtgvChucVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvChucVu.Size = new System.Drawing.Size(223, 114);
+            this.dtgvChucVu.Size = new System.Drawing.Size(297, 140);
             this.dtgvChucVu.TabIndex = 19;
             // 
             // btnShowChucVu
             // 
-            this.btnShowChucVu.Location = new System.Drawing.Point(308, 29);
-            this.btnShowChucVu.Margin = new System.Windows.Forms.Padding(2);
+            this.btnShowChucVu.Location = new System.Drawing.Point(411, 36);
+            this.btnShowChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnShowChucVu.Name = "btnShowChucVu";
-            this.btnShowChucVu.Size = new System.Drawing.Size(79, 29);
+            this.btnShowChucVu.Size = new System.Drawing.Size(105, 36);
             this.btnShowChucVu.TabIndex = 19;
             this.btnShowChucVu.Text = "Chức Vụ Info";
             this.btnShowChucVu.UseVisualStyleBackColor = true;
@@ -171,25 +180,25 @@ namespace QLTSTBKhachSan
             // 
             // btnTaoTaiKhoan
             // 
-            this.btnTaoTaiKhoan.Location = new System.Drawing.Point(7, 139);
-            this.btnTaoTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTaoTaiKhoan.Location = new System.Drawing.Point(9, 171);
+            this.btnTaoTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTaoTaiKhoan.Name = "btnTaoTaiKhoan";
-            this.btnTaoTaiKhoan.Size = new System.Drawing.Size(124, 40);
+            this.btnTaoTaiKhoan.Size = new System.Drawing.Size(165, 49);
             this.btnTaoTaiKhoan.TabIndex = 21;
             this.btnTaoTaiKhoan.Text = "Thêm Tài Khoản";
             this.btnTaoTaiKhoan.UseVisualStyleBackColor = true;
-            this.btnTaoTaiKhoan.Click += new System.EventHandler(this.btnTaoTaiKhoan_Click);
             // 
             // FTaoTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(600, 366);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.dtgvChucVu);
             this.Controls.Add(this.btnTaoTaiKhoan);
             this.Controls.Add(this.pnShowChucVu);
             this.Controls.Add(this.btnShowChucVu);
             this.Controls.Add(this.panel3);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FTaoTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tạo tài khoản";
@@ -200,7 +209,6 @@ namespace QLTSTBKhachSan
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
-            this.pnShowChucVu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvChucVu)).EndInit();
             this.ResumeLayout(false);
 

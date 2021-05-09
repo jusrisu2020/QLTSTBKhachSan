@@ -14,7 +14,8 @@ namespace QLTSTBKhachSan.UI
 {
     public partial class UCQuanLiBoPhan : UserControl
     {
-        public UCQuanLiBoPhan()
+        BindingSource bin = new BindingSource();
+         public UCQuanLiBoPhan()
         {
             InitializeComponent();
             LoadData();
@@ -25,11 +26,11 @@ namespace QLTSTBKhachSan.UI
             {
                 LoadListBoPhan();
                 AddBinding();
+                dtgvQLBP.DataSource = bin;
             }
             void LoadListBoPhan()
             {
-                List<BoPhanDTO> BoPhanList = BoPhanDAO.Instance.LoadListBoPhan();
-                dtgvQLBP.DataSource = BoPhanList;
+                bin.DataSource = BoPhanDAO.Instance.LoadListBoPhan();
                 dtgvQLBP.Columns[0].Visible = false;
                 dtgvQLBP.Columns[1].HeaderText = "Mã Bộ Phận";
                 dtgvQLBP.Columns[2].HeaderText = "Tên Bộ Phận";

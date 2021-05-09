@@ -28,7 +28,7 @@ namespace QLTSTBKhachSan.DAO
         public List<TaiKhoanDTO> LoadListAccount()
         {
             List<TaiKhoanDTO> TaiKhoanList = new List<TaiKhoanDTO>();
-            string SATaiKhoan = "EXEC USP_SelectATaiKhoan";
+            string SATaiKhoan = "SELECT TK.Id,TK.MaTK, TK.MaNV,TK.TenTK,TK.TenHienThi,TK.Pass,CV.MaCV,CV.TenCV FROM dbo.TaiKhoan AS TK, dbo.ChucVu AS CV WHERE CV.MaCV = TK.MaCV";
             DataTable data = DataProvider.Instance.ExecuteQuery(SATaiKhoan);
 
             foreach (DataRow item in data.Rows)
@@ -46,9 +46,9 @@ namespace QLTSTBKhachSan.DAO
             return result.Rows.Count > 0;
         }
 
-        public bool InsertAccount(string manv, string tentk ,string pass ,string macv)
+        public bool InsertAccount(string manv, string tentk ,string tenhienthi, string pass ,string macv)
         {
-            string TaiKhoanQuery = string.Format("EXEC dbo.USP_ThemTaiKhoan '{0}','{1}','{2}','{3}'", manv, tentk, pass, macv);
+            string TaiKhoanQuery = string.Format("EXEC dbo.USP_ThemTaiKhoan '{0}','{1}','{2}','{3}','{4}' ", manv, tentk, tenhienthi, pass, macv);
             int result = DataProvider.Instance.ExecuteNonQuery(TaiKhoanQuery);
             return result > 0;
         }

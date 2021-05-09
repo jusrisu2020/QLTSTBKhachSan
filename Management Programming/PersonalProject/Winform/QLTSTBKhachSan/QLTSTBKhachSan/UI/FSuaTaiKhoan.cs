@@ -54,6 +54,9 @@ namespace QLTSTBKhachSan.UI
                     MessageBox.Show("Cập Nhật Thành Công");
                     if(updateAccount != null)  
                         updateAccount(this, new AccountEvent(TaiKhoanDAO.Instance.GetAccountByUserName(TenTK)));
+                    txtPass.Clear();
+                    txtNewPass.Clear();
+                    txtNhapLaiPass.Clear();
                 }
                 else
                 {
