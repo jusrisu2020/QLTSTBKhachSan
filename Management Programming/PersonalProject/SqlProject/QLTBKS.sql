@@ -3,6 +3,8 @@ CREATE DATABASE TSTBKhachSan
 GO
 USE TSTBKhachSan
 GO
+USE QLCF
+
 ------------------------------------  Function TimKiemGanDung ----------------------------------------------------------
 CREATE FUNCTION dbo.fuConvertToUnsign1 ( @strInput NVARCHAR(4000) ) 
 RETURNS NVARCHAR(4000) 
@@ -231,10 +233,6 @@ GO
 EXEC dbo.USP_SelectNhanVien
 GO
 --------------------------------------------------------Tài khoản
-
-DROP TABLE dbo.TaiKhoan
-DROP PROC USP_ThemTaiKhoan
-
 CREATE TABLE TaiKhoan
 (
 	Id INT IDENTITY,
@@ -279,6 +277,7 @@ EXEC USP_DangNhap N'ad', N'1'
 GO
 SELECT *FROM dbo.TaiKhoan WHERE TenTK = 'ad';
 --PROC Select Tất cả tài khoản
+GO
 CREATE PROC USP_SelectATaiKhoan
 AS 
 BEGIN
@@ -310,14 +309,7 @@ BEGIN
 	END
 END
 GO
-
-EXEC USP_UpdateTaiKhoan @TenTK,@TenHienThi,@Pass,@newPass
-
-
-
 EXEC USP_UpdateTaiKhoan @TenTK = 'ad',@TenHienThi='trtr',@Pass='1',@newPass='2'
-
-SELECT * FROM dbo.TaiKhoan
 -------------------------------------HoaDonMuaTB CHƯA ------------------------------------------------
 CREATE TABLE HoaDonMuaTB
 (

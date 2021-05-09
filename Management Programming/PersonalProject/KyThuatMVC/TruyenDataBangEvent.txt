@@ -1,0 +1,41 @@
+1. Form Cập Nhật cần xử lí sự kiện
+
+Hàm Cập Nhật()
+{ 
+	if(updateAccount != null)  
+           updateAccount(this, new AccountEvent(TaiKhoanDAO.Instance.GetAccountByUserName(TenTK)));
+}
+
+
+private event EventHandler<AccountEvent> updateAccount;
+        public event EventHandler<AccountEvent> UpdateAccount
+        {
+            add { updateAccount += value; }
+            remove { updateAccount -= value; }
+        }
+
+ public class AccountEvent : EventArgs
+        {
+            private TaiKhoanDTO tk;
+            public TaiKhoanDTO Tk 
+            { 
+                get{return tk;}
+                set{tk = value;}
+            }
+            public AccountEvent(TaiKhoanDTO tk)
+            {
+                this.Tk = tk;
+            }
+        }
+
+
+2. From Main
+	Tham chiếu Form cập nhật
+	FSuaTaiKhoan stk = new FSuaTaiKhoan(LoginTaiKhoan);
+        stk.UpdateAccount += Stk_UpdateAccount;
+
+
+	void Stk_UpdateAccount(object sender, AccountEvent e)
+        {
+            lbUserName.Text = e.Tk.TenHienThi;
+        }

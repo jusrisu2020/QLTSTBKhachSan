@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using QLTSTBKhachSan.DTO;
 using QLTSTBKhachSan.DAO;
+using static QLTSTBKhachSan.UI.FSuaTaiKhoan;
 
 namespace QLTSTBKhachSan.UI
 {
@@ -180,12 +181,12 @@ namespace QLTSTBKhachSan.UI
         {
             FSuaTaiKhoan stk = new FSuaTaiKhoan(LoginTaiKhoan);
             stk.UpdateAccount += Stk_UpdateAccount;
-            stk.Show();
+            stk.ShowDialog();
         }
 
-        private void Stk_UpdateAccount(object sender, EventArgs e)
+        void Stk_UpdateAccount(object sender, AccountEvent e)
         {
-
+            lbUserName.Text = e.Tk.TenHienThi;
         }
     }
 }

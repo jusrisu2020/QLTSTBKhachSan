@@ -25,7 +25,7 @@ namespace QLTSTBKhachSan.UI
             }
         }
 
-        public FSuaTaiKhoan(TaiKhoanDTO tk)
+        public FSuaTaiKhoan(TaiKhoanDTO tk) 
         {
             InitializeComponent();
             LoginTaiKhoan = tk;
@@ -52,6 +52,8 @@ namespace QLTSTBKhachSan.UI
                 if (TaiKhoanDAO.Instance.UpdateAccountByUser(TenTK, TenHienThi, Pass, NewPass))
                 {
                     MessageBox.Show("Cập Nhật Thành Công");
+                    if(updateAccount != null)  
+                        updateAccount(this, new AccountEvent(TaiKhoanDAO.Instance.GetAccountByUserName(TenTK)));
                 }
                 else
                 {
@@ -59,8 +61,8 @@ namespace QLTSTBKhachSan.UI
                 }
             }
         }
-        private event EventHandler updateAccount;
-        public event EventHandler UpdateAccount
+        private event EventHandler<AccountEvent> updateAccount;
+        public event EventHandler<AccountEvent> UpdateAccount
         {
             add { updateAccount += value; }
             remove { updateAccount -= value; }
@@ -76,6 +78,19 @@ namespace QLTSTBKhachSan.UI
             if(MessageBox.Show("Bạn muốn thoát","Notification",MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
                 this.Hide();
+            }
+        }
+        public class AccountEvent : EventArgs
+        {
+            private TaiKhoanDTO tk;
+            public TaiKhoanDTO Tk 
+            { 
+                get{return tk;}
+                set{tk = value;}
+            }
+            public AccountEvent(TaiKhoanDTO tk)
+            {
+                this.Tk = tk;
             }
         }
     }

@@ -56,103 +56,119 @@
             this.panel3.Controls.Add(this.gbTenHienThi);
             this.panel3.Controls.Add(this.groupBox3);
             this.panel3.Controls.Add(this.groupBox4);
-            this.panel3.Location = new System.Drawing.Point(11, 22);
-            this.panel3.Margin = new System.Windows.Forms.Padding(2);
+            this.panel3.Location = new System.Drawing.Point(15, 27);
+            this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(164, 326);
+            this.panel3.Size = new System.Drawing.Size(219, 401);
             this.panel3.TabIndex = 16;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this.txtNhapLaiPass);
-            this.groupBox2.Location = new System.Drawing.Point(12, 240);
+            this.groupBox2.Location = new System.Drawing.Point(16, 295);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(126, 52);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox2.Size = new System.Drawing.Size(168, 64);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhập lại";
             // 
             // txtNhapLaiPass
             // 
-            this.txtNhapLaiPass.Location = new System.Drawing.Point(6, 19);
+            this.txtNhapLaiPass.Location = new System.Drawing.Point(8, 23);
+            this.txtNhapLaiPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNhapLaiPass.Name = "txtNhapLaiPass";
-            this.txtNhapLaiPass.Size = new System.Drawing.Size(100, 20);
+            this.txtNhapLaiPass.Size = new System.Drawing.Size(132, 22);
             this.txtNhapLaiPass.TabIndex = 0;
             // 
             // gbNewPass
             // 
             this.gbNewPass.Controls.Add(this.txtNewPass);
-            this.gbNewPass.Location = new System.Drawing.Point(12, 182);
+            this.gbNewPass.Location = new System.Drawing.Point(16, 224);
+            this.gbNewPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbNewPass.Name = "gbNewPass";
-            this.gbNewPass.Size = new System.Drawing.Size(126, 52);
+            this.gbNewPass.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbNewPass.Size = new System.Drawing.Size(168, 64);
             this.gbNewPass.TabIndex = 10;
             this.gbNewPass.TabStop = false;
             this.gbNewPass.Text = "New Pass";
             // 
             // txtNewPass
             // 
-            this.txtNewPass.Location = new System.Drawing.Point(6, 19);
+            this.txtNewPass.Location = new System.Drawing.Point(8, 23);
+            this.txtNewPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNewPass.Name = "txtNewPass";
-            this.txtNewPass.Size = new System.Drawing.Size(100, 20);
+            this.txtNewPass.Size = new System.Drawing.Size(132, 22);
             this.txtNewPass.TabIndex = 0;
             // 
             // gbTenHienThi
             // 
             this.gbTenHienThi.Controls.Add(this.txtTenHienThi);
-            this.gbTenHienThi.Location = new System.Drawing.Point(12, 66);
+            this.gbTenHienThi.Location = new System.Drawing.Point(16, 81);
+            this.gbTenHienThi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbTenHienThi.Name = "gbTenHienThi";
-            this.gbTenHienThi.Size = new System.Drawing.Size(126, 52);
+            this.gbTenHienThi.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gbTenHienThi.Size = new System.Drawing.Size(168, 64);
             this.gbTenHienThi.TabIndex = 10;
             this.gbTenHienThi.TabStop = false;
             this.gbTenHienThi.Text = "Tên Hiển Thị";
             // 
             // txtTenHienThi
             // 
-            this.txtTenHienThi.Location = new System.Drawing.Point(6, 19);
+            this.txtTenHienThi.Location = new System.Drawing.Point(8, 23);
+            this.txtTenHienThi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenHienThi.Name = "txtTenHienThi";
-            this.txtTenHienThi.Size = new System.Drawing.Size(100, 20);
+            this.txtTenHienThi.Size = new System.Drawing.Size(132, 22);
             this.txtTenHienThi.TabIndex = 0;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtPass);
-            this.groupBox3.Location = new System.Drawing.Point(12, 124);
+            this.groupBox3.Location = new System.Drawing.Point(16, 153);
+            this.groupBox3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(126, 52);
+            this.groupBox3.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox3.Size = new System.Drawing.Size(168, 64);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "pass";
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(6, 19);
+            this.txtPass.Location = new System.Drawing.Point(8, 23);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(100, 20);
+            this.txtPass.Size = new System.Drawing.Size(132, 22);
             this.txtPass.TabIndex = 0;
             // 
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.txtTenTK);
-            this.groupBox4.Location = new System.Drawing.Point(12, 11);
+            this.groupBox4.Location = new System.Drawing.Point(16, 14);
+            this.groupBox4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(126, 52);
+            this.groupBox4.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox4.Size = new System.Drawing.Size(168, 64);
             this.groupBox4.TabIndex = 9;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Tên Tài Khoản";
             // 
             // txtTenTK
             // 
-            this.txtTenTK.Location = new System.Drawing.Point(6, 19);
+            this.txtTenTK.Enabled = false;
+            this.txtTenTK.Location = new System.Drawing.Point(8, 23);
+            this.txtTenTK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtTenTK.Name = "txtTenTK";
-            this.txtTenTK.Size = new System.Drawing.Size(100, 20);
+            this.txtTenTK.Size = new System.Drawing.Size(132, 22);
             this.txtTenTK.TabIndex = 0;
             // 
             // btnUpdateTaiKhoan
             // 
-            this.btnUpdateTaiKhoan.Location = new System.Drawing.Point(11, 365);
-            this.btnUpdateTaiKhoan.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateTaiKhoan.Location = new System.Drawing.Point(15, 449);
+            this.btnUpdateTaiKhoan.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnUpdateTaiKhoan.Name = "btnUpdateTaiKhoan";
-            this.btnUpdateTaiKhoan.Size = new System.Drawing.Size(76, 40);
+            this.btnUpdateTaiKhoan.Size = new System.Drawing.Size(101, 49);
             this.btnUpdateTaiKhoan.TabIndex = 17;
             this.btnUpdateTaiKhoan.Text = "Update";
             this.btnUpdateTaiKhoan.UseVisualStyleBackColor = true;
@@ -160,10 +176,10 @@
             // 
             // btnThoat
             // 
-            this.btnThoat.Location = new System.Drawing.Point(131, 365);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(2);
+            this.btnThoat.Location = new System.Drawing.Point(175, 449);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(76, 40);
+            this.btnThoat.Size = new System.Drawing.Size(101, 49);
             this.btnThoat.TabIndex = 18;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
@@ -171,12 +187,13 @@
             // 
             // FSuaTaiKhoan
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(327, 450);
+            this.ClientSize = new System.Drawing.Size(436, 554);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnUpdateTaiKhoan);
             this.Controls.Add(this.panel3);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FSuaTaiKhoan";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FSuaTaiKhoan";
