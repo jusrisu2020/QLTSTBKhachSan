@@ -1,0 +1,79 @@
+D:\Do An\code\DoAn\QLKhachSan\bin\Debug\QLKhachSan.exe.config
+D:\Do An\code\DoAn\QLKhachSan\bin\Debug\QLKhachSan.exe
+D:\Do An\code\DoAn\QLKhachSan\bin\Debug\QLKhachSan.pdb
+D:\Do An\code\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csprojAssemblyReference.cache
+D:\Do An\code\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Form1.resources
+D:\Do An\code\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Properties.Resources.resources
+D:\Do An\code\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csproj.GenerateResource.cache
+D:\Do An\code\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csproj.CoreCompileInputs.cache
+D:\Do An\code\DoAn\QLKhachSan\obj\Debug\QLKhachSan.exe
+D:\Do An\code\DoAn\QLKhachSan\obj\Debug\QLKhachSan.pdb
+D:\Do An\code\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Form2.resources
+D:\Do An\code\DoAn\QLKhachSan\obj\Debug\QLKhachSan.ThuePhong.resources
+D:\Do An\code\DoAn\QLKhachSan\obj\Debug\QLKhachSan.TraPhong.resources
+D:\TESTDOAN\DoAn\QLKhachSan\bin\Debug\QLKhachSan.exe.config
+D:\TESTDOAN\DoAn\QLKhachSan\bin\Debug\QLKhachSan.exe
+D:\TESTDOAN\DoAn\QLKhachSan\bin\Debug\QLKhachSan.pdb
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csprojAssemblyReference.cache
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Form1.resources
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Form2.resources
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Properties.Resources.resources
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.ThuePhong.resources
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.TraPhong.resources
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csproj.GenerateResource.cache
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csproj.CoreCompileInputs.cache
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.exe
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.pdb
+D:\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.QuanLiKhachHang.resources
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\bin\Debug\QLKhachSan.exe.config
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\bin\Debug\QLKhachSan.exe
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\bin\Debug\QLKhachSan.pdb
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csprojAssemblyReference.cache
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Form1.resources
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Properties.Resources.resources
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.ThuePhong.resources
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.TraPhong.resources
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csproj.GenerateResource.cache
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csproj.CoreCompileInputs.cache
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.exe
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.pdb
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.QuanLiPhong.resources
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.txtMa.resources
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.QuanLiHoaDon.resources
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.QuanLiNhanVien.resources
+E:\SQL\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Frommain.resources
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\bin\Debug\QLKhachSan.exe.config
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\bin\Debug\QLKhachSan.exe
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\bin\Debug\QLKhachSan.pdb
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csprojAssemblyReference.cache
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Form1.resources
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Frommain.resources
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Properties.Resources.resources
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.QuanLiHoaDon.resources
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.txtMa.resources
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.QuanLiNhanVien.resources
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.QuanLiPhong.resources
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.ThuePhong.resources
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.TraPhong.resources
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csproj.GenerateResource.cache
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csproj.CoreCompileInputs.cache
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.exe
+D:\NHom21DOAN\TESTDOAN\DoAn\QLKhachSan\obj\Debug\QLKhachSan.pdb
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\bin\Debug\QLKhachSan.exe.config
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\bin\Debug\QLKhachSan.exe
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\bin\Debug\QLKhachSan.pdb
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csprojAssemblyReference.cache
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.Properties.Resources.resources
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.QuanLiHoaDon.resources
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.txtMa.resources
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.ThuePhong.resources
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.TraPhong.resources
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csproj.GenerateResource.cache
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.csproj.CoreCompileInputs.cache
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.exe
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.pdb
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.FormLogIn.resources
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.FormMain.resources
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.FormDangKi.resources
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.fQLNV.resources
+D:\.NET Programming\.NET Reference Project\Nhom21_ChuDe6_TranMinhTri\DoAn\QLKhachSan\obj\Debug\QLKhachSan.fQLP.resources

@@ -32,7 +32,7 @@
             this.picOutPut = new System.Windows.Forms.PictureBox();
             this.dtgvHinhAnh = new System.Windows.Forms.DataGridView();
             this.picInput = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtPath = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picOutPut)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHinhAnh)).BeginInit();
@@ -47,6 +47,7 @@
             this.btnSave.TabIndex = 3;
             this.btnSave.Text = "Save";
             this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // picOutPut
             // 
@@ -54,6 +55,7 @@
             this.picOutPut.Location = new System.Drawing.Point(44, 273);
             this.picOutPut.Name = "picOutPut";
             this.picOutPut.Size = new System.Drawing.Size(215, 135);
+            this.picOutPut.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picOutPut.TabIndex = 0;
             this.picOutPut.TabStop = false;
             // 
@@ -67,6 +69,7 @@
             this.dtgvHinhAnh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvHinhAnh.Size = new System.Drawing.Size(450, 380);
             this.dtgvHinhAnh.TabIndex = 4;
+            this.dtgvHinhAnh.Click += new System.EventHandler(this.dtgvHinhAnh_Click);
             // 
             // picInput
             // 
@@ -74,15 +77,17 @@
             this.picInput.Location = new System.Drawing.Point(44, 97);
             this.picInput.Name = "picInput";
             this.picInput.Size = new System.Drawing.Size(215, 135);
+            this.picInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picInput.TabIndex = 5;
             this.picInput.TabStop = false;
+            this.picInput.Click += new System.EventHandler(this.picInput_Click);
             // 
-            // textBox1
+            // txtPath
             // 
-            this.textBox1.Location = new System.Drawing.Point(78, 29);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(139, 20);
-            this.textBox1.TabIndex = 6;
+            this.txtPath.Location = new System.Drawing.Point(78, 29);
+            this.txtPath.Name = "txtPath";
+            this.txtPath.Size = new System.Drawing.Size(139, 20);
+            this.txtPath.TabIndex = 6;
             // 
             // label1
             // 
@@ -99,7 +104,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtPath);
             this.Controls.Add(this.picInput);
             this.Controls.Add(this.dtgvHinhAnh);
             this.Controls.Add(this.btnSave);
@@ -107,7 +112,6 @@
             this.Name = "SaveImg";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "SaveXuatImg";
-            this.Load += new System.EventHandler(this.SaveXuatImg_Load);
             ((System.ComponentModel.ISupportInitialize)(this.picOutPut)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvHinhAnh)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picInput)).EndInit();
@@ -121,7 +125,7 @@
         private System.Windows.Forms.PictureBox picOutPut;
         private System.Windows.Forms.DataGridView dtgvHinhAnh;
         private System.Windows.Forms.PictureBox picInput;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtPath;
         private System.Windows.Forms.Label label1;
     }
 }
