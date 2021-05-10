@@ -1,0 +1,10 @@
+CREATE DATABASE HinhAnh
+GO
+USE HinhAnh
+GO
+
+CREATE TABLE LoadHinhAnh
+(
+	tenhinh NVARCHAR(100),
+	ha IMAGE 
+)

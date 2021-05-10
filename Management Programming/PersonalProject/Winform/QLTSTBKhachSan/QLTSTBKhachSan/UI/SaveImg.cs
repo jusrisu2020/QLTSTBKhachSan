@@ -28,7 +28,7 @@ namespace QLTSTBKhachSan.UI
                 if(dlg.ShowDialog() == DialogResult.OK)
                 {
                     ImgLoc = dlg.FileName.ToString();
-                    picTest.ImageLocation = ImgLoc; 
+                    picOutPut.ImageLocation = ImgLoc; 
                 }
             }
             catch (Exception ex)
@@ -40,8 +40,8 @@ namespace QLTSTBKhachSan.UI
         private void SaveXuatImg_Load(object sender, EventArgs e)
         {
             string Squery = "SELECT * FROM dbo.ThemAnh ";
-            dataGridView1.DataSource = DataProvider.Instance.ExecuteQuery(Squery);
-            dataGridView1.Rows[0].Height = 100;
+            dtgvHinhAnh.DataSource = DataProvider.Instance.ExecuteQuery(Squery);
+            dtgvHinhAnh.Rows[0].Height = 100;
         }
     }
 }

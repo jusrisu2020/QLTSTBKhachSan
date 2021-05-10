@@ -28,14 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label2 = new System.Windows.Forms.Label();
             this.dtgvQLBP = new System.Windows.Forms.DataGridView();
             this.btnSearchBoPhan = new System.Windows.Forms.Button();
             this.txtTKBoPhan = new System.Windows.Forms.TextBox();
             this.btnDeleteBoPhan = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtThemBoPhan = new System.Windows.Forms.TextBox();
+            this.txtTenBP = new System.Windows.Forms.TextBox();
             this.btnInsertBP = new System.Windows.Forms.Button();
             this.btnUpdateBoPhan = new System.Windows.Forms.Button();
             this.txtMaBP = new System.Windows.Forms.TextBox();
@@ -61,14 +61,14 @@
             // 
             this.dtgvQLBP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvQLBP.CausesValidation = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvQLBP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvQLBP.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dtgvQLBP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtgvQLBP.Location = new System.Drawing.Point(5, 210);
             this.dtgvQLBP.Margin = new System.Windows.Forms.Padding(2);
@@ -80,6 +80,7 @@
             this.dtgvQLBP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtgvQLBP.Size = new System.Drawing.Size(355, 169);
             this.dtgvQLBP.TabIndex = 14;
+            this.dtgvQLBP.Click += new System.EventHandler(this.dtgvQLBP_Click);
             // 
             // btnSearchBoPhan
             // 
@@ -123,12 +124,12 @@
             this.panel1.Size = new System.Drawing.Size(900, 81);
             this.panel1.TabIndex = 8;
             // 
-            // txtThemBoPhan
+            // txtTenBP
             // 
-            this.txtThemBoPhan.Location = new System.Drawing.Point(24, 57);
-            this.txtThemBoPhan.Name = "txtThemBoPhan";
-            this.txtThemBoPhan.Size = new System.Drawing.Size(128, 20);
-            this.txtThemBoPhan.TabIndex = 15;
+            this.txtTenBP.Location = new System.Drawing.Point(24, 57);
+            this.txtTenBP.Name = "txtTenBP";
+            this.txtTenBP.Size = new System.Drawing.Size(128, 20);
+            this.txtTenBP.TabIndex = 15;
             // 
             // btnInsertBP
             // 
@@ -178,7 +179,7 @@
             this.groupBox1.Controls.Add(this.txtMaBP);
             this.groupBox1.Controls.Add(this.btnDeleteBoPhan);
             this.groupBox1.Controls.Add(this.btnUpdateBoPhan);
-            this.groupBox1.Controls.Add(this.txtThemBoPhan);
+            this.groupBox1.Controls.Add(this.txtTenBP);
             this.groupBox1.Controls.Add(this.btnInsertBP);
             this.groupBox1.Location = new System.Drawing.Point(22, 86);
             this.groupBox1.Name = "groupBox1";
@@ -222,7 +223,7 @@
         private System.Windows.Forms.TextBox txtTKBoPhan;
         private System.Windows.Forms.Button btnDeleteBoPhan;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtThemBoPhan;
+        private System.Windows.Forms.TextBox txtTenBP;
         private System.Windows.Forms.Button btnInsertBP;
         private System.Windows.Forms.Button btnUpdateBoPhan;
         private System.Windows.Forms.TextBox txtMaBP;

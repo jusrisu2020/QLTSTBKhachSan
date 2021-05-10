@@ -37,5 +37,12 @@ namespace QLTSTBKhachSan.DAO
             }
             return NCCList;
         }
+
+        public bool InsertNhaCungCap(string tenncc, string sdt, string diachi, string email,string stk, string tencongty)
+        {
+            string Query = string.Format("EXEC dbo.USP_ThemNhaCungCap N'{0}',N'{1}','{2}',N'{3}',N'{4}',N'{5}'", tenncc, sdt, diachi, email, stk, tencongty);
+            int result = DataProvider.Instance.ExecuteNonQuery(Query);
+            return result > 0;
+        }
     }
 }

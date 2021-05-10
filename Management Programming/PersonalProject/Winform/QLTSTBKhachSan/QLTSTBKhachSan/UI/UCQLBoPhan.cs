@@ -14,7 +14,6 @@ namespace QLTSTBKhachSan.UI
 {
     public partial class UCQuanLiBoPhan : UserControl
     {
-        BindingSource bin = new BindingSource();
          public UCQuanLiBoPhan()
         {
             InitializeComponent();
@@ -25,22 +24,14 @@ namespace QLTSTBKhachSan.UI
             void LoadData()
             {
                 LoadListBoPhan();
-                AddBinding();
-                dtgvQLBP.DataSource = bin;
+                txtMaBP.Enabled = false;
             }
             void LoadListBoPhan()
             {
-                bin.DataSource = BoPhanDAO.Instance.LoadListBoPhan();
+                dtgvQLBP.DataSource = BoPhanDAO.Instance.LoadListBoPhan();
                 dtgvQLBP.Columns[0].Visible = false;
                 dtgvQLBP.Columns[1].HeaderText = "Mã Bộ Phận";
                 dtgvQLBP.Columns[2].HeaderText = "Tên Bộ Phận";
-            }
-
-            void AddBinding()
-            {
-                txtThemBoPhan.DataBindings.Add(new Binding("Text", dtgvQLBP.DataSource, "Tenbp", true, DataSourceUpdateMode.Never));
-                txtMaBP.DataBindings.Add(new Binding("Text", dtgvQLBP.DataSource, "Mabp", true, DataSourceUpdateMode.Never));
-                txtMaBP.Enabled = false;
             }
 
             List<BoPhanDTO> SearchTenBoPhan(string name)
@@ -48,15 +39,19 @@ namespace QLTSTBKhachSan.UI
                 List<BoPhanDTO> BoPhanList = BoPhanDAO.Instance.SearchBoPhan(name);
                 return BoPhanList;
             }
-
-
-
         #endregion
 
         #region Event
+        private void dtgvQLBP_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dtgvQLBP.SelectedRows[0];
+            txtMaBP.Text = dr.Cells["MaBP"].Value.ToString();
+            txtTenBP.Text = dr.Cells["TenBP"].Value.ToString();
+        }
+
         private void btnInsertBP_Click(object sender, EventArgs e)
         {
-            string tenbp = txtThemBoPhan.Text;
+            string tenbp = txtTenBP.Text;
             if (tenbp == "")
             {
                 MessageBox.Show("Tên phòng không được bỏ trống!");
@@ -67,8 +62,8 @@ namespace QLTSTBKhachSan.UI
                 {
                     MessageBox.Show("Saved!");
                     LoadListBoPhan();
-                    txtThemBoPhan.Clear();
-                    txtThemBoPhan.Focus();
+                    txtTenBP.Clear();
+                    txtTenBP.Focus();
                 }
                 else
                 {
@@ -79,7 +74,7 @@ namespace QLTSTBKhachSan.UI
 
         private void btnUpdateBoPhan_Click(object sender, EventArgs e)
         {
-            string tenbp = txtThemBoPhan.Text;
+            string tenbp = txtTenBP.Text;
             string mabp = txtMaBP.Text;
             if (tenbp == "")
             {
@@ -91,8 +86,8 @@ namespace QLTSTBKhachSan.UI
                 {
                     MessageBox.Show("Đã thay đổi!");
                     LoadListBoPhan();
-                    txtThemBoPhan.Clear();
-                    txtThemBoPhan.Focus();
+                    txtTenBP.Clear();
+                    txtTenBP.Focus();
                 }
                 else
                 {
@@ -109,8 +104,8 @@ namespace QLTSTBKhachSan.UI
                 if (BoPhanDAO.Instance.DeleteBoPhan(mabp))
                 {
                     LoadListBoPhan();
-                    txtThemBoPhan.Clear();
-                    txtThemBoPhan.Focus();
+                    txtTenBP.Clear();
+                    txtTenBP.Focus();
                     MessageBox.Show("Đã xoá!", "Notification", MessageBoxButtons.OK);
                 }
                 else
@@ -122,8 +117,8 @@ namespace QLTSTBKhachSan.UI
 
         private void btnRefeshBoPhan_Click(object sender, EventArgs e)
         {
-            txtThemBoPhan.Clear();
-            txtThemBoPhan.Focus();
+            txtTenBP.Clear();
+            txtTenBP.Focus();
             LoadListBoPhan();
         }
 
@@ -132,5 +127,7 @@ namespace QLTSTBKhachSan.UI
             dtgvQLBP.DataSource = SearchTenBoPhan(txtTKBoPhan.Text);
         }
         #endregion
+
+        
     }
 }

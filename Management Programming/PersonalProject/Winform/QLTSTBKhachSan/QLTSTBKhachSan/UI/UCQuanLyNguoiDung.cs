@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using System.Data.SqlClient;
 namespace QLTSTBKhachSan.UI
 {
     public partial class UCQuanLyNguoiDung : UserControl
@@ -82,14 +82,10 @@ namespace QLTSTBKhachSan.UI
                 pnShowChucVu.Visible = true;
             }
         }
-        void ObjectText()
-        {
-            string manv = cbMaNV.Text;
-            string macv = cbMaCV.Text;
-            string tentk = txtPass.Text;
-            string tenhienthi = txtTenHienThi.Text;
-            string pass = txtPass.Text;
-        }
+
+       
+
+        
         #endregion
 
         #region Event
@@ -129,6 +125,8 @@ namespace QLTSTBKhachSan.UI
 
 
 
+
+
         /*private void btnTimKiem_Click(object sender, EventArgs e)
         {
             string TimKiem = txtTimKiem.Text;
@@ -146,6 +144,19 @@ namespace QLTSTBKhachSan.UI
         }*/
         #endregion
 
+        
 
+        private void picAvatar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofile = new OpenFileDialog();
+            if (ofile.ShowDialog() == DialogResult.OK)
+            {
+                picAvatar.Image = Image.FromFile(ofile.FileName);
+
+                lbPic.Text = ofile.FileName;
+            }
+        }
+        
+        
     }
 }

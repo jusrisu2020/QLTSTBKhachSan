@@ -1,7 +1,6 @@
-﻿
-namespace QLTSTBKhachSan.UI
+﻿namespace QLTSTBKhachSan.UI
 {
-    partial class UCQuanLyBaoCao
+    partial class UCQuanLiChucVu
     {
         /// <summary> 
         /// Required designer variable.
@@ -29,34 +28,18 @@ namespace QLTSTBKhachSan.UI
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(72, 53);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(84, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Quản lí báo cáo";
-            // 
-            // UCQuanLyBaoCao
+            // UCQuanLiChucVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.label1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "UCQuanLyBaoCao";
+            this.Name = "UCQuanLiChucVu";
             this.Size = new System.Drawing.Size(900, 569);
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label label1;
     }
 }

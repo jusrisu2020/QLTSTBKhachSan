@@ -150,6 +150,12 @@
     <Compile Include="UI\UCQLNhaCungCap.Designer.cs">
       <DependentUpon>UCQLNhaCungCap.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UCQuanLiChucVu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI\UCQuanLiChucVu.Designer.cs">
+      <DependentUpon>UCQuanLiChucVu.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\UCQuanLyBaoCao.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -222,6 +228,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCQLNhaCungCap.resx">
       <DependentUpon>UCQLNhaCungCap.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UCQuanLiChucVu.resx">
+      <DependentUpon>UCQuanLiChucVu.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCQuanLyBaoCao.resx">
       <DependentUpon>UCQuanLyBaoCao.cs</DependentUpon>

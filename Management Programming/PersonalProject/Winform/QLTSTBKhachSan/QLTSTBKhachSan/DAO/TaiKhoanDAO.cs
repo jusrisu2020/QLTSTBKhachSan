@@ -28,7 +28,7 @@ namespace QLTSTBKhachSan.DAO
         public List<TaiKhoanDTO> LoadListAccount()
         {
             List<TaiKhoanDTO> TaiKhoanList = new List<TaiKhoanDTO>();
-            string SATaiKhoan = "SELECT TK.Id,TK.MaTK, TK.MaNV,TK.TenTK,TK.TenHienThi,TK.Pass,CV.MaCV,CV.TenCV FROM dbo.TaiKhoan AS TK, dbo.ChucVu AS CV WHERE CV.MaCV = TK.MaCV";
+            string SATaiKhoan = "EXEC USP_SelectATaiKhoan";
             DataTable data = DataProvider.Instance.ExecuteQuery(SATaiKhoan);
 
             foreach (DataRow item in data.Rows)

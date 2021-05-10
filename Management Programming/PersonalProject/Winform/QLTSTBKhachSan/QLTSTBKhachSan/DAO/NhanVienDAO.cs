@@ -38,6 +38,15 @@ namespace QLTSTBKhachSan.DAO
             }
             return NhanVienList;
         }
+
+        public bool InsertNhanVien(string hoten,string gioitinh,string ngaysinh,string diachi,
+                                    string sdt,string email,string tongiao,string cmnd, string mabp,string macv)
+        {
+            string Query = string.Format("EXEC dbo.USP_ThemNhanVien N'{0}',N'{1}','{2}', N'{3}', N'{4}',N'{5}',N'{6}',N'{7}',N'{8}',N'{9}'", 
+                hoten,gioitinh,ngaysinh,diachi,sdt,email,tongiao,cmnd,mabp,macv);
+            int result = DataProvider.Instance.ExecuteNonQuery(Query);
+            return result > 0;
+        }
         public void DeleteNhanVienByBoPhan(string mabp)
         {
             string Query = "DELETE dbo.NhanVien WHERE MaBP = N'" + mabp + "'";
