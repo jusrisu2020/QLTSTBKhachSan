@@ -46,9 +46,9 @@ namespace QLTSTBKhachSan.DAO
             return result.Rows.Count > 0;
         }
 
-        public bool InsertAccount(string manv, string tentk ,string tenhienthi, string pass ,string macv)
+        public bool InsertAccount(byte[] hinhanh,string manv, string tentk ,string tenhienthi, string pass ,string macv)
         {
-            string TaiKhoanQuery = string.Format("EXEC dbo.USP_ThemTaiKhoan '{0}','{1}','{2}','{3}','{4}' ", manv, tentk, tenhienthi, pass, macv);
+            string TaiKhoanQuery = string.Format("EXEC dbo.USP_ThemTaiKhoan '{0}','{1}','{2}','{3}','{4}','{5}' ", hinhanh, manv, tentk, tenhienthi, pass, macv);
             int result = DataProvider.Instance.ExecuteNonQuery(TaiKhoanQuery);
             return result > 0;
         }

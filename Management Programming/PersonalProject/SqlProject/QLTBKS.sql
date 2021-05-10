@@ -236,6 +236,7 @@ CREATE TABLE TaiKhoan
 (
 	Id INT IDENTITY,
 	MaTK NVARCHAR(20) PRIMARY KEY,
+	HinhAnh IMAGE,
 	MaNV NVARCHAR(20) CONSTRAINT FK_TaiKhoan_NhanVien FOREIGN KEY(MaNV) REFERENCES dbo.NhanVien(MaNV),
 	TenTK NVARCHAR(100),
 	TenHienThi NVARCHAR(100),
@@ -245,6 +246,7 @@ CREATE TABLE TaiKhoan
 GO
 
 CREATE PROC USP_ThemTaiKhoan
+		@HinhAnh IMAGE,
 		@MaNV NVARCHAR(20),
 		@TenTK NVARCHAR(100),
 		@TenHienThi NVARCHAR(100),
@@ -257,10 +259,10 @@ CREATE PROC USP_ThemTaiKhoan
 		IF EXISTS (SELECT * FROM dbo.TaiKhoan WHERE ID = @MaTK)
 			SET @MaTK=@MaTK+1
 			SET @MaTK='TK'+REPLICATE('0',2-LEN(@MaTK))+@MaTK
-			INSERT INTO dbo.TaiKhoan VALUES(@MaTK,@MaNV,@TenTK,@TenHienThi,@Pass,@MaCV)
+			INSERT INTO dbo.TaiKhoan VALUES(@MaTK,@HinhAnh,@MaNV,@TenTK,@TenHienThi,@Pass,@MaCV)
 	END
 GO
-EXEC dbo.USP_ThemTaiKhoan @MaNV = 'NV01',@TenTK = N'ad',@TenHienThi='Tricua',@Pass=N'1', @MaCV = N'CV01'
+EXEC dbo.USP_ThemTaiKhoan @HinhAnh='D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\riven.jpg',@MaNV = 'NV01',@TenTK = N'ad',@TenHienThi='Tricua',@Pass=N'1', @MaCV = N'CV01'
 EXEC dbo.USP_ThemTaiKhoan @MaNV = 'NV02',@TenTK = N'tk1',@TenHienThi='Tricua1',@Pass=N'1', @MaCV = N'CV02'
 EXEC dbo.USP_ThemTaiKhoan @MaNV = 'NV02',@TenTK = N'tk2',@TenHienThi='Tricua2',@Pass=N'1', @MaCV = N'CV01'
 GO

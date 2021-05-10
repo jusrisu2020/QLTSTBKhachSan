@@ -11,4 +11,3 @@ CREATE TABLE LoadHinhAnh
 
 INSERT INTO dbo.LoadHinhAnh(tenhinh,ha)VALUES(   N'', NULL);
 SELECT * FROM dbo.LoadHinhAnh 
-SELECT * FROM dbo.LoadHinhAnh

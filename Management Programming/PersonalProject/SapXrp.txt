@@ -1,0 +1,18 @@
+
+User ---> Lỗi 
+Employee
+Department
+ChucVu
+Equipment -> 
+	DanhMuc
+	NhaCungCap
+	HoaDonMuaTB
+	Report
+	Báo Cáo thiết bị hỏng
+	Bàn Giao Thiết bị
+HeThong
+	TaiKhoanUser
+	Log Out
+	Cài Đặt
+	Exit
+	GioiThieu

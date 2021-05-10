@@ -10,18 +10,17 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.IO;
+
 namespace QLTSTBKhachSan.UI
 {
     public partial class UCQuanLyNguoiDung : UserControl
     {
-        BindingSource bin = new BindingSource();
         public UCQuanLyNguoiDung()
         {
             InitializeComponent();
             LoadData();
         }
-
-
 
         #region Method
         void LoadData()
@@ -91,12 +90,14 @@ namespace QLTSTBKhachSan.UI
         #region Event
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
+            byte[] b = ImageToByteArray(picInput.Image);
+
             string manv = cbMaNV.Text;
             string macv = cbMaCV.Text;
             string tentk = txtPass.Text;
             string tenhienthi = txtTenHienThi.Text;
             string pass = txtPass.Text;
-            if (TaiKhoanDAO.Instance.InsertAccount(manv, tentk, tenhienthi, pass, macv))
+            if (TaiKhoanDAO.Instance.InsertAccount(b,manv, tentk, tenhienthi, pass, macv))
             {
                 MessageBox.Show("Saved");
                 LoadListAccount();
@@ -144,19 +145,37 @@ namespace QLTSTBKhachSan.UI
         }*/
         #endregion
 
-        
-
         private void picAvatar_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofile = new OpenFileDialog();
             if (ofile.ShowDialog() == DialogResult.OK)
             {
-                picAvatar.Image = Image.FromFile(ofile.FileName);
-
-                lbPic.Text = ofile.FileName;
+                picInput.Image = Image.FromFile(ofile.FileName);
+                this.Text = ofile.FileName;
             }
         }
-        
-        
+        Byte[] ImageToByteArray(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+        Image ByteArrayToImage(Byte[] b)
+        {
+            MemoryStream m = new MemoryStream(b);
+            return Image.FromStream(m);
+        }
+        private void dtgvQLND_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dtgvQLND.SelectedRows[0];
+            txtMaTK.Text = dr.Cells["MaTK"].Value.ToString();
+            byte[] b = (byte[])dr.Cells["HinhAnh"].Value;
+            picOutput.Image = ByteArrayToImage(b);
+            cbMaNV.Text = dr.Cells["MaTK"].Value.ToString();
+            cbMaCV.Text = dr.Cells["MaTK"].Value.ToString();
+            txtTenTK.Text = dr.Cells["MaTK"].Value.ToString();
+            txtTenHienThi.Text = dr.Cells["MaTK"].Value.ToString();
+            txtPass.Text = dr.Cells["MaTK"].Value.ToString();
+        }
     }
 }
