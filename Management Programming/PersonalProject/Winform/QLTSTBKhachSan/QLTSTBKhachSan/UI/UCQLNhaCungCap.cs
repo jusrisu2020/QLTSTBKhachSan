@@ -45,19 +45,7 @@ namespace QLTSTBKhachSan.UI
             txtSTK.Text = dr.Cells["STK"].Value.ToString();
             txtTenCongTy.Text = dr.Cells["TenCongTy"].Value.ToString();
         }
-        void Test()
-        {
-            string tenncc = txtTenNCC.Text;
-            List<NhaCungCapDTO> LIST = NhaCungCapDAO.Instance.LoadNCC();
-            foreach (NhaCungCapDTO item in LIST)
-            {
-                if (tenncc.Equals(item.TenNCC))
-                {
-                    MessageBox.Show("Tên Nhà Cung Cấp bị trùng!");
-                    return;
-                }
-            }
-        }
+        
         private void btnInsertNhaCungCap_Click(object sender, EventArgs e)
         {
             string tenncc = txtTenNCC.Text;
@@ -96,7 +84,6 @@ namespace QLTSTBKhachSan.UI
             string email = txtEmail.Text;
             string stk = txtSTK.Text;
             string tencongty = txtTenCongTy.Text;
-            Test();
             if (NhaCungCapDAO.Instance.UpdateNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty, mancc))
             {
 

@@ -46,7 +46,6 @@ namespace QLTSTBKhachSan.DAO
         }
         public bool TestTrung(string tenncc)
         {
-            
             int result = DataProvider.Instance.ExecuteNonQuery("EXEC dbo.Test @TenNCC ",new object[] { tenncc});
             return result > 0;
         }
