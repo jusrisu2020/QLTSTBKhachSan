@@ -115,6 +115,20 @@ AS SELECT * FROM dbo.NhaCungCap
 GO
 EXEC USP_SelectNhaCungCap
 GO
+
+CREATE PROC USP_UpdateNCC
+	@TenNCC NVARCHAR(255),
+	@SDT NVARCHAR(50),
+	@DiaChi NVARCHAR(300),
+	@Email NVARCHAR(50),
+	@STK NVARCHAR(50),
+	@TenCongTy NVARCHAR(300),
+	@MaNCC NVARCHAR(20)
+AS
+BEGIN
+	UPDATE dbo.NhaCungCap SET TenNCC = @TenNCC,SDT = @SDT,DiaChi = @DiaChi,Email = @Email,STK = @STK,TenCongTy = @TenCongTy WHERE MaNCC = @MaNCC
+END
+GO
 -------------------------------------DanhMuc ------------------------------------------------
 CREATE TABLE DanhMuc
 (
@@ -236,7 +250,7 @@ CREATE TABLE TaiKhoan
 (
 	Id INT IDENTITY,
 	MaTK NVARCHAR(20) PRIMARY KEY,
-	HinhAnh IMAGE,
+	HinhAnh NVARCHAR(1000),
 	MaNV NVARCHAR(20) CONSTRAINT FK_TaiKhoan_NhanVien FOREIGN KEY(MaNV) REFERENCES dbo.NhanVien(MaNV),
 	TenTK NVARCHAR(100),
 	TenHienThi NVARCHAR(100),
@@ -246,7 +260,7 @@ CREATE TABLE TaiKhoan
 GO
 
 CREATE PROC USP_ThemTaiKhoan
-		@HinhAnh IMAGE,
+		@HinhAnh NVARCHAR(1000),
 		@MaNV NVARCHAR(20),
 		@TenTK NVARCHAR(100),
 		@TenHienThi NVARCHAR(100),
@@ -262,10 +276,16 @@ CREATE PROC USP_ThemTaiKhoan
 			INSERT INTO dbo.TaiKhoan VALUES(@MaTK,@HinhAnh,@MaNV,@TenTK,@TenHienThi,@Pass,@MaCV)
 	END
 GO
-EXEC dbo.USP_ThemTaiKhoan @HinhAnh='D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\riven.jpg',@MaNV = 'NV01',@TenTK = N'ad',@TenHienThi='Tricua',@Pass=N'1', @MaCV = N'CV01'
+EXEC dbo.USP_ThemTaiKhoan @HinhAnh=N'C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\management_30px.png',@MaNV = 'NV01',@TenTK = N'ad',@TenHienThi='Tricua',@Pass=N'1', @MaCV = N'CV01'
+
 EXEC dbo.USP_ThemTaiKhoan @MaNV = 'NV02',@TenTK = N'tk1',@TenHienThi='Tricua1',@Pass=N'1', @MaCV = N'CV02'
 EXEC dbo.USP_ThemTaiKhoan @MaNV = 'NV02',@TenTK = N'tk2',@TenHienThi='Tricua2',@Pass=N'1', @MaCV = N'CV01'
 GO
+
+
+SELECT * FROM dbo.TaiKhoan
+
+
 CREATE PROC USP_DangNhap
 	@TenTK NVARCHAR(100),
 	@Pass NVARCHAR(100)

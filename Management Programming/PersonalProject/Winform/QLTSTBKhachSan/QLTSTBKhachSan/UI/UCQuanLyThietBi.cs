@@ -56,7 +56,7 @@ namespace QLTSTBKhachSan.UI
                 btn.Click += btnClick;
                 btn.Tag = item;
                 btn.Text = item.MaBP +"\n"+ item.TenBP;
-                btn.Image = Image.FromFile(@"D:\File-HK2-Nam3\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\Resources\department_50px.png");
+                btn.Image = Image.FromFile(@"QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\Resources\department_50px.png");
                 btn.ImageAlign = ContentAlignment.BottomCenter;
                 btn.TextAlign = ContentAlignment.TopCenter;
             }

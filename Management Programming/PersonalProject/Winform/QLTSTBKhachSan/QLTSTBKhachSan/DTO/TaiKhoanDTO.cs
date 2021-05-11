@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,8 +12,8 @@ namespace QLTSTBKhachSan.DTO
     {
 		private int iD;
 		private string maTK;
-        private byte[] hinhAnh;
-		private string maNV;
+        private string hinhAnh;
+        private string maNV;
 		private string tenTK;
         private string tenHienThi;
 		private string pAss;
@@ -20,14 +21,14 @@ namespace QLTSTBKhachSan.DTO
 
         public int ID { get => iD; set => iD = value; }
         public string MaTK { get => maTK; set => maTK = value; }
-        public byte[] HinhAnh { get => hinhAnh; set => hinhAnh = value; }
+        public string HinhAnh { get => hinhAnh; set => hinhAnh = value; }
         public string MaNV { get => maNV; set => maNV = value; }
         public string TenTK { get => tenTK; set => tenTK = value; }
         public string TenHienThi { get => tenHienThi; set => tenHienThi = value; }
         public string PAss { get => pAss; set => pAss = value; }
         public string MaCV { get => maCV; set => maCV = value; }
 
-        public TaiKhoanDTO(int id, string matk, byte[] hinhanh, string manv, string tentk,string tenhienthi, string pass, string macv)
+        public TaiKhoanDTO(int id, string matk, string hinhanh, string manv, string tentk,string tenhienthi, string pass, string macv)
         {
             this.ID = id;
             this.MaTK = matk;
@@ -43,7 +44,7 @@ namespace QLTSTBKhachSan.DTO
         {
             this.ID = (int)row["id"];
             this.MaTK = row["matk"].ToString();
-            this.HinhAnh = (byte[])row["HinhAnh"];
+            this.HinhAnh = row["HinhAnh"].ToString();
             this.MaNV = row["manv"].ToString();
             this.TenTK = row["tentk"].ToString();
             this.TenHienThi = row["tenhienthi"].ToString();

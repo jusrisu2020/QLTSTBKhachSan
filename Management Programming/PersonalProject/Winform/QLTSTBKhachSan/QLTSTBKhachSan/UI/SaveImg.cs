@@ -14,23 +14,13 @@ namespace QLTSTBKhachSan.UI
 {
     public partial class SaveImg : Form
     {
-        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=HinhAnh;Integrated Security=True");
+        SqlConnection conn = new SqlConnection(@"Data Source=.\SQLEXPRESS;Initial Catalog=SaveImageDataBase;Integrated Security=True");
         public SaveImg()
         {
             InitializeComponent();
-            LoadData();
+            
         }
-        void LoadData()
-        {
-            conn.Open();
-            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.LoadHinhAnh", conn);
-            DataTable table = new DataTable();
-            SqlDataAdapter adap = new SqlDataAdapter(cmd);
-            adap.Fill(table);
-            dtgvHinhAnh.DataSource = table;
-            conn.Close();
-        }
-
+        
         private void picInput_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofile = new OpenFileDialog();
@@ -42,7 +32,21 @@ namespace QLTSTBKhachSan.UI
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void SaveImg_Load(object sender, EventArgs e)
+        {
+            SqlCommand cmd = new SqlCommand("SELECT * FROM dbo.Img", conn);
+            SqlDataAdapter adap = new SqlDataAdapter(cmd);
+            DataTable table = new DataTable();
+            adap.Fill(table);
+            table.Columns.Add("Pic", Type.GetType("System.Byte[]"));
+            foreach (DataRow drow in table.Rows)
+            {
+                drow["Pic"] = File.ReadAllBytes(drow["Paths"].ToString());
+            }
+            dataGridView1.DataSource = table;
+        }
+
+        /*private void btnSave_Click(object sender, EventArgs e)
         {
             byte[] b = ImageToByteArray(picInput.Image);
             conn.Open();
@@ -51,6 +55,8 @@ namespace QLTSTBKhachSan.UI
             cmd.Parameters.Add("@ha", b);
             cmd.ExecuteNonQuery();
             conn.Close();
+            txtPath.Clear();
+            picInput.Controls.Clear();
             LoadData();
         }
 
@@ -71,11 +77,12 @@ namespace QLTSTBKhachSan.UI
             picOutPut.Image = ByteArrayToImage(b);
         }
 
+        //Chuyển byte sang Image
         Image ByteArrayToImage(Byte[] b)
         {
             MemoryStream m = new MemoryStream(b);
             return Image.FromStream(m);
-        }
+        }*/
 
 
         /*private void SaveXuatImg_Load(object sender, EventArgs e)

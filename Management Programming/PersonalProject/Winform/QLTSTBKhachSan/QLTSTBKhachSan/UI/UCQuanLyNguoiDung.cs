@@ -35,12 +35,6 @@ namespace QLTSTBKhachSan.UI
         {
             List<TaiKhoanDTO> tk = TaiKhoanDAO.Instance.LoadListAccount();
             dtgvQLND.DataSource = tk;
-            dtgvQLND.Columns["id"].Visible = false;
-            dtgvQLND.Columns["Pass"].Visible = false;
-            dtgvQLND.Columns["MaTK"].HeaderText = "Mã Tài Khoản";
-            dtgvQLND.Columns["MaNV"].HeaderText = "Mã Nhân Viên";
-            dtgvQLND.Columns["TenTK"].HeaderText = "Tên Tài Khoản";
-            dtgvQLND.Columns["Macv"].HeaderText = "Chức Vụ";
         }
 
         void LoadCBMaNV()
@@ -90,14 +84,13 @@ namespace QLTSTBKhachSan.UI
         #region Event
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
-            byte[] b = ImageToByteArray(picInput.Image);
-
+            string hinhanh = txtHinhAnh.Text;
             string manv = cbMaNV.Text;
             string macv = cbMaCV.Text;
             string tentk = txtPass.Text;
             string tenhienthi = txtTenHienThi.Text;
             string pass = txtPass.Text;
-            if (TaiKhoanDAO.Instance.InsertAccount(b,manv, tentk, tenhienthi, pass, macv))
+            if (TaiKhoanDAO.Instance.InsertAccount(hinhanh, manv, tentk, tenhienthi, pass, macv))
             {
                 MessageBox.Show("Saved");
                 LoadListAccount();
@@ -154,28 +147,20 @@ namespace QLTSTBKhachSan.UI
                 this.Text = ofile.FileName;
             }
         }
-        Byte[] ImageToByteArray(Image img)
-        {
-            MemoryStream m = new MemoryStream();
-            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
-            return m.ToArray();
-        }
-        Image ByteArrayToImage(Byte[] b)
-        {
-            MemoryStream m = new MemoryStream(b);
-            return Image.FromStream(m);
-        }
+
+        //Chuyển Image sang Byte[]
+        
         private void dtgvQLND_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dr = dtgvQLND.SelectedRows[0];
+            /*DataGridViewRow dr = dtgvQLND.SelectedRows[0];
             txtMaTK.Text = dr.Cells["MaTK"].Value.ToString();
             byte[] b = (byte[])dr.Cells["HinhAnh"].Value;
             picOutput.Image = ByteArrayToImage(b);
-            cbMaNV.Text = dr.Cells["MaTK"].Value.ToString();
-            cbMaCV.Text = dr.Cells["MaTK"].Value.ToString();
-            txtTenTK.Text = dr.Cells["MaTK"].Value.ToString();
-            txtTenHienThi.Text = dr.Cells["MaTK"].Value.ToString();
-            txtPass.Text = dr.Cells["MaTK"].Value.ToString();
+            cbMaNV.Text = dr.Cells["MaNV"].Value.ToString();
+            cbMaCV.Text = dr.Cells["MaCV"].Value.ToString();
+            txtTenTK.Text = dr.Cells["TenTK"].Value.ToString();
+            txtTenHienThi.Text = dr.Cells["TenHienThi"].Value.ToString();
+            txtPass.Text = dr.Cells["Pass"].Value.ToString();*/
         }
     }
 }

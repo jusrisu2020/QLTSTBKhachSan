@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,7 +31,6 @@ namespace QLTSTBKhachSan.DAO
             List<TaiKhoanDTO> TaiKhoanList = new List<TaiKhoanDTO>();
             string SATaiKhoan = "EXEC USP_SelectATaiKhoan";
             DataTable data = DataProvider.Instance.ExecuteQuery(SATaiKhoan);
-
             foreach (DataRow item in data.Rows)
             {
                 TaiKhoanDTO tk = new TaiKhoanDTO(item);
@@ -46,7 +46,7 @@ namespace QLTSTBKhachSan.DAO
             return result.Rows.Count > 0;
         }
 
-        public bool InsertAccount(byte[] hinhanh,string manv, string tentk ,string tenhienthi, string pass ,string macv)
+        public bool InsertAccount(string hinhanh,string manv, string tentk ,string tenhienthi, string pass ,string macv)
         {
             string TaiKhoanQuery = string.Format("EXEC dbo.USP_ThemTaiKhoan '{0}','{1}','{2}','{3}','{4}','{5}' ", hinhanh, manv, tentk, tenhienthi, pass, macv);
             int result = DataProvider.Instance.ExecuteNonQuery(TaiKhoanQuery);

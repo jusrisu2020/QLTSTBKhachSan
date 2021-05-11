@@ -41,7 +41,6 @@
             this.gbEmail = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.gbDiaChi = new System.Windows.Forms.GroupBox();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.gbSDT = new System.Windows.Forms.GroupBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.gbTenNCC = new System.Windows.Forms.GroupBox();
@@ -51,10 +50,11 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             this.gbTool = new System.Windows.Forms.GroupBox();
-            this.btnInsertNhaCungCap = new System.Windows.Forms.Button();
-            this.btnUpdateNCC = new System.Windows.Forms.Button();
-            this.btnDeleteNCC = new System.Windows.Forms.Button();
             this.btnRefesh = new System.Windows.Forms.Button();
+            this.btnDeleteNCC = new System.Windows.Forms.Button();
+            this.btnUpdateNCC = new System.Windows.Forms.Button();
+            this.btnInsertNhaCungCap = new System.Windows.Forms.Button();
+            this.cbDiaChi = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNCC)).BeginInit();
             this.gbInfo.SuspendLayout();
@@ -190,20 +190,13 @@
             // 
             // gbDiaChi
             // 
-            this.gbDiaChi.Controls.Add(this.txtDiaChi);
+            this.gbDiaChi.Controls.Add(this.cbDiaChi);
             this.gbDiaChi.Location = new System.Drawing.Point(164, 32);
             this.gbDiaChi.Name = "gbDiaChi";
             this.gbDiaChi.Size = new System.Drawing.Size(134, 52);
             this.gbDiaChi.TabIndex = 9;
             this.gbDiaChi.TabStop = false;
             this.gbDiaChi.Text = "Địa Chỉ";
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Location = new System.Drawing.Point(15, 19);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(100, 20);
-            this.txtDiaChi.TabIndex = 0;
             // 
             // gbSDT
             // 
@@ -269,27 +262,16 @@
             this.gbTool.TabStop = false;
             this.gbTool.Text = "Tool";
             // 
-            // btnInsertNhaCungCap
+            // btnRefesh
             // 
-            this.btnInsertNhaCungCap.Location = new System.Drawing.Point(30, 18);
-            this.btnInsertNhaCungCap.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInsertNhaCungCap.Name = "btnInsertNhaCungCap";
-            this.btnInsertNhaCungCap.Size = new System.Drawing.Size(64, 30);
-            this.btnInsertNhaCungCap.TabIndex = 14;
-            this.btnInsertNhaCungCap.Text = "Thêm";
-            this.btnInsertNhaCungCap.UseVisualStyleBackColor = true;
-            this.btnInsertNhaCungCap.Click += new System.EventHandler(this.btnInsertNhaCungCap_Click);
-            // 
-            // btnUpdateNCC
-            // 
-            this.btnUpdateNCC.Location = new System.Drawing.Point(117, 18);
-            this.btnUpdateNCC.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateNCC.Name = "btnUpdateNCC";
-            this.btnUpdateNCC.Size = new System.Drawing.Size(64, 30);
-            this.btnUpdateNCC.TabIndex = 15;
-            this.btnUpdateNCC.Text = "Sửa";
-            this.btnUpdateNCC.UseVisualStyleBackColor = true;
-            this.btnUpdateNCC.Click += new System.EventHandler(this.btnUpdateNCC_Click);
+            this.btnRefesh.Location = new System.Drawing.Point(117, 66);
+            this.btnRefesh.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(64, 30);
+            this.btnRefesh.TabIndex = 17;
+            this.btnRefesh.Text = "Refesh";
+            this.btnRefesh.UseVisualStyleBackColor = true;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
             // 
             // btnDeleteNCC
             // 
@@ -302,15 +284,101 @@
             this.btnDeleteNCC.UseVisualStyleBackColor = true;
             this.btnDeleteNCC.Click += new System.EventHandler(this.btnDeleteNCC_Click);
             // 
-            // btnRefesh
+            // btnUpdateNCC
             // 
-            this.btnRefesh.Location = new System.Drawing.Point(117, 66);
-            this.btnRefesh.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.Size = new System.Drawing.Size(64, 30);
-            this.btnRefesh.TabIndex = 17;
-            this.btnRefesh.Text = "Refesh";
-            this.btnRefesh.UseVisualStyleBackColor = true;
+            this.btnUpdateNCC.Location = new System.Drawing.Point(117, 18);
+            this.btnUpdateNCC.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateNCC.Name = "btnUpdateNCC";
+            this.btnUpdateNCC.Size = new System.Drawing.Size(64, 30);
+            this.btnUpdateNCC.TabIndex = 15;
+            this.btnUpdateNCC.Text = "Sửa";
+            this.btnUpdateNCC.UseVisualStyleBackColor = true;
+            this.btnUpdateNCC.Click += new System.EventHandler(this.btnUpdateNCC_Click);
+            // 
+            // btnInsertNhaCungCap
+            // 
+            this.btnInsertNhaCungCap.Location = new System.Drawing.Point(30, 18);
+            this.btnInsertNhaCungCap.Margin = new System.Windows.Forms.Padding(2);
+            this.btnInsertNhaCungCap.Name = "btnInsertNhaCungCap";
+            this.btnInsertNhaCungCap.Size = new System.Drawing.Size(64, 30);
+            this.btnInsertNhaCungCap.TabIndex = 14;
+            this.btnInsertNhaCungCap.Text = "Thêm";
+            this.btnInsertNhaCungCap.UseVisualStyleBackColor = true;
+            this.btnInsertNhaCungCap.Click += new System.EventHandler(this.btnInsertNhaCungCap_Click);
+            // 
+            // cbDiaChi
+            // 
+            this.cbDiaChi.FormattingEnabled = true;
+            this.cbDiaChi.Items.AddRange(new object[] {
+            "An Giang",
+            "Bà Rịa-Vũng Tàu",
+            "Bạc Liêu",
+            "Bắc Kạn",
+            "Bắc Giang",
+            "Bắc Ninh",
+            "Bến Tre",
+            "Bình Dương",
+            "Bình Định",
+            "Bình Phước",
+            "Bình Thuận",
+            "Cà Mau",
+            "Cao Bằng",
+            "Cần Thơ (TP)",
+            "Đà Nẵng (TP)",
+            "Đắk Lắk",
+            "Đắk Nông",
+            "Điện Biên",
+            "Đồng Nai",
+            "Đồng Tháp",
+            "Gia Lai",
+            "Hà Giang",
+            "Hà Nam",
+            "Hà Nội (TP)",
+            "Hà Tây",
+            "Hà Tĩnh",
+            "Hải Dương",
+            "Hải Phòng (TP)",
+            "Hòa Bình",
+            "Hồ Chí Minh (TP)",
+            "Hậu Giang",
+            "Hưng Yên",
+            "Khánh Hòa",
+            "Kiên Giang",
+            "Kon Tum",
+            "Lai Châu",
+            "Lào Cai",
+            "Lạng Sơn",
+            "Lâm Đồng",
+            "Long An",
+            "Nam Định",
+            "Nghệ An",
+            "Ninh Bình",
+            "Ninh Thuận",
+            "Phú Thọ",
+            "Phú Yên",
+            "Quảng Bình",
+            "Quảng Nam",
+            "Quảng Ngãi",
+            "Quảng Ninh",
+            "Quảng Trị",
+            "Sóc Trăng",
+            "Sơn La",
+            "Tây Ninh",
+            "Thái Bình",
+            "Thái Nguyên",
+            "Thanh Hóa",
+            "Thừa Thiên – Huế",
+            "Tiền Giang",
+            "Trà Vinh",
+            "Tuyên Quang",
+            "Vĩnh Long",
+            "Vĩnh Phúc",
+            "Yên Bái",
+            ""});
+            this.cbDiaChi.Location = new System.Drawing.Point(6, 18);
+            this.cbDiaChi.Name = "cbDiaChi";
+            this.cbDiaChi.Size = new System.Drawing.Size(112, 21);
+            this.cbDiaChi.TabIndex = 0;
             // 
             // UCQLNhaCungCap
             // 
@@ -333,7 +401,6 @@
             this.gbEmail.ResumeLayout(false);
             this.gbEmail.PerformLayout();
             this.gbDiaChi.ResumeLayout(false);
-            this.gbDiaChi.PerformLayout();
             this.gbSDT.ResumeLayout(false);
             this.gbSDT.PerformLayout();
             this.gbTenNCC.ResumeLayout(false);
@@ -362,7 +429,6 @@
         private System.Windows.Forms.GroupBox gbSDT;
         private System.Windows.Forms.TextBox txtSDT;
         private System.Windows.Forms.GroupBox gbDiaChi;
-        private System.Windows.Forms.TextBox txtDiaChi;
         private System.Windows.Forms.GroupBox gbEmail;
         private System.Windows.Forms.TextBox txtEmail;
         private System.Windows.Forms.GroupBox gbSTK;
@@ -374,5 +440,6 @@
         private System.Windows.Forms.Button btnDeleteNCC;
         private System.Windows.Forms.Button btnUpdateNCC;
         private System.Windows.Forms.Button btnInsertNhaCungCap;
+        private System.Windows.Forms.ComboBox cbDiaChi;
     }
 }

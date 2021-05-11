@@ -1,4 +1,5 @@
-﻿using QLTSTBKhachSan.UI;
+﻿using QLTSTBKhachSan.DTO;
+using QLTSTBKhachSan.UI;
 using System;
 using System.Collections.Generic;
 using System.Linq;

@@ -40,20 +40,42 @@ namespace QLTSTBKhachSan.UI
             txtMaNCC.Text = dr.Cells["MaNCC"].Value.ToString();
             txtTenNCC.Text = dr.Cells["TenNCC"].Value.ToString();
             txtSDT.Text = dr.Cells["SDT"].Value.ToString();
-            txtDiaChi.Text = dr.Cells["DiaChi"].Value.ToString();
+            cbDiaChi.Text = dr.Cells["DiaChi"].Value.ToString();
             txtEmail.Text = dr.Cells["Email"].Value.ToString();
             txtSTK.Text = dr.Cells["STK"].Value.ToString();
             txtTenCongTy.Text = dr.Cells["TenCongTy"].Value.ToString();
         }
-
+        void Test()
+        {
+            string tenncc = txtTenNCC.Text;
+            List<NhaCungCapDTO> LIST = NhaCungCapDAO.Instance.LoadNCC();
+            foreach (NhaCungCapDTO item in LIST)
+            {
+                if (tenncc.Equals(item.TenNCC))
+                {
+                    MessageBox.Show("Tên Nhà Cung Cấp bị trùng!");
+                    return;
+                }
+            }
+        }
         private void btnInsertNhaCungCap_Click(object sender, EventArgs e)
         {
             string tenncc = txtTenNCC.Text;
             string sdt = txtSDT.Text;
-            string diachi = txtDiaChi.Text;
+            string diachi = cbDiaChi.Text;
             string email = txtEmail.Text;
             string stk = txtSTK.Text;
             string tencongty = txtTenCongTy.Text;
+            List<NhaCungCapDTO> NhaCungCapList = NhaCungCapDAO.Instance.LoadNCC();
+            foreach (NhaCungCapDTO item in NhaCungCapList)
+            {
+                if (tenncc.Equals(item.TenNCC))
+                {
+                    MessageBox.Show("Tên Nhà Cung Cấp bị trùng!");
+                    return;
+                }
+            }
+            
             if (NhaCungCapDAO.Instance.InsertNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty))
             {
                 MessageBox.Show("Saved");
@@ -61,18 +83,46 @@ namespace QLTSTBKhachSan.UI
             }
             else
             {
-                MessageBox.Show(ex+"Không thành công");
+                MessageBox.Show(ex + "Không thành công");
             }
         }
 
         private void btnUpdateNCC_Click(object sender, EventArgs e)
         {
+            string mancc = txtMaNCC.Text;
+            string tenncc = txtTenNCC.Text;
+            string sdt = txtSDT.Text;
+            string diachi = cbDiaChi.Text;
+            string email = txtEmail.Text;
+            string stk = txtSTK.Text;
+            string tencongty = txtTenCongTy.Text;
+            Test();
+            if (NhaCungCapDAO.Instance.UpdateNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty, mancc))
+            {
 
+                MessageBox.Show("Sửa thành công");
+                LoadNCCUC();
+            }
+            else
+            {
+                MessageBox.Show(ex + "Không thành công");
+            }
         }
 
         private void btnDeleteNCC_Click(object sender, EventArgs e)
         {
             //Xoá Table NhaCC thì phải Xoá Table HoaDonMuaTB có liên quan đến nhà cung cấp đó 
+        }
+
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            txtTenNCC.Clear();
+            txtSDT.Clear();
+            cbDiaChi.SelectedItem = "";
+            txtEmail.Clear();
+            txtSTK.Clear();
+            txtTenCongTy.Clear();
+            LoadNCCUC();
         }
     }
 }
