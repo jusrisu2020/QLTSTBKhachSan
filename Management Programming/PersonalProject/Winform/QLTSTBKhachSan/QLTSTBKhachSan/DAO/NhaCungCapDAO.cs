@@ -44,15 +44,29 @@ namespace QLTSTBKhachSan.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(Query);
             return result > 0;
         }
-        public bool TestTrung(string tenncc)
+        public int Test(string tenncc)
         {
-            int result = DataProvider.Instance.ExecuteNonQuery("EXEC dbo.Test @TenNCC ",new object[] { tenncc});
-            return result > 0;
+            List<NhaCungCapDTO> NhaCungCapList = NhaCungCapDAO.Instance.LoadNCC();
+            foreach (NhaCungCapDTO item in NhaCungCapList)
+            {
+                if (tenncc.Equals(item.TenNCC))
+                {
+                    return 0;
+                }
+            }
+            return 1;
         }
 
         public bool UpdateNhaCungCap(string tenncc, string sdt, string diachi, string email, string stk, string tencongty, string mancc)
         {
             string Query = string.Format("EXEC USP_UpdateNCC N'{0}',N'{1}',N'{2}',N'{3}',N'{4}',N'{5}', N'{6}'", tenncc, sdt, diachi, email, stk, tencongty, mancc);
+            int result = DataProvider.Instance.ExecuteNonQuery(Query);
+            return result > 0;
+        }
+
+        public bool DeleteNhaCungCap(string mancc)
+        {
+            string Query = string.Format("DELETE dbo.NhaCungCap WHERE MaNCC = '{0}'", mancc);
             int result = DataProvider.Instance.ExecuteNonQuery(Query);
             return result > 0;
         }

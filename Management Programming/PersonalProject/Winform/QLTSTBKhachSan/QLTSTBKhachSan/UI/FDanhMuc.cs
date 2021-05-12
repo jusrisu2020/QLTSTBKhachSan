@@ -21,5 +21,9 @@ namespace QLTSTBKhachSan
         private void btnThemDanhMuc_Click(object sender, EventArgs e)
         {
         }
+
+        private void FDanhMuc_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

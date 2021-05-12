@@ -41,6 +41,7 @@
             this.gbEmail = new System.Windows.Forms.GroupBox();
             this.txtEmail = new System.Windows.Forms.TextBox();
             this.gbDiaChi = new System.Windows.Forms.GroupBox();
+            this.cbDiaChi = new System.Windows.Forms.ComboBox();
             this.gbSDT = new System.Windows.Forms.GroupBox();
             this.txtSDT = new System.Windows.Forms.TextBox();
             this.gbTenNCC = new System.Windows.Forms.GroupBox();
@@ -54,7 +55,6 @@
             this.btnDeleteNCC = new System.Windows.Forms.Button();
             this.btnUpdateNCC = new System.Windows.Forms.Button();
             this.btnInsertNhaCungCap = new System.Windows.Forms.Button();
-            this.cbDiaChi = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNCC)).BeginInit();
             this.gbInfo.SuspendLayout();
@@ -75,35 +75,34 @@
             this.panel1.Controls.Add(this.txtTimKiem);
             this.panel1.Controls.Add(this.btnTimKiem);
             this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 81);
+            this.panel1.Size = new System.Drawing.Size(1200, 100);
             this.panel1.TabIndex = 9;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 30);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(25, 37);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(111, 13);
+            this.label2.Size = new System.Drawing.Size(143, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "Quản lí nhà cung cấp";
             // 
             // txtTimKiem
             // 
-            this.txtTimKiem.Location = new System.Drawing.Point(438, 30);
-            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.txtTimKiem.Location = new System.Drawing.Point(584, 37);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(162, 20);
+            this.txtTimKiem.Size = new System.Drawing.Size(215, 22);
             this.txtTimKiem.TabIndex = 12;
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(613, 24);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimKiem.Location = new System.Drawing.Point(817, 30);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(64, 30);
+            this.btnTimKiem.Size = new System.Drawing.Size(85, 37);
             this.btnTimKiem.TabIndex = 13;
             this.btnTimKiem.Text = "Search...";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -112,12 +111,13 @@
             // 
             this.dtgvNCC.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvNCC.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvNCC.Location = new System.Drawing.Point(22, 363);
+            this.dtgvNCC.Location = new System.Drawing.Point(29, 447);
+            this.dtgvNCC.Margin = new System.Windows.Forms.Padding(4);
             this.dtgvNCC.Name = "dtgvNCC";
             this.dtgvNCC.ReadOnly = true;
             this.dtgvNCC.RowHeadersWidth = 51;
             this.dtgvNCC.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvNCC.Size = new System.Drawing.Size(860, 178);
+            this.dtgvNCC.Size = new System.Drawing.Size(1147, 219);
             this.dtgvNCC.TabIndex = 10;
             this.dtgvNCC.Click += new System.EventHandler(this.dtgvNCC_Click);
             // 
@@ -130,181 +130,87 @@
             this.gbInfo.Controls.Add(this.gbSDT);
             this.gbInfo.Controls.Add(this.gbTenNCC);
             this.gbInfo.Controls.Add(this.gbMaNCC);
-            this.gbInfo.Location = new System.Drawing.Point(13, 98);
+            this.gbInfo.Location = new System.Drawing.Point(17, 121);
+            this.gbInfo.Margin = new System.Windows.Forms.Padding(4);
             this.gbInfo.Name = "gbInfo";
-            this.gbInfo.Size = new System.Drawing.Size(508, 251);
+            this.gbInfo.Padding = new System.Windows.Forms.Padding(4);
+            this.gbInfo.Size = new System.Drawing.Size(677, 309);
             this.gbInfo.TabIndex = 11;
             this.gbInfo.TabStop = false;
             this.gbInfo.Text = "Thông Tin";
+            this.gbInfo.Enter += new System.EventHandler(this.gbInfo_Enter);
             // 
             // gbTenCongTy
             // 
             this.gbTenCongTy.Controls.Add(this.txtTenCongTy);
-            this.gbTenCongTy.Location = new System.Drawing.Point(337, 32);
+            this.gbTenCongTy.Location = new System.Drawing.Point(449, 39);
+            this.gbTenCongTy.Margin = new System.Windows.Forms.Padding(4);
             this.gbTenCongTy.Name = "gbTenCongTy";
-            this.gbTenCongTy.Size = new System.Drawing.Size(134, 52);
+            this.gbTenCongTy.Padding = new System.Windows.Forms.Padding(4);
+            this.gbTenCongTy.Size = new System.Drawing.Size(179, 64);
             this.gbTenCongTy.TabIndex = 11;
             this.gbTenCongTy.TabStop = false;
             this.gbTenCongTy.Text = "Tên Công Ty";
             // 
             // txtTenCongTy
             // 
-            this.txtTenCongTy.Location = new System.Drawing.Point(15, 19);
+            this.txtTenCongTy.Location = new System.Drawing.Point(20, 23);
+            this.txtTenCongTy.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenCongTy.Name = "txtTenCongTy";
-            this.txtTenCongTy.Size = new System.Drawing.Size(100, 20);
+            this.txtTenCongTy.Size = new System.Drawing.Size(132, 22);
             this.txtTenCongTy.TabIndex = 0;
             // 
             // gbSTK
             // 
             this.gbSTK.Controls.Add(this.txtSTK);
-            this.gbSTK.Location = new System.Drawing.Point(164, 148);
+            this.gbSTK.Location = new System.Drawing.Point(219, 182);
+            this.gbSTK.Margin = new System.Windows.Forms.Padding(4);
             this.gbSTK.Name = "gbSTK";
-            this.gbSTK.Size = new System.Drawing.Size(134, 52);
+            this.gbSTK.Padding = new System.Windows.Forms.Padding(4);
+            this.gbSTK.Size = new System.Drawing.Size(179, 64);
             this.gbSTK.TabIndex = 11;
             this.gbSTK.TabStop = false;
             this.gbSTK.Text = "Số Tài Khoản";
             // 
             // txtSTK
             // 
-            this.txtSTK.Location = new System.Drawing.Point(15, 19);
+            this.txtSTK.Location = new System.Drawing.Point(20, 23);
+            this.txtSTK.Margin = new System.Windows.Forms.Padding(4);
             this.txtSTK.Name = "txtSTK";
-            this.txtSTK.Size = new System.Drawing.Size(100, 20);
+            this.txtSTK.Size = new System.Drawing.Size(132, 22);
             this.txtSTK.TabIndex = 0;
             // 
             // gbEmail
             // 
             this.gbEmail.Controls.Add(this.txtEmail);
-            this.gbEmail.Location = new System.Drawing.Point(164, 90);
+            this.gbEmail.Location = new System.Drawing.Point(219, 111);
+            this.gbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.gbEmail.Name = "gbEmail";
-            this.gbEmail.Size = new System.Drawing.Size(134, 52);
+            this.gbEmail.Padding = new System.Windows.Forms.Padding(4);
+            this.gbEmail.Size = new System.Drawing.Size(179, 64);
             this.gbEmail.TabIndex = 10;
             this.gbEmail.TabStop = false;
             this.gbEmail.Text = "Email";
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(15, 19);
+            this.txtEmail.Location = new System.Drawing.Point(20, 23);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 20);
+            this.txtEmail.Size = new System.Drawing.Size(132, 22);
             this.txtEmail.TabIndex = 0;
             // 
             // gbDiaChi
             // 
             this.gbDiaChi.Controls.Add(this.cbDiaChi);
-            this.gbDiaChi.Location = new System.Drawing.Point(164, 32);
+            this.gbDiaChi.Location = new System.Drawing.Point(219, 39);
+            this.gbDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.gbDiaChi.Name = "gbDiaChi";
-            this.gbDiaChi.Size = new System.Drawing.Size(134, 52);
+            this.gbDiaChi.Padding = new System.Windows.Forms.Padding(4);
+            this.gbDiaChi.Size = new System.Drawing.Size(179, 64);
             this.gbDiaChi.TabIndex = 9;
             this.gbDiaChi.TabStop = false;
             this.gbDiaChi.Text = "Địa Chỉ";
-            // 
-            // gbSDT
-            // 
-            this.gbSDT.Controls.Add(this.txtSDT);
-            this.gbSDT.Location = new System.Drawing.Point(9, 148);
-            this.gbSDT.Name = "gbSDT";
-            this.gbSDT.Size = new System.Drawing.Size(134, 52);
-            this.gbSDT.TabIndex = 8;
-            this.gbSDT.TabStop = false;
-            this.gbSDT.Text = "SDT";
-            // 
-            // txtSDT
-            // 
-            this.txtSDT.Location = new System.Drawing.Point(15, 19);
-            this.txtSDT.Name = "txtSDT";
-            this.txtSDT.Size = new System.Drawing.Size(100, 20);
-            this.txtSDT.TabIndex = 0;
-            // 
-            // gbTenNCC
-            // 
-            this.gbTenNCC.Controls.Add(this.txtTenNCC);
-            this.gbTenNCC.Location = new System.Drawing.Point(9, 90);
-            this.gbTenNCC.Name = "gbTenNCC";
-            this.gbTenNCC.Size = new System.Drawing.Size(134, 52);
-            this.gbTenNCC.TabIndex = 7;
-            this.gbTenNCC.TabStop = false;
-            this.gbTenNCC.Text = "Tên Nhà Cung Cấp";
-            // 
-            // txtTenNCC
-            // 
-            this.txtTenNCC.Location = new System.Drawing.Point(15, 19);
-            this.txtTenNCC.Name = "txtTenNCC";
-            this.txtTenNCC.Size = new System.Drawing.Size(100, 20);
-            this.txtTenNCC.TabIndex = 0;
-            // 
-            // gbMaNCC
-            // 
-            this.gbMaNCC.Controls.Add(this.txtMaNCC);
-            this.gbMaNCC.Location = new System.Drawing.Point(9, 32);
-            this.gbMaNCC.Name = "gbMaNCC";
-            this.gbMaNCC.Size = new System.Drawing.Size(134, 52);
-            this.gbMaNCC.TabIndex = 6;
-            this.gbMaNCC.TabStop = false;
-            this.gbMaNCC.Text = "Mã Nhà Cung Cấp";
-            // 
-            // txtMaNCC
-            // 
-            this.txtMaNCC.Location = new System.Drawing.Point(15, 19);
-            this.txtMaNCC.Name = "txtMaNCC";
-            this.txtMaNCC.Size = new System.Drawing.Size(100, 20);
-            this.txtMaNCC.TabIndex = 0;
-            // 
-            // gbTool
-            // 
-            this.gbTool.Controls.Add(this.btnRefesh);
-            this.gbTool.Controls.Add(this.btnDeleteNCC);
-            this.gbTool.Controls.Add(this.btnUpdateNCC);
-            this.gbTool.Controls.Add(this.btnInsertNhaCungCap);
-            this.gbTool.Location = new System.Drawing.Point(536, 98);
-            this.gbTool.Name = "gbTool";
-            this.gbTool.Size = new System.Drawing.Size(196, 115);
-            this.gbTool.TabIndex = 12;
-            this.gbTool.TabStop = false;
-            this.gbTool.Text = "Tool";
-            // 
-            // btnRefesh
-            // 
-            this.btnRefesh.Location = new System.Drawing.Point(117, 66);
-            this.btnRefesh.Margin = new System.Windows.Forms.Padding(2);
-            this.btnRefesh.Name = "btnRefesh";
-            this.btnRefesh.Size = new System.Drawing.Size(64, 30);
-            this.btnRefesh.TabIndex = 17;
-            this.btnRefesh.Text = "Refesh";
-            this.btnRefesh.UseVisualStyleBackColor = true;
-            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
-            // 
-            // btnDeleteNCC
-            // 
-            this.btnDeleteNCC.Location = new System.Drawing.Point(30, 66);
-            this.btnDeleteNCC.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDeleteNCC.Name = "btnDeleteNCC";
-            this.btnDeleteNCC.Size = new System.Drawing.Size(64, 30);
-            this.btnDeleteNCC.TabIndex = 16;
-            this.btnDeleteNCC.Text = "Xoá";
-            this.btnDeleteNCC.UseVisualStyleBackColor = true;
-            this.btnDeleteNCC.Click += new System.EventHandler(this.btnDeleteNCC_Click);
-            // 
-            // btnUpdateNCC
-            // 
-            this.btnUpdateNCC.Location = new System.Drawing.Point(117, 18);
-            this.btnUpdateNCC.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateNCC.Name = "btnUpdateNCC";
-            this.btnUpdateNCC.Size = new System.Drawing.Size(64, 30);
-            this.btnUpdateNCC.TabIndex = 15;
-            this.btnUpdateNCC.Text = "Sửa";
-            this.btnUpdateNCC.UseVisualStyleBackColor = true;
-            this.btnUpdateNCC.Click += new System.EventHandler(this.btnUpdateNCC_Click);
-            // 
-            // btnInsertNhaCungCap
-            // 
-            this.btnInsertNhaCungCap.Location = new System.Drawing.Point(30, 18);
-            this.btnInsertNhaCungCap.Margin = new System.Windows.Forms.Padding(2);
-            this.btnInsertNhaCungCap.Name = "btnInsertNhaCungCap";
-            this.btnInsertNhaCungCap.Size = new System.Drawing.Size(64, 30);
-            this.btnInsertNhaCungCap.TabIndex = 14;
-            this.btnInsertNhaCungCap.Text = "Thêm";
-            this.btnInsertNhaCungCap.UseVisualStyleBackColor = true;
-            this.btnInsertNhaCungCap.Click += new System.EventHandler(this.btnInsertNhaCungCap_Click);
             // 
             // cbDiaChi
             // 
@@ -375,21 +281,144 @@
             "Vĩnh Phúc",
             "Yên Bái",
             ""});
-            this.cbDiaChi.Location = new System.Drawing.Point(6, 18);
+            this.cbDiaChi.Location = new System.Drawing.Point(8, 22);
+            this.cbDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.cbDiaChi.Name = "cbDiaChi";
-            this.cbDiaChi.Size = new System.Drawing.Size(112, 21);
+            this.cbDiaChi.Size = new System.Drawing.Size(148, 24);
             this.cbDiaChi.TabIndex = 0;
+            // 
+            // gbSDT
+            // 
+            this.gbSDT.Controls.Add(this.txtSDT);
+            this.gbSDT.Location = new System.Drawing.Point(12, 182);
+            this.gbSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.gbSDT.Name = "gbSDT";
+            this.gbSDT.Padding = new System.Windows.Forms.Padding(4);
+            this.gbSDT.Size = new System.Drawing.Size(179, 64);
+            this.gbSDT.TabIndex = 8;
+            this.gbSDT.TabStop = false;
+            this.gbSDT.Text = "SDT";
+            // 
+            // txtSDT
+            // 
+            this.txtSDT.Location = new System.Drawing.Point(20, 23);
+            this.txtSDT.Margin = new System.Windows.Forms.Padding(4);
+            this.txtSDT.Name = "txtSDT";
+            this.txtSDT.Size = new System.Drawing.Size(132, 22);
+            this.txtSDT.TabIndex = 0;
+            // 
+            // gbTenNCC
+            // 
+            this.gbTenNCC.Controls.Add(this.txtTenNCC);
+            this.gbTenNCC.Location = new System.Drawing.Point(12, 111);
+            this.gbTenNCC.Margin = new System.Windows.Forms.Padding(4);
+            this.gbTenNCC.Name = "gbTenNCC";
+            this.gbTenNCC.Padding = new System.Windows.Forms.Padding(4);
+            this.gbTenNCC.Size = new System.Drawing.Size(179, 64);
+            this.gbTenNCC.TabIndex = 7;
+            this.gbTenNCC.TabStop = false;
+            this.gbTenNCC.Text = "Tên Nhà Cung Cấp";
+            // 
+            // txtTenNCC
+            // 
+            this.txtTenNCC.Location = new System.Drawing.Point(20, 23);
+            this.txtTenNCC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtTenNCC.Name = "txtTenNCC";
+            this.txtTenNCC.Size = new System.Drawing.Size(132, 22);
+            this.txtTenNCC.TabIndex = 0;
+            // 
+            // gbMaNCC
+            // 
+            this.gbMaNCC.Controls.Add(this.txtMaNCC);
+            this.gbMaNCC.Location = new System.Drawing.Point(12, 39);
+            this.gbMaNCC.Margin = new System.Windows.Forms.Padding(4);
+            this.gbMaNCC.Name = "gbMaNCC";
+            this.gbMaNCC.Padding = new System.Windows.Forms.Padding(4);
+            this.gbMaNCC.Size = new System.Drawing.Size(179, 64);
+            this.gbMaNCC.TabIndex = 6;
+            this.gbMaNCC.TabStop = false;
+            this.gbMaNCC.Text = "Mã Nhà Cung Cấp";
+            // 
+            // txtMaNCC
+            // 
+            this.txtMaNCC.Location = new System.Drawing.Point(20, 23);
+            this.txtMaNCC.Margin = new System.Windows.Forms.Padding(4);
+            this.txtMaNCC.Name = "txtMaNCC";
+            this.txtMaNCC.Size = new System.Drawing.Size(132, 22);
+            this.txtMaNCC.TabIndex = 0;
+            // 
+            // gbTool
+            // 
+            this.gbTool.Controls.Add(this.btnRefesh);
+            this.gbTool.Controls.Add(this.btnDeleteNCC);
+            this.gbTool.Controls.Add(this.btnUpdateNCC);
+            this.gbTool.Controls.Add(this.btnInsertNhaCungCap);
+            this.gbTool.Location = new System.Drawing.Point(715, 121);
+            this.gbTool.Margin = new System.Windows.Forms.Padding(4);
+            this.gbTool.Name = "gbTool";
+            this.gbTool.Padding = new System.Windows.Forms.Padding(4);
+            this.gbTool.Size = new System.Drawing.Size(261, 142);
+            this.gbTool.TabIndex = 12;
+            this.gbTool.TabStop = false;
+            this.gbTool.Text = "Tool";
+            // 
+            // btnRefesh
+            // 
+            this.btnRefesh.Location = new System.Drawing.Point(156, 81);
+            this.btnRefesh.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnRefesh.Name = "btnRefesh";
+            this.btnRefesh.Size = new System.Drawing.Size(85, 37);
+            this.btnRefesh.TabIndex = 17;
+            this.btnRefesh.Text = "Refesh";
+            this.btnRefesh.UseVisualStyleBackColor = true;
+            this.btnRefesh.Click += new System.EventHandler(this.btnRefesh_Click);
+            // 
+            // btnDeleteNCC
+            // 
+            this.btnDeleteNCC.Location = new System.Drawing.Point(40, 81);
+            this.btnDeleteNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnDeleteNCC.Name = "btnDeleteNCC";
+            this.btnDeleteNCC.Size = new System.Drawing.Size(85, 37);
+            this.btnDeleteNCC.TabIndex = 16;
+            this.btnDeleteNCC.Text = "Xoá";
+            this.btnDeleteNCC.UseVisualStyleBackColor = true;
+            this.btnDeleteNCC.Click += new System.EventHandler(this.btnDeleteNCC_Click);
+            // 
+            // btnUpdateNCC
+            // 
+            this.btnUpdateNCC.Location = new System.Drawing.Point(156, 22);
+            this.btnUpdateNCC.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUpdateNCC.Name = "btnUpdateNCC";
+            this.btnUpdateNCC.Size = new System.Drawing.Size(85, 37);
+            this.btnUpdateNCC.TabIndex = 15;
+            this.btnUpdateNCC.Text = "Sửa";
+            this.btnUpdateNCC.UseVisualStyleBackColor = true;
+            this.btnUpdateNCC.Click += new System.EventHandler(this.btnUpdateNCC_Click);
+            // 
+            // btnInsertNhaCungCap
+            // 
+            this.btnInsertNhaCungCap.Location = new System.Drawing.Point(40, 22);
+            this.btnInsertNhaCungCap.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnInsertNhaCungCap.Name = "btnInsertNhaCungCap";
+            this.btnInsertNhaCungCap.Size = new System.Drawing.Size(85, 37);
+            this.btnInsertNhaCungCap.TabIndex = 14;
+            this.btnInsertNhaCungCap.Text = "Thêm";
+            this.btnInsertNhaCungCap.UseVisualStyleBackColor = true;
+            this.btnInsertNhaCungCap.Click += new System.EventHandler(this.btnInsertNhaCungCap_Click);
             // 
             // UCQLNhaCungCap
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.gbTool);
             this.Controls.Add(this.gbInfo);
             this.Controls.Add(this.dtgvNCC);
             this.Controls.Add(this.panel1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "UCQLNhaCungCap";
-            this.Size = new System.Drawing.Size(900, 569);
+            this.Size = new System.Drawing.Size(1200, 700);
+            this.Load += new System.EventHandler(this.UCQLNhaCungCap_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.UCQLNhaCungCap_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvNCC)).EndInit();

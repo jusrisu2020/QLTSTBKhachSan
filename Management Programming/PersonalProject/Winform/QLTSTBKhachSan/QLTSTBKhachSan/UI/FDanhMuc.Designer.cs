@@ -161,6 +161,7 @@ namespace QLTSTBKhachSan
             this.Name = "FDanhMuc";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh Mục";
+            this.Load += new System.EventHandler(this.FDanhMuc_Load);
             this.gbDanhMuc.ResumeLayout(false);
             this.gbDanhMuc.PerformLayout();
             this.gbTool.ResumeLayout(false);

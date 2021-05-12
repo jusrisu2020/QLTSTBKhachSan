@@ -45,15 +45,7 @@ namespace QLTSTBKhachSan.UI
             txtSTK.Text = dr.Cells["STK"].Value.ToString();
             txtTenCongTy.Text = dr.Cells["TenCongTy"].Value.ToString();
         }
-        public int kiemtra()
-        {
-            for (int i = 0; i < dtgvNCC.RowCount - 1; i++)
-            {
-                if (txtTenNCC.Text == dtgvNCC.Rows[i].Cells["Tenncc"].Value.ToString())
-                    return 0;
-            }
-            return 1;
-        }
+        
         private void btnInsertNhaCungCap_Click(object sender, EventArgs e)
         {
             string tenncc = txtTenNCC.Text;
@@ -62,9 +54,9 @@ namespace QLTSTBKhachSan.UI
             string email = txtEmail.Text;
             string stk = txtSTK.Text;
             string tencongty = txtTenCongTy.Text;
-            if(kiemtra() == 0)
+            if (NhaCungCapDAO.Instance.Test(tenncc)==0)
             {
-                MessageBox.Show("Trùng");
+                MessageBox.Show("Tên nhà cung cấp đã có trong danh sách");
             }
             else if (NhaCungCapDAO.Instance.InsertNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty))
             {
@@ -86,9 +78,13 @@ namespace QLTSTBKhachSan.UI
             string email = txtEmail.Text;
             string stk = txtSTK.Text;
             string tencongty = txtTenCongTy.Text;
-            if (NhaCungCapDAO.Instance.UpdateNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty, mancc))
-            {
 
+            if (NhaCungCapDAO.Instance.Test(tenncc) == 0)
+            {
+                MessageBox.Show("Tên nhà cung cấp đã có trong danh sách");
+            }
+            else if (NhaCungCapDAO.Instance.UpdateNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty, mancc))
+            {
                 MessageBox.Show("Sửa thành công");
                 LoadNCCUC();
             }
@@ -100,8 +96,19 @@ namespace QLTSTBKhachSan.UI
 
         private void btnDeleteNCC_Click(object sender, EventArgs e)
         {
-            //Xoá Table NhaCC thì phải Xoá Table HoaDonMuaTB có liên quan đến nhà cung cấp đó 
+            string mancc = txtMaNCC.Text;
+            if (NhaCungCapDAO.Instance.DeleteNhaCungCap(mancc))
+            {
+                MessageBox.Show("Xóa thành công");
+                LoadNCCUC();
+            }
+            else
+            {
+                MessageBox.Show(ex + "Không thành công");
+            }
         }
+
+        
 
         private void btnRefesh_Click(object sender, EventArgs e)
         {
@@ -112,6 +119,27 @@ namespace QLTSTBKhachSan.UI
             txtSTK.Clear();
             txtTenCongTy.Clear();
             LoadNCCUC();
+        }
+
+       
+        
+
+        private void UCQLNhaCungCap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.Control == true && e.KeyCode == Keys.Enter)
+            {
+                btnInsertNhaCungCap.PerformClick();
+            }
+        }
+
+        private void gbInfo_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UCQLNhaCungCap_Load(object sender, EventArgs e)
+        {
+            this = true;
         }
     }
 }

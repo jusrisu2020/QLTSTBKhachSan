@@ -129,6 +129,10 @@ BEGIN
 	UPDATE dbo.NhaCungCap SET TenNCC = @TenNCC,SDT = @SDT,DiaChi = @DiaChi,Email = @Email,STK = @STK,TenCongTy = @TenCongTy WHERE MaNCC = @MaNCC
 END
 GO
+
+
+DELETE dbo.NhaCungCap WHERE MaNCC = 'NCC13'
+SELECT *FROM dbo.NhaCungCap
 -------------------------------------DanhMuc ------------------------------------------------
 CREATE TABLE DanhMuc
 (
