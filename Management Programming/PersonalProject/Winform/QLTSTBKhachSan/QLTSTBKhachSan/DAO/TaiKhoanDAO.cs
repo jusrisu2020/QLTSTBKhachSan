@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -46,12 +47,26 @@ namespace QLTSTBKhachSan.DAO
             return result.Rows.Count > 0;
         }
 
-        public bool InsertAccount(string hinhanh,string manv, string tentk ,string tenhienthi, string pass ,string macv)
+        public bool InsertAccount(byte[] hinhanh,string manv, string tentk ,string tenhienthi, string pass ,string macv)
         {
-            string TaiKhoanQuery = string.Format("EXEC dbo.USP_ThemTaiKhoan '{0}','{1}','{2}','{3}','{4}','{5}' ", hinhanh, manv, tentk, tenhienthi, pass, macv);
-            int result = DataProvider.Instance.ExecuteNonQuery(TaiKhoanQuery);
+            string TaiKhoanQuery = "EXEC dbo.USP_ThemTaiKhoan @HinhAnh , @MaNV , @TenTK , @TenHienThi , @Pass , @MaCV ";
+            int result = DataProvider.Instance.ExecuteNonQuery(TaiKhoanQuery, new object[] {hinhanh, manv, tentk, tenhienthi, pass, macv});
             return result > 0;
         }
+        // Chuyển image sang byte để thêm vào csdl
+        public byte[] ImageToByte(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+        // Chuyển byte sang image để hiển thị từ csdl ra picturebox
+        public Image ByteArrayToImage(byte[] b)
+        {
+            MemoryStream m = new MemoryStream(b);
+            return Image.FromStream(m);
+        }
+
         //Thay đổi thông tin tài khoản từ các người dùng
         public bool UpdateAccountByUser(string tentk, string tenhienthi, string pass, string newPass)
         {

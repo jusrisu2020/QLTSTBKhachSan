@@ -25,7 +25,7 @@ namespace QLTSTBKhachSan.UI
             {
                 loginTaiKhoan = value;
                 PhanQuyen(loginTaiKhoan.TenTK);
-                LoadDisPlayName(loginTaiKhoan.TenHienThi);
+                LoadInfoUser(loginTaiKhoan.TenHienThi);
             }
         }
 
@@ -44,7 +44,7 @@ namespace QLTSTBKhachSan.UI
           
         }
        
-        void LoadDisPlayName(string tenhienthi)
+        void LoadInfoUser(string tenhienthi)
         {
             lbUserName.Text = tenhienthi;
         }

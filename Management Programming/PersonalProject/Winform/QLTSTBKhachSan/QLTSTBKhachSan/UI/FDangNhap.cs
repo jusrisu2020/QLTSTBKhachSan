@@ -26,6 +26,7 @@ namespace QLTSTBKhachSan.UI
         {
             string UserName = txtUserName.Text;
             string PassWord = txtPassword.Text;
+
             if (TaiKhoanDAO.Instance.Login(UserName, PassWord))
             {
                 TaiKhoanDTO LoginTaiKhoan = TaiKhoanDAO.Instance.GetAccountByUserName(UserName);

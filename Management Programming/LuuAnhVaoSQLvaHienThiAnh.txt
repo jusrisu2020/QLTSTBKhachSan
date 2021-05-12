@@ -1,0 +1,18 @@
+Đọc File ảnh từ PC
+            OpenFileDialog ofile = new OpenFileDialog();
+            if (ofile.ShowDialog() == DialogResult.OK)
+            {
+                /*path = ofile.FileName.ToString();
+                picInput.ImageLocation = path; */
+                picInput.Image = Image.FromFile(ofile.FileName);
+                this.Text = ofile.FileName;
+            }
+
+Save ảnh có 2 cách
+	//Hàm chuyển Image sang Byte[]
+		 byte[] ImageToByte(Image img)
+        	{
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
