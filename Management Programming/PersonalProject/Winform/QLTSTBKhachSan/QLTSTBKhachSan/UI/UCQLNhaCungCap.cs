@@ -45,7 +45,15 @@ namespace QLTSTBKhachSan.UI
             txtSTK.Text = dr.Cells["STK"].Value.ToString();
             txtTenCongTy.Text = dr.Cells["TenCongTy"].Value.ToString();
         }
-        
+        public int kiemtra()
+        {
+            for (int i = 0; i < dtgvNCC.RowCount - 1; i++)
+            {
+                if (txtTenNCC.Text == dtgvNCC.Rows[i].Cells["Tenncc"].Value.ToString())
+                    return 0;
+            }
+            return 1;
+        }
         private void btnInsertNhaCungCap_Click(object sender, EventArgs e)
         {
             string tenncc = txtTenNCC.Text;
@@ -54,17 +62,11 @@ namespace QLTSTBKhachSan.UI
             string email = txtEmail.Text;
             string stk = txtSTK.Text;
             string tencongty = txtTenCongTy.Text;
-            List<NhaCungCapDTO> NhaCungCapList = NhaCungCapDAO.Instance.LoadNCC();
-            foreach (NhaCungCapDTO item in NhaCungCapList)
+            if(kiemtra() == 0)
             {
-                if (tenncc.Equals(item.TenNCC))
-                {
-                    MessageBox.Show("Tên Nhà Cung Cấp bị trùng!");
-                    return;
-                }
+                MessageBox.Show("Trùng");
             }
-            
-            if (NhaCungCapDAO.Instance.InsertNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty))
+            else if (NhaCungCapDAO.Instance.InsertNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty))
             {
                 MessageBox.Show("Saved");
                 LoadNCCUC();
