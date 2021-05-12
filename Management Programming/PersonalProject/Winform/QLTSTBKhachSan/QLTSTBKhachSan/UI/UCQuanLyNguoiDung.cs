@@ -76,21 +76,34 @@ namespace QLTSTBKhachSan.UI
             }
         }
 
-       
 
-        
+
+
         #endregion
 
         #region Event
+        string path = "";
+
+        private void picAvatar_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofile = new OpenFileDialog();
+            if (ofile.ShowDialog() == DialogResult.OK)
+            {
+                picInput.Image = Image.FromFile(ofile.FileName);
+                this.Text = ofile.FileName;
+            }
+        }
+
+        
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
-            string hinhanh = txtHinhAnh.Text;
+            byte[] hinhanhb = TaiKhoanDAO.Instance.ImageToByte(picInput.Image); ;
             string manv = cbMaNV.Text;
             string macv = cbMaCV.Text;
-            string tentk = txtPass.Text;
+            string tentk = txtPass.Text; 
             string tenhienthi = txtTenHienThi.Text;
             string pass = txtPass.Text;
-            if (TaiKhoanDAO.Instance.InsertAccount(hinhanh, manv, tentk, tenhienthi, pass, macv))
+            if (TaiKhoanDAO.Instance.InsertAccount(hinhanhb, manv, tentk, tenhienthi, pass, macv))
             {
                 MessageBox.Show("Saved");
                 LoadListAccount();
@@ -100,7 +113,18 @@ namespace QLTSTBKhachSan.UI
                 MessageBox.Show("Không thành công");
             }
         }
-       
+        private void dtgvQLND_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dtgvQLND.SelectedRows[0];
+            txtMaTK.Text = dr.Cells["MaTK"].Value.ToString();
+            byte[] b = (byte[])dr.Cells["HinhAnh"].Value;
+            picOutput.Image = TaiKhoanDAO.Instance.ByteArrayToImage(b);
+            /*cbMaNV.Text = dr.Cells["MaNV"].Value.ToString();
+            cbMaCV.Text = dr.Cells["MaCV"].Value.ToString();
+            txtTenTK.Text = dr.Cells["TenTK"].Value.ToString();
+            txtTenHienThi.Text = dr.Cells["TenHienThi"].Value.ToString();
+            txtPass.Text = dr.Cells["Pass"].Value.ToString();*/
+        }
         private void btnXoa_Click(object sender, EventArgs e)
         {
             string matk = txtMaTK.Text;
@@ -137,30 +161,5 @@ namespace QLTSTBKhachSan.UI
             }
         }*/
         #endregion
-
-        private void picAvatar_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog ofile = new OpenFileDialog();
-            if (ofile.ShowDialog() == DialogResult.OK)
-            {
-                picInput.Image = Image.FromFile(ofile.FileName);
-                this.Text = ofile.FileName;
-            }
-        }
-
-        //Chuyển Image sang Byte[]
-        
-        private void dtgvQLND_Click(object sender, EventArgs e)
-        {
-            /*DataGridViewRow dr = dtgvQLND.SelectedRows[0];
-            txtMaTK.Text = dr.Cells["MaTK"].Value.ToString();
-            byte[] b = (byte[])dr.Cells["HinhAnh"].Value;
-            picOutput.Image = ByteArrayToImage(b);
-            cbMaNV.Text = dr.Cells["MaNV"].Value.ToString();
-            cbMaCV.Text = dr.Cells["MaCV"].Value.ToString();
-            txtTenTK.Text = dr.Cells["TenTK"].Value.ToString();
-            txtTenHienThi.Text = dr.Cells["TenHienThi"].Value.ToString();
-            txtPass.Text = dr.Cells["Pass"].Value.ToString();*/
-        }
     }
 }

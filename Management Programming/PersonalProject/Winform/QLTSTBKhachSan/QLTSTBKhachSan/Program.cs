@@ -18,7 +18,7 @@ namespace QLTSTBKhachSan
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new SaveImg());
+            Application.Run(new FDangNhap());
         }
     }
 }
