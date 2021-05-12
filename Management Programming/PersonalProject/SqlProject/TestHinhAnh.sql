@@ -3,31 +3,20 @@ GO
 USE HinhAnh
 GO
 
+
+
 CREATE TABLE LoadHinhAnh
 (
 	tenhinh NVARCHAR(100),
-	ha IMAGE 
+	ha VARBINARY(MAX)
 )
 
 SELECT * FROM dbo.LoadHinhAnh 
-SELECT * FROM dbo.LoadHinhAnh2
 
-
-CREATE TABLE LoadHinhAnh2
-(
-	tenhinh NVARCHAR(100),
-	ha IMAGE
-)
-
-INSERT INTO dbo.LoadHinhAnh2
+INSERT INTO dbo.LoadHinhAnh
 (
     tenhinh,
     ha
 )
 VALUES
-(   N'H1', 'C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\riven.jpg')
-    
-
-	SELECT * FROM dbo.LoadHinhAnh2
-
-	DROP TABLE dbo.LoadHinhAnh2
+(   N'Hình 1',ha FROM OPENROWSET(BULK N'C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\BackGLoading-1.png', SINGLE_BLOB) AS ImageSource(ha))

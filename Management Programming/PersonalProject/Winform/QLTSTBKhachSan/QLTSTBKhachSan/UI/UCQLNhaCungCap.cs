@@ -139,7 +139,6 @@ namespace QLTSTBKhachSan.UI
 
         private void UCQLNhaCungCap_Load(object sender, EventArgs e)
         {
-            this = true;
         }
     }
 }
