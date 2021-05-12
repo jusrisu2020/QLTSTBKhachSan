@@ -82,7 +82,6 @@ namespace QLTSTBKhachSan.UI
         #endregion
 
         #region Event
-        string path = "";
 
         private void picAvatar_Click(object sender, EventArgs e)
         {

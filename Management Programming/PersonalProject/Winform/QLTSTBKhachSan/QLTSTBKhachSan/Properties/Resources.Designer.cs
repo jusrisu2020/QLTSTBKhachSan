@@ -63,6 +63,16 @@ namespace QLTSTBKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Avatar {
+            get {
+                object obj = ResourceManager.GetObject("Avatar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap department_50px {
             get {
                 object obj = ResourceManager.GetObject("department_50px", resourceCulture);
@@ -186,6 +196,16 @@ namespace QLTSTBKhachSan.Properties {
         internal static System.Drawing.Bitmap settings_50px {
             get {
                 object obj = ResourceManager.GetObject("settings_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap WallBgLogin {
+            get {
+                object obj = ResourceManager.GetObject("WallBgLogin", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

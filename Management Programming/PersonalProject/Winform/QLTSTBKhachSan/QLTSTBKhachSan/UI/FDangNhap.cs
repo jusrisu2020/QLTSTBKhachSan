@@ -20,6 +20,7 @@ namespace QLTSTBKhachSan.UI
         {
             InitializeComponent();
             txtPassword.UseSystemPasswordChar = true;
+            txtUserName.Focus();
         }
         
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -42,13 +43,33 @@ namespace QLTSTBKhachSan.UI
 
         private void chkPassword_CheckedChanged(object sender, EventArgs e)
         {
-            if (chkPassword.Checked == true)
+            if(chkPassword.Checked == true)
             {
                 txtPassword.UseSystemPasswordChar = false;
             }
             else
             {
                 txtPassword.UseSystemPasswordChar = true;
+            }
+        }
+        private void FDangNhap_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+            {
+                if (MessageBox.Show("Exit?", "Exit Form", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    btnClose.PerformClick();
+                }
+            }
+
+            if (e.KeyCode == Keys.M)
+            {
+                btnMiniMize.PerformClick();
+            }
+         
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnLogIn.PerformClick();
             }
         }
     }

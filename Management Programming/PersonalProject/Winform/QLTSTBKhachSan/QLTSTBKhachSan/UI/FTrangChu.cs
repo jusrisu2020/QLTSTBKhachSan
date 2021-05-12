@@ -25,7 +25,7 @@ namespace QLTSTBKhachSan.UI
             {
                 loginTaiKhoan = value;
                 PhanQuyen(loginTaiKhoan.TenTK);
-                LoadInfoUser(loginTaiKhoan.TenHienThi);
+                LoadInfoUser(loginTaiKhoan.TenHienThi,loginTaiKhoan.HinhAnh);
             }
         }
 
@@ -44,9 +44,10 @@ namespace QLTSTBKhachSan.UI
           
         }
        
-        void LoadInfoUser(string tenhienthi)
+        void LoadInfoUser(string tenhienthi, byte[] b)
         {
             lbUserName.Text = tenhienthi;
+            pbAvartar.Image = TaiKhoanDAO.Instance.ByteArrayToImage(b);
         }
         void PhanQuyen(string tentk)
         {
@@ -153,10 +154,7 @@ namespace QLTSTBKhachSan.UI
 
         #endregion
 
-        private void pnLogo_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+        
 
         private void btnSuaNguoiDung_Click(object sender, EventArgs e)
         {

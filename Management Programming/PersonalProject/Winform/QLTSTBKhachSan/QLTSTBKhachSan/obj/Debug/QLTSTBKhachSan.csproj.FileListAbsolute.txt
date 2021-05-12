@@ -110,8 +110,6 @@ C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProj
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\bin\Debug\QLTSTBKhachSan.pdb
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\bin\Debug\EntityFramework.dll
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\bin\Debug\EntityFramework.SqlServer.dll
-C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\bin\Debug\Guna.UI.dll
-C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\bin\Debug\Guna.UI2.dll
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\bin\Debug\EntityFramework.xml
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.csprojAssemblyReference.cache
