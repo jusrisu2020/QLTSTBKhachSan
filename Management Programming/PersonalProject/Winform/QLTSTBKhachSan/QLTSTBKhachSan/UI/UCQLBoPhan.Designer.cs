@@ -34,7 +34,6 @@
             this.btnSearchBoPhan = new System.Windows.Forms.Button();
             this.txtTKBoPhan = new System.Windows.Forms.TextBox();
             this.btnDeleteBoPhan = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.txtTenBP = new System.Windows.Forms.TextBox();
             this.btnInsertBP = new System.Windows.Forms.Button();
             this.btnUpdateBoPhan = new System.Windows.Forms.Button();
@@ -42,15 +41,16 @@
             this.btnRefeshBoPhan = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnDeleteAll = new System.Windows.Forms.Button();
+            this.gunaElipsePanel1 = new Guna.UI.WinForms.GunaElipsePanel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQLBP)).BeginInit();
-            this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.gunaElipsePanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 30);
+            this.label2.Location = new System.Drawing.Point(19, 17);
             this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(148, 13);
@@ -84,7 +84,7 @@
             // 
             // btnSearchBoPhan
             // 
-            this.btnSearchBoPhan.Location = new System.Drawing.Point(613, 24);
+            this.btnSearchBoPhan.Location = new System.Drawing.Point(569, 10);
             this.btnSearchBoPhan.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchBoPhan.Name = "btnSearchBoPhan";
             this.btnSearchBoPhan.Size = new System.Drawing.Size(64, 30);
@@ -95,7 +95,7 @@
             // 
             // txtTKBoPhan
             // 
-            this.txtTKBoPhan.Location = new System.Drawing.Point(447, 30);
+            this.txtTKBoPhan.Location = new System.Drawing.Point(332, 10);
             this.txtTKBoPhan.Margin = new System.Windows.Forms.Padding(2);
             this.txtTKBoPhan.Name = "txtTKBoPhan";
             this.txtTKBoPhan.Size = new System.Drawing.Size(162, 20);
@@ -111,18 +111,6 @@
             this.btnDeleteBoPhan.Text = "Delete";
             this.btnDeleteBoPhan.UseVisualStyleBackColor = true;
             this.btnDeleteBoPhan.Click += new System.EventHandler(this.btnDeleteBoPhan_Click);
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.txtTKBoPhan);
-            this.panel1.Controls.Add(this.btnSearchBoPhan);
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 81);
-            this.panel1.TabIndex = 8;
             // 
             // txtTenBP
             // 
@@ -198,19 +186,33 @@
             this.btnDeleteAll.Text = "DeleteAll";
             this.btnDeleteAll.UseVisualStyleBackColor = true;
             // 
+            // gunaElipsePanel1
+            // 
+            this.gunaElipsePanel1.BackColor = System.Drawing.Color.Transparent;
+            this.gunaElipsePanel1.BaseColor = System.Drawing.Color.White;
+            this.gunaElipsePanel1.Controls.Add(this.label2);
+            this.gunaElipsePanel1.Controls.Add(this.txtTKBoPhan);
+            this.gunaElipsePanel1.Controls.Add(this.btnSearchBoPhan);
+            this.gunaElipsePanel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.gunaElipsePanel1.Location = new System.Drawing.Point(0, 0);
+            this.gunaElipsePanel1.Name = "gunaElipsePanel1";
+            this.gunaElipsePanel1.Size = new System.Drawing.Size(900, 80);
+            this.gunaElipsePanel1.TabIndex = 21;
+            // 
             // UCQuanLiBoPhan
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.gunaElipsePanel1);
             this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.panel1);
             this.Name = "UCQuanLiBoPhan";
             this.Size = new System.Drawing.Size(900, 569);
+            this.Load += new System.EventHandler(this.UCQuanLiBoPhan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQLBP)).EndInit();
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            this.gunaElipsePanel1.ResumeLayout(false);
+            this.gunaElipsePanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -222,7 +224,6 @@
         private System.Windows.Forms.Button btnSearchBoPhan;
         private System.Windows.Forms.TextBox txtTKBoPhan;
         private System.Windows.Forms.Button btnDeleteBoPhan;
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.TextBox txtTenBP;
         private System.Windows.Forms.Button btnInsertBP;
         private System.Windows.Forms.Button btnUpdateBoPhan;
@@ -230,5 +231,6 @@
         private System.Windows.Forms.Button btnRefeshBoPhan;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnDeleteAll;
+        private Guna.UI.WinForms.GunaElipsePanel gunaElipsePanel1;
     }
 }

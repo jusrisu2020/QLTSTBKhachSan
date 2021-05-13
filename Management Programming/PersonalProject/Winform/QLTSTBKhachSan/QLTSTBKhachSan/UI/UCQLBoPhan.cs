@@ -126,8 +126,12 @@ namespace QLTSTBKhachSan.UI
         {
             dtgvQLBP.DataSource = SearchTenBoPhan(txtTKBoPhan.Text);
         }
+
         #endregion
 
-        
+        private void UCQuanLiBoPhan_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

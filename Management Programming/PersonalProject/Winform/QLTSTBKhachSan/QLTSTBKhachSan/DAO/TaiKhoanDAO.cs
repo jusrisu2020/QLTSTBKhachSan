@@ -68,10 +68,10 @@ namespace QLTSTBKhachSan.DAO
         }
 
         //Thay đổi thông tin tài khoản từ các người dùng
-        public bool UpdateAccountByUser(string tentk, string tenhienthi, string pass, string newPass)
+        public bool UpdateAccountByUser(byte[] hinhanh, string tentk, string tenhienthi, string pass, string newPass)
         {
-            string Query = string.Format("EXEC USP_UpdateTaiKhoan N'{0}',N'{1}',N'{2}',N'{3}'", tentk, tenhienthi, pass, newPass);
-            int result = DataProvider.Instance.ExecuteNonQuery(Query);
+            string Query = "EXEC USP_UpdateTaiKhoan @HinhAnh , @TenTK , @TenHienThi , @Pass , @NewPass ";
+            int result = DataProvider.Instance.ExecuteNonQuery(Query,new object[]{ hinhanh, tentk, tenhienthi, pass, newPass});
             return result > 0;
         }
 

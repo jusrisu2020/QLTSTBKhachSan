@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace QLTSTBKhachSan.UI
 {
-    public partial class FSuaTaiKhoan : Form
+    public partial class FCapNhatThongTin : Form
     {
         private TaiKhoanDTO loginTaiKhoan;
         public TaiKhoanDTO LoginTaiKhoan
@@ -21,26 +21,28 @@ namespace QLTSTBKhachSan.UI
             set
             {
                 loginTaiKhoan = value;
-                LoadFSua();
+                LoadFSua(loginTaiKhoan.TenTK, loginTaiKhoan.TenHienThi);
             }
         }
 
-        public FSuaTaiKhoan(TaiKhoanDTO tk) 
+        public FCapNhatThongTin(TaiKhoanDTO tk) 
         {
             InitializeComponent();
             LoginTaiKhoan = tk;
         }
 
-        void LoadFSua()
+        void LoadFSua(string tentk, string tenhienthi)
         {
-            txtTenTK.Text = loginTaiKhoan.TenTK;
-            txtTenHienThi.Text = loginTaiKhoan.TenHienThi;
+            lbTenTK.Text = tentk;
+            txtTenHienThi.Text = tenhienthi;
         }
+        
         void UpdateUser()
         {
-            string TenTK = txtTenTK.Text;
+            byte[] HinhAnh = TaiKhoanDAO.Instance.ImageToByte(picAvatar.Image);
+            string TenTK = lbTenTK.Text;
             string TenHienThi = txtTenHienThi.Text;
-            string Pass = txtPass.Text;
+            string Pass = txtPassword.Text;
             string NewPass = txtNewPass.Text;
             string PassNhapLai = txtNhapLaiPass.Text;
             if (!NewPass.Equals(PassNhapLai))
@@ -49,12 +51,12 @@ namespace QLTSTBKhachSan.UI
             }
             else
             {
-                if (TaiKhoanDAO.Instance.UpdateAccountByUser(TenTK, TenHienThi, Pass, NewPass))
+                if (TaiKhoanDAO.Instance.UpdateAccountByUser(HinhAnh,TenTK, TenHienThi, Pass, NewPass))
                 {
                     MessageBox.Show("Cập Nhật Thành Công");
-                    if(updateAccount != null)  
+                    if(updateAccount != null)
                         updateAccount(this, new AccountEvent(TaiKhoanDAO.Instance.GetAccountByUserName(TenTK)));
-                    txtPass.Clear();
+                    txtPassword.Clear();
                     txtNewPass.Clear();
                     txtNhapLaiPass.Clear();
                 }
@@ -64,6 +66,13 @@ namespace QLTSTBKhachSan.UI
                 }
             }
         }
+        
+        private void btnUpdateTaiKhoan_Click(object sender, EventArgs e)
+        {
+            UpdateUser();
+        }
+
+        //Event Cập nhật vào Form Trang Chủ
         private event EventHandler<AccountEvent> updateAccount;
         public event EventHandler<AccountEvent> UpdateAccount
         {
@@ -71,23 +80,11 @@ namespace QLTSTBKhachSan.UI
             remove { updateAccount -= value; }
         }
         
-        private void btnUpdateTaiKhoan_Click(object sender, EventArgs e)
-        {
-            UpdateUser();
-        }
-
-        private void btnThoat_Click(object sender, EventArgs e)
-        {
-            if(MessageBox.Show("Bạn muốn thoát","Notification",MessageBoxButtons.OKCancel) == DialogResult.OK)
-            {
-                this.Hide();
-            }
-        }
         public class AccountEvent : EventArgs
         {
             private TaiKhoanDTO tk;
             public TaiKhoanDTO Tk 
-            { 
+            {
                 get{return tk;}
                 set{tk = value;}
             }
@@ -95,6 +92,21 @@ namespace QLTSTBKhachSan.UI
             {
                 this.Tk = tk;
             }
+        }
+       
+        private void btnDoiAnh_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog Ofile = new OpenFileDialog();
+            if(Ofile.ShowDialog() == DialogResult.OK)
+            {
+                picAvatar.Image = Image.FromFile(Ofile.FileName);
+                this.Text = Ofile.FileName;
+            }
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

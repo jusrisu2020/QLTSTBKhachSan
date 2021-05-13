@@ -10,7 +10,7 @@ using System.Windows.Forms;
 using System.Data.SqlClient;
 using QLTSTBKhachSan.DTO;
 using QLTSTBKhachSan.DAO;
-using static QLTSTBKhachSan.UI.FSuaTaiKhoan;
+using static QLTSTBKhachSan.UI.FCapNhatThongTin;
 
 namespace QLTSTBKhachSan.UI
 {
@@ -25,7 +25,7 @@ namespace QLTSTBKhachSan.UI
             {
                 loginTaiKhoan = value;
                 PhanQuyen(loginTaiKhoan.TenTK);
-                LoadInfoUser(loginTaiKhoan.TenHienThi,loginTaiKhoan.HinhAnh);
+                LoadInfoUser(loginTaiKhoan.TenHienThi, loginTaiKhoan.MaCV,loginTaiKhoan.HinhAnh);
             }
         }
 
@@ -33,22 +33,19 @@ namespace QLTSTBKhachSan.UI
         {
             InitializeComponent();
             AddLoadToolTip();
+            ShowSL();
             LoginTaiKhoan = tk;
             pnDropDownHeThong.Visible = false;
             pnDropDownTSThietBi.Visible = false;
         }
         #region Method
-        void AddLoadToolTip()
-        {
-            ToolTip tt = new ToolTip();
-          
-        }
-       
-        void LoadInfoUser(string tenhienthi, byte[] b)
+        void LoadInfoUser(string tenhienthi, string machucvu, byte[] b)
         {
             lbUserName.Text = tenhienthi;
+            lbChucVu.Text = machucvu;
             pbAvartar.Image = TaiKhoanDAO.Instance.ByteArrayToImage(b);
         }
+
         void PhanQuyen(string tentk)
         {
             if (!tentk.Equals("ad"))
@@ -56,6 +53,39 @@ namespace QLTSTBKhachSan.UI
                 //btnUserMss.Enabled = false;
             }
         }
+        //Xử lí xự kiện Event Cập nhật xong Load trực tiếp
+        void Stk_UpdateAccount(object sender, AccountEvent e)
+        {
+            lbUserName.Text = e.Tk.TenHienThi;
+            pbAvartar.Image = TaiKhoanDAO.Instance.ByteArrayToImage(e.Tk.HinhAnh);
+        }
+        void AddLoadToolTip()
+        {
+            ToolTip tt = new ToolTip();
+          
+        }
+        void ShowSL()
+        {
+            List<BoPhanDTO> BoPhanList = BoPhanDAO.Instance.LoadListBoPhan();
+            foreach (BoPhanDTO item in BoPhanList)
+            {
+                lbShowBoPhan.Text = item.ID.ToString();
+            }
+
+            List<NhanVienDTO> NhanVienList = NhanVienDAO.Instance.LoadNhanVien();
+            foreach (NhanVienDTO item in NhanVienList)
+            {
+                lbShowNhanVien.Text = item.ID.ToString();
+            }
+
+            /*List<ThietBiDTO> ThietBiList = ThietBiDAO.Instance.LoadThietBi();
+            foreach (ThietBiDTO item in ThietBiList)
+            {
+                lbShowThietBi.Text = item.ID.ToString();
+            }*/
+        }
+
+        
 
         #endregion
         #region Envent_Main
@@ -178,16 +208,37 @@ namespace QLTSTBKhachSan.UI
 
         private void btnSuaTaiKhoan_Click(object sender, EventArgs e)
         {
-            FSuaTaiKhoan stk = new FSuaTaiKhoan(LoginTaiKhoan);
+            FCapNhatThongTin stk = new FCapNhatThongTin(LoginTaiKhoan);
             stk.UpdateAccount += Stk_UpdateAccount;
             stk.ShowDialog();
         }
 
-        void Stk_UpdateAccount(object sender, AccountEvent e)
+        
+
+        private void btnList_Click(object sender, EventArgs e)
         {
-            lbUserName.Text = e.Tk.TenHienThi;
+            if(pnList.Visible == false)
+            {
+                pnList.Visible = true;
+            }
+            else
+            {
+                pnList.Visible = false;
+            }
+        }
+        private void TimHienThiThoiGian_Tick(object sender, EventArgs e)
+        {
+            DateTime Nowdt = DateTime.Now;
+            this.lbTime.Text = "Date: " + Nowdt.ToString("dd/MM/yyyy") + "\nTime: " + Nowdt.ToString("HH:mm:ss");
         }
 
+        private void btnLSThongBao_Click(object sender, EventArgs e)
+        {
+            pnContainer.Controls.Clear();
+            UCLSThongBao lstb = new UCLSThongBao();
+            pnContainer.Controls.Add(lstb);
+        }
+        
         
     }
 }

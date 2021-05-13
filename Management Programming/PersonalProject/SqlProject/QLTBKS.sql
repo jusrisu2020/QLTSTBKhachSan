@@ -302,7 +302,10 @@ END
 GO
 EXEC USP_SelectATaiKhoan
 GO
+
+
 CREATE PROC USP_UpdateTaiKhoan
+	@HinhAnh IMAGE,
 	@TenTK NVARCHAR(100),
 	@TenHienThi NVARCHAR(100),
 	@Pass NVARCHAR(100),
@@ -317,14 +320,15 @@ BEGIN
 	BEGIN
 	    IF(@newPass = NULL OR @newPass = '')
 		BEGIN
-		    UPDATE dbo.TaiKhoan SET TenHienThi = @TenHienThi WHERE TenTK = @TenTK
+		    UPDATE dbo.TaiKhoan SET HinhAnh = @HinhAnh , TenHienThi = @TenHienThi WHERE TenTK = @TenTK
 		END
 		ELSE
-		    UPDATE dbo.TaiKhoan SET TenHienThi = @TenHienThi, Pass = @newPass WHERE TenTK = @TenTK 
+		    UPDATE dbo.TaiKhoan SET HinhAnh = @HinhAnh ,TenHienThi = @TenHienThi, Pass = @newPass WHERE TenTK = @TenTK 
 	END
 END
 GO
-EXEC USP_UpdateTaiKhoan @TenTK = 'ad',@TenHienThi='trtr',@Pass='1',@newPass='2'
+EXEC USP_UpdateTaiKhoan @TenTK = 'tri',@TenHienThi='trtr',@Pass='1',@newPass='2'
+
 -------------------------------------HoaDonMuaTB CHƯA ------------------------------------------------
 CREATE TABLE HoaDonMuaTB
 (
