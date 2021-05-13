@@ -34,8 +34,8 @@ namespace QLTSTBKhachSan.UI
             InitializeComponent();
             AddLoadToolTip();
             LoginTaiKhoan = tk;
-            pnMuiti.Visible = false;
-            panel1.Visible = false;
+            pnDropDownHeThong.Visible = false;
+            pnDropDownTSThietBi.Visible = false;
         }
         #region Method
         void AddLoadToolTip()
@@ -53,60 +53,76 @@ namespace QLTSTBKhachSan.UI
         {
             if (!tentk.Equals("ad"))
             {
-                btnUserM.Enabled = false;
+                //btnUserMss.Enabled = false;
             }
         }
-        
+
         #endregion
         #region Envent_Main
-        public void pbLogo_Click(object sender, EventArgs e)
-        {
-            pnContainer.Controls.Clear();
-        }
-        private void btnUserM_Click(object sender, EventArgs e)
+        private void btnAdmin_Click(object sender, EventArgs e)
         {
             pnContainer.Controls.Clear();
             UCQuanLyNguoiDung nd = new UCQuanLyNguoiDung();
             pnContainer.Controls.Add(nd);
         }
-
-        private void btnEmployeeM_Click(object sender, EventArgs e)
+        
+        private void btnHeThong_Click(object sender, EventArgs e)
         {
-            pnContainer.Controls.Clear();
-            UCQuanLyNhanVien nv = new UCQuanLyNhanVien();
-            pnContainer.Controls.Add(nv);
-        }
-
-        private void btnDepartmentM_Click(object sender, EventArgs e)
-        {
-            pnContainer.Controls.Clear();
-            UCQuanLiBoPhan bp = new UCQuanLiBoPhan();
-            pnContainer.Controls.Add(bp);
-        }
-
-        private void btnEquipmentM_Click(object sender, EventArgs e)
-        {
-            if (pnMuiti.Visible == true)
+            if (pnDropDownHeThong.Visible == false)
             {
-                pnMuiti.Visible = false;
+                pnDropDownHeThong.Visible = true;
             }
             else
             {
-                pnMuiti.Visible = true;
+                pnDropDownHeThong.Visible = false;
             }
         }
+        //Drop Down Hệ Thống
+            private void btnBoPhan_Click(object sender, EventArgs e)
+            {
+                pnContainer.Controls.Clear();
+                UCQuanLiBoPhan bp = new UCQuanLiBoPhan();
+                pnContainer.Controls.Add(bp);
+            }
+
+            private void btnChucVu_Click(object sender, EventArgs e)
+            {
+                pnContainer.Controls.Clear();
+                UCQuanLiChucVu cv = new UCQuanLiChucVu();
+                pnContainer.Controls.Add(cv);
+            }
+            private void btnNhanVien_Click(object sender, EventArgs e)
+            {
+                pnContainer.Controls.Clear();
+                UCQuanLyNhanVien nv = new UCQuanLyNhanVien();
+                pnContainer.Controls.Add(nv);
+            }
+
+        private void btnTaiSanThietBi_Click(object sender, EventArgs e)
+        {
+            if (pnDropDownTSThietBi.Visible == false)
+            {
+                pnDropDownTSThietBi.Visible = true;
+            }
+            else
+            {
+                pnDropDownTSThietBi.Visible = false;
+            }
+        }
+
+      
             private void gunaButton1_Click(object sender, EventArgs e)
             {
                 pnContainer.Controls.Clear();
                 UCQuanLyThietBi tb = new UCQuanLyThietBi();
                 pnContainer.Controls.Add(tb);
             }
-        private void btnReportM_Click(object sender, EventArgs e)
+        /*private void btnReportM_Click(object sender, EventArgs e)
         {
             pnContainer.Controls.Clear();
             UCQuanLyBaoCao bc = new UCQuanLyBaoCao();
             pnContainer.Controls.Add(bc);
-        }
+        }*/
             
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
@@ -114,10 +130,7 @@ namespace QLTSTBKhachSan.UI
             UCQLNhaCungCap ncc = new UCQLNhaCungCap();
             pnContainer.Controls.Add(ncc);
         }
-        private void btnHeThong_Click(object sender, EventArgs e)
-        {
-
-        }
+       
         #endregion
         #region Event_Dif
         private void btnNotification_Click(object sender, EventArgs e)
@@ -161,17 +174,7 @@ namespace QLTSTBKhachSan.UI
 
         }
 
-        private void btnHeThong_Click_1(object sender, EventArgs e)
-        {
-            if(panel1.Visible == false)
-            {
-                panel1.Visible = true;
-            }
-            else
-            {
-                panel1.Visible = false;
-            }
-        }
+        
 
         private void btnSuaTaiKhoan_Click(object sender, EventArgs e)
         {
@@ -184,5 +187,7 @@ namespace QLTSTBKhachSan.UI
         {
             lbUserName.Text = e.Tk.TenHienThi;
         }
+
+        
     }
 }

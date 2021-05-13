@@ -309,5 +309,23 @@
   <ItemGroup>
     <None Include="Resources\Avatar.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAdminstrator.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEmployee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnThietBi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnAdminstrator1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnThietBi1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEmployee1.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
