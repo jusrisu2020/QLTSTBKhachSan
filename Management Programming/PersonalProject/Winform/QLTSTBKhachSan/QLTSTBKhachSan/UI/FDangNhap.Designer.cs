@@ -68,11 +68,11 @@ namespace QLTSTBKhachSan.UI
             this.btnLogIn.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.ForeColor = System.Drawing.Color.White;
             this.btnLogIn.HoverState.Parent = this.btnLogIn;
-            this.btnLogIn.Location = new System.Drawing.Point(85, 437);
+            this.btnLogIn.Location = new System.Drawing.Point(99, 436);
             this.btnLogIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.ShadowDecoration.Parent = this.btnLogIn;
-            this.btnLogIn.Size = new System.Drawing.Size(217, 37);
+            this.btnLogIn.Size = new System.Drawing.Size(183, 47);
             this.btnLogIn.TabIndex = 3;
             this.btnLogIn.Text = "LOG IN";
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);

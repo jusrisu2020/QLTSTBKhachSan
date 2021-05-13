@@ -160,5 +160,10 @@ namespace QLTSTBKhachSan.UI
             }
         }*/
         #endregion
+
+        private void UCQuanLyNguoiDung_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

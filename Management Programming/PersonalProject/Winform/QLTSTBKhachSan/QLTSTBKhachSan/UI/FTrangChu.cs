@@ -11,6 +11,7 @@ using System.Data.SqlClient;
 using QLTSTBKhachSan.DTO;
 using QLTSTBKhachSan.DAO;
 using static QLTSTBKhachSan.UI.FCapNhatThongTin;
+using System.Runtime.InteropServices;
 
 namespace QLTSTBKhachSan.UI
 {
@@ -29,6 +30,10 @@ namespace QLTSTBKhachSan.UI
             }
         }
 
+        private Button currentButton;
+
+        
+
         public FTrangChu(TaiKhoanDTO tk)
         {
             InitializeComponent();
@@ -38,6 +43,13 @@ namespace QLTSTBKhachSan.UI
             pnDropDownHeThong.Visible = false;
             pnDropDownTSThietBi.Visible = false;
         }
+        //Kéo thả Form
+        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
+        private extern static void ReleaseCapture();
+        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
+        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
+
+
         #region Method
         void LoadInfoUser(string tenhienthi, string machucvu, byte[] b)
         {
@@ -94,8 +106,10 @@ namespace QLTSTBKhachSan.UI
             pnContainer.Controls.Clear();
             UCQuanLyNguoiDung nd = new UCQuanLyNguoiDung();
             pnContainer.Controls.Add(nd);
+            nd.Dock = DockStyle.Fill;
         }
-        
+
+
         private void btnHeThong_Click(object sender, EventArgs e)
         {
             if (pnDropDownHeThong.Visible == false)
@@ -141,19 +155,21 @@ namespace QLTSTBKhachSan.UI
         }
 
       
-            private void gunaButton1_Click(object sender, EventArgs e)
-            {
-                pnContainer.Controls.Clear();
-                UCQuanLyThietBi tb = new UCQuanLyThietBi();
-                pnContainer.Controls.Add(tb);
-            }
+            
+        private void btnThietBi_Click(object sender, EventArgs e)
+        {
+            
+            pnContainer.Controls.Clear();
+            UCQuanLyThietBi tb = new UCQuanLyThietBi();
+            pnContainer.Controls.Add(tb);
+        }
         /*private void btnReportM_Click(object sender, EventArgs e)
         {
             pnContainer.Controls.Clear();
             UCQuanLyBaoCao bc = new UCQuanLyBaoCao();
             pnContainer.Controls.Add(bc);
         }*/
-            
+
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
             pnContainer.Controls.Clear();
@@ -199,11 +215,6 @@ namespace QLTSTBKhachSan.UI
 
         
 
-        private void btnSuaNguoiDung_Click(object sender, EventArgs e)
-        {
-
-        }
-
         
 
         private void btnSuaTaiKhoan_Click(object sender, EventArgs e)
@@ -238,7 +249,13 @@ namespace QLTSTBKhachSan.UI
             UCLSThongBao lstb = new UCLSThongBao();
             pnContainer.Controls.Add(lstb);
         }
-        
-        
+
+       
+
+        private void panel1_MouseDown(object sender, MouseEventArgs e)
+        {
+            ReleaseCapture();
+            SendMessage(this.Handle, 0x112, 0xf012, 0);
+        }
     }
 }

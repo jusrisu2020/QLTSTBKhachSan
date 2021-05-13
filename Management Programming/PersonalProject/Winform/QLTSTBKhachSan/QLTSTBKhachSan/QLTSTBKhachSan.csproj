@@ -187,6 +187,7 @@
     <Compile Include="UI\UCQuanLyThietBi.Designer.cs">
       <DependentUpon>UCQuanLyThietBi.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\UIColor.cs" />
     <EmbeddedResource Include="UI\FDangNhap.resx">
       <DependentUpon>FDangNhap.cs</DependentUpon>
     </EmbeddedResource>
@@ -390,6 +391,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\bgForm.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\BtnEmployee2.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
