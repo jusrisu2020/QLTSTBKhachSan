@@ -1,0 +1,11 @@
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\bin\Debug\OutputFileLog.exe.config
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\bin\Debug\OutputFileLog.exe
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\bin\Debug\OutputFileLog.pdb
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.csprojAssemblyReference.cache
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.Form1.resources
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.Properties.Resources.resources
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.csproj.GenerateResource.cache
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.csproj.CoreCompileInputs.cache
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.exe
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.pdb
+C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.FormThongBao.resources
