@@ -9,3 +9,17 @@ C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog
 C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.exe
 C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.pdb
 C:\Users\PC GAMING\Downloads\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.FormThongBao.resources
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\bin\Debug\OutputFileLog.exe.config
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\bin\Debug\OutputFileLog.exe
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\bin\Debug\OutputFileLog.pdb
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.csprojAssemblyReference.cache
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.FormThongBao.resources
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.Properties.Resources.resources
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.csproj.GenerateResource.cache
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.csproj.CoreCompileInputs.cache
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.exe
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.pdb
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.FFL2.resources
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.FFL1.resources
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.FDangNhap.resources
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\obj\Debug\OutputFileLog.FMain.resources

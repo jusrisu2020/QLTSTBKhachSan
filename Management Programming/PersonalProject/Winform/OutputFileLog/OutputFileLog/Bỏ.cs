@@ -11,9 +11,9 @@ using System.Windows.Forms;
 
 namespace OutputFileLog
 {
-    public partial class Form1 : Form
+    public partial class FFL1 : Form
     {
-        public Form1()
+        public FFL1()
         {
             InitializeComponent();
         }
@@ -21,8 +21,6 @@ namespace OutputFileLog
 
         DateTime dt = new DateTime();
         string path = Environment.CurrentDirectory + "/" + "FileLog.txt";
-        string Time;
-
 
         private void btnTaoFile_Click(object sender, EventArgs e)
         {
@@ -49,7 +47,8 @@ namespace OutputFileLog
             using (StreamWriter sw = new StreamWriter(path))
             {
                 string time = DateTime.Now.ToString("dd/MM/yyyy , HH:mm:ss");
-                sw.WriteLine("Đã đăng xuất 2" + time);
+                sw.WriteLine("Đã đăng xuất vào lúc:   " + time);
+                sw.WriteLine(lbUserName.Text);
             }
         }
 
@@ -64,6 +63,11 @@ namespace OutputFileLog
         private void timer1_Tick(object sender, EventArgs e)
         {
             lbTime.Text = DateTime.Now.ToString("dd/MM/yyyy , HH:mm:ss");
+        }
+
+        private void btnDeleteFile_Click(object sender, EventArgs e)
+        {
+            File.Delete(path);
         }
     }
 }
