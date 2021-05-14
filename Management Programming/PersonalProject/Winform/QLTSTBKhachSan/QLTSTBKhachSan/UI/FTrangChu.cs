@@ -30,9 +30,6 @@ namespace QLTSTBKhachSan.UI
             }
         }
 
-        private Button currentButton;
-
-        
 
         public FTrangChu(TaiKhoanDTO tk)
         {

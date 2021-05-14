@@ -27,8 +27,7 @@ namespace QLTSTBKhachSan.UI
         {
             LoadListAccount();
             LoadCBMaNV();
-            LoadCBChucVu();
-            AddBinding();
+            LoadChucVu();
         }
 
         void LoadListAccount()
@@ -44,23 +43,12 @@ namespace QLTSTBKhachSan.UI
             cbMaNV.DisplayMember = "MaNV";
         }
 
-        void LoadCBChucVu()
+        void LoadChucVu()
         {
-            pnShowChucVu.Visible = false;
             List<ChucVuDTO> ChucVuList = ChucVuDAO.Instance.LoadChucVu();
             cbMaCV.DataSource = ChucVuList;
             cbMaCV.DisplayMember = "MaCV";
             dtgvChucVu.DataSource = ChucVuList;
-            dtgvChucVu.Columns[0].Visible = false;
-            dtgvChucVu.Columns[1].HeaderText = "Mã chức vụ";
-            dtgvChucVu.Columns[2].HeaderText = "Tên chức vụ";
-        }
-
-        void AddBinding()
-        {
-            cbMaNV.DataBindings.Add(new Binding("Text",dtgvQLND.DataSource,"MaNV",true,DataSourceUpdateMode.Never));
-            cbMaCV.DataBindings.Add(new Binding("Text", dtgvQLND.DataSource, "MaCV", true, DataSourceUpdateMode.Never));
-            txtMaTK.DataBindings.Add(new Binding("Text", dtgvQLND.DataSource, "MaTK", true, DataSourceUpdateMode.Never));
         }
 
 
@@ -93,7 +81,7 @@ namespace QLTSTBKhachSan.UI
             }
         }
 
-        
+        Exception ex = new Exception();
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
             byte[] hinhanhb = TaiKhoanDAO.Instance.ImageToByte(picInput.Image); ;
@@ -102,22 +90,28 @@ namespace QLTSTBKhachSan.UI
             string tentk = txtPass.Text; 
             string tenhienthi = txtTenHienThi.Text;
             string pass = txtPass.Text;
-            if (TaiKhoanDAO.Instance.InsertAccount(hinhanhb, manv, tentk, tenhienthi, pass, macv))
+            if (manv.Equals("") || macv.Equals("") || tentk.Equals("") || tenhienthi.Equals("") || pass.Equals("") || picInput.Image.Equals(ex))
             {
-                MessageBox.Show("Saved");
-                LoadListAccount();
+                MessageBox.Show("Hãy nhập đầy đủ thông tin!");
             }
             else
             {
-                MessageBox.Show("Không thành công");
+                if (TaiKhoanDAO.Instance.InsertAccount(hinhanhb, manv, tentk, tenhienthi, pass, macv))
+                {
+                    MessageBox.Show("Saved");
+                    LoadListAccount();
+                }
+                else
+                {
+                    MessageBox.Show("Không thành công");
+                }
             }
         }
         private void dtgvQLND_Click(object sender, EventArgs e)
         {
             DataGridViewRow dr = dtgvQLND.SelectedRows[0];
-            txtMaTK.Text = dr.Cells["MaTK"].Value.ToString();
             byte[] b = (byte[])dr.Cells["HinhAnh"].Value;
-            picOutput.Image = TaiKhoanDAO.Instance.ByteArrayToImage(b);
+            picInput.Image = TaiKhoanDAO.Instance.ByteArrayToImage(b);
             /*cbMaNV.Text = dr.Cells["MaNV"].Value.ToString();
             cbMaCV.Text = dr.Cells["MaCV"].Value.ToString();
             txtTenTK.Text = dr.Cells["TenTK"].Value.ToString();
@@ -126,7 +120,8 @@ namespace QLTSTBKhachSan.UI
         }
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            string matk = txtMaTK.Text;
+            DataGridViewRow dr = dtgvQLND.SelectedRows[0];
+            string matk = dr.Cells["MaTK"].Value.ToString();
             
             if (TaiKhoanDAO.Instance.DeleteAccount(matk))
             {
@@ -138,6 +133,9 @@ namespace QLTSTBKhachSan.UI
                 MessageBox.Show("Không thành công");
             }
         }
+
+
+
 
 
 
@@ -161,9 +159,20 @@ namespace QLTSTBKhachSan.UI
         }*/
         #endregion
 
-        private void UCQuanLyNguoiDung_Load(object sender, EventArgs e)
+        private void btnAddUser_Click(object sender, EventArgs e)
         {
-
+            if(pnAddUser.Visible == false)
+            {
+                pnAddUser.Visible = true;
+                btnAddUser.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
+            }
+            else
+            {
+                pnAddUser.Visible = false;
+                btnAddUser.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
+            }
         }
+
+        
     }
 }

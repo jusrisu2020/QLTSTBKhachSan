@@ -63,6 +63,16 @@ namespace QLTSTBKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap add_32px {
+            get {
+                object obj = ResourceManager.GetObject("add_32px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Avatar {
             get {
                 object obj = ResourceManager.GetObject("Avatar", resourceCulture);
@@ -203,6 +213,26 @@ namespace QLTSTBKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap delete_30px {
+            get {
+                object obj = ResourceManager.GetObject("delete_30px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap delete_sign_50px {
+            get {
+                object obj = ResourceManager.GetObject("delete_sign_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap department_48px {
             get {
                 object obj = ResourceManager.GetObject("department_48px", resourceCulture);
@@ -323,6 +353,16 @@ namespace QLTSTBKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap image_file_26px {
+            get {
+                object obj = ResourceManager.GetObject("image_file_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap light_64px {
             get {
                 object obj = ResourceManager.GetObject("light_64px", resourceCulture);
@@ -363,6 +403,16 @@ namespace QLTSTBKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap minus_24px {
+            get {
+                object obj = ResourceManager.GetObject("minus_24px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap money_30px {
             get {
                 object obj = ResourceManager.GetObject("money_30px", resourceCulture);
@@ -386,6 +436,16 @@ namespace QLTSTBKhachSan.Properties {
         internal static System.Drawing.Bitmap money_bag_80px {
             get {
                 object obj = ResourceManager.GetObject("money_bag_80px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap multiply_50px {
+            get {
+                object obj = ResourceManager.GetObject("multiply_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

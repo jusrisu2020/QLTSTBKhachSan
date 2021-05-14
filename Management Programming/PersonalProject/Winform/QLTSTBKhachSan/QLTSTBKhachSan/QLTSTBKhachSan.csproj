@@ -395,5 +395,23 @@
   <ItemGroup>
     <None Include="Resources\BtnEmployee2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\add_32px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minus_24px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\multiply_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_sign_50px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\delete_30px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\image_file_26px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
