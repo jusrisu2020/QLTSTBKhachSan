@@ -67,15 +67,6 @@ namespace QLTSTBKhachSan.UI
             ShowThietBiTrongBoPhan(mabp);
             EditColums();
         }
-        void LoadDanhMuc()
-        {
-            dtgvThietBi.Controls.Clear();
-            List<DanhMucDTO> DanhMucList = DanhMucDAO.Instance.LoadDanhMuc();
-            cbDanhMuc.DataSource = DanhMucList;
-            cbDanhMuc.DisplayMember = "TenDanhMuc";
-            dtgvThietBi.DataSource = DanhMucList;
-        }
-        
 
         private void btnThemDanhMuc_Click(object sender, EventArgs e)
         {
@@ -90,6 +81,20 @@ namespace QLTSTBKhachSan.UI
             List<ThietBiDTO> ThietBiList = ThietBiDAO.Instance.LoadThietBi();
             dtgvThietBi.DataSource = ThietBiList;
             EditColums();
+        }
+
+        private void btnThemThietBi_Click(object sender, EventArgs e)
+        {
+            if (pnAddUser.Visible == false)
+            {
+                pnAddUser.Visible = true;
+                btnThemThietBi.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
+            }
+            else
+            {
+                pnAddUser.Visible = false;
+                btnThemThietBi.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
+            }
         }
     }
 }

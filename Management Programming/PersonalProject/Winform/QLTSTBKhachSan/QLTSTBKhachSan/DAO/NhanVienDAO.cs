@@ -25,7 +25,7 @@ namespace QLTSTBKhachSan.DAO
                 instance = value;
             }
         }
-
+        private NhanVienDAO() { }
         public List<NhanVienDTO> LoadNhanVien()
         {
             List<NhanVienDTO> NhanVienList = new List<NhanVienDTO>();

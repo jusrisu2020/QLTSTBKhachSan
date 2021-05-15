@@ -126,9 +126,14 @@ namespace QLTSTBKhachSan.UI
 
         private void UCQLNhaCungCap_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.Control == true && e.KeyCode == Keys.Enter)
+            if(e.KeyCode == Keys.Enter)
             {
                 btnInsertNhaCungCap.PerformClick();
+
+            }
+            if (e.KeyCode == Keys.Delete)
+            {
+                btnDeleteNCC.PerformClick();
             }
         }
 

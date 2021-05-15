@@ -31,6 +31,10 @@ namespace QLTSTBKhachSan.UI
         {
             this.components = new System.ComponentModel.Container();
             this.pnList = new System.Windows.Forms.Panel();
+            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
+            this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
+            this.btnHuongDan = new Guna.UI2.WinForms.Guna2Button();
+            this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
             this.TimHienThiThoiGian = new System.Windows.Forms.Timer(this.components);
             this.lbTime = new System.Windows.Forms.Label();
             this.gunaElipsePanel2 = new Guna.UI.WinForms.GunaElipsePanel();
@@ -39,10 +43,13 @@ namespace QLTSTBKhachSan.UI
             this.gunaElipsePanel4 = new Guna.UI.WinForms.GunaElipsePanel();
             this.lbNameBoPhan = new System.Windows.Forms.Label();
             this.lbShowBoPhan = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.gunaElipsePanel6 = new Guna.UI.WinForms.GunaElipsePanel();
             this.lbShowThietBi = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.gunaElipsePanel5 = new Guna.UI.WinForms.GunaElipsePanel();
             this.lbShowNhanVien = new System.Windows.Forms.Label();
+            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.btnChucVu = new Guna.UI2.WinForms.Guna2Button();
             this.btnBoPhan = new Guna.UI2.WinForms.Guna2Button();
             this.btnNhanVien = new Guna.UI2.WinForms.Guna2Button();
@@ -52,45 +59,38 @@ namespace QLTSTBKhachSan.UI
             this.btnThietBi = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
             this.pnDropDownTSThietBi = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnTaiSanThietBi = new Guna.UI2.WinForms.Guna2Button();
             this.pnDropDownHeThong = new Guna.UI2.WinForms.Guna2Panel();
+            this.btnHeThong = new Guna.UI2.WinForms.Guna2Button();
+            this.btnAdmin = new Guna.UI2.WinForms.Guna2Button();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             this.lbChucVu = new System.Windows.Forms.Label();
             this.linkSuaTK = new Guna.UI.WinForms.GunaLinkLabel();
             this.lbUserName = new System.Windows.Forms.Label();
+            this.pbAvartar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gunaControlBox1 = new Guna.UI.WinForms.GunaControlBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.pnContainer = new Guna.UI.WinForms.GunaElipsePanel();
-            this.guna2CirclePictureBox3 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            this.guna2CirclePictureBox2 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
             this.txtSearch = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnLSThongBao = new Guna.UI2.WinForms.Guna2Button();
             this.btnList = new Guna.UI2.WinForms.Guna2Button();
-            this.btnExit = new Guna.UI2.WinForms.Guna2Button();
-            this.btnLogOut = new Guna.UI2.WinForms.Guna2Button();
-            this.btnHuongDan = new Guna.UI2.WinForms.Guna2Button();
-            this.btnCaiDat = new Guna.UI2.WinForms.Guna2Button();
-            this.btnTaiSanThietBi = new Guna.UI2.WinForms.Guna2Button();
-            this.btnHeThong = new Guna.UI2.WinForms.Guna2Button();
-            this.btnAdmin = new Guna.UI2.WinForms.Guna2Button();
-            this.pbAvartar = new Guna.UI2.WinForms.Guna2CirclePictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.pnContainer = new Guna.UI.WinForms.GunaElipsePanel();
             this.pnList.SuspendLayout();
             this.gunaElipsePanel2.SuspendLayout();
             this.gunaElipsePanel3.SuspendLayout();
             this.gunaElipsePanel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
             this.gunaElipsePanel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
             this.gunaElipsePanel5.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
             this.guna2Panel1.SuspendLayout();
             this.pnDropDownTSThietBi.SuspendLayout();
             this.pnDropDownHeThong.SuspendLayout();
             this.guna2Panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvartar)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvartar)).BeginInit();
             this.SuspendLayout();
             // 
             // pnList
@@ -105,6 +105,90 @@ namespace QLTSTBKhachSan.UI
             this.pnList.Size = new System.Drawing.Size(114, 176);
             this.pnList.TabIndex = 14;
             this.pnList.Visible = false;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.btnExit.CheckedState.Parent = this.btnExit;
+            this.btnExit.CustomImages.Parent = this.btnExit;
+            this.btnExit.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.HoverState.Parent = this.btnExit;
+            this.btnExit.Image = global::QLTSTBKhachSan.Properties.Resources.exit_26px1;
+            this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnExit.Location = new System.Drawing.Point(0, 99);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.ShadowDecoration.Parent = this.btnExit;
+            this.btnExit.Size = new System.Drawing.Size(114, 33);
+            this.btnExit.TabIndex = 21;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
+            // btnLogOut
+            // 
+            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.btnLogOut.CheckedState.Parent = this.btnLogOut;
+            this.btnLogOut.CustomImages.Parent = this.btnLogOut;
+            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnLogOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnLogOut.ForeColor = System.Drawing.Color.White;
+            this.btnLogOut.HoverState.Parent = this.btnLogOut;
+            this.btnLogOut.Image = global::QLTSTBKhachSan.Properties.Resources.BtnLogOut1;
+            this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogOut.Location = new System.Drawing.Point(0, 66);
+            this.btnLogOut.Name = "btnLogOut";
+            this.btnLogOut.ShadowDecoration.Parent = this.btnLogOut;
+            this.btnLogOut.Size = new System.Drawing.Size(114, 33);
+            this.btnLogOut.TabIndex = 20;
+            this.btnLogOut.Text = "Đổi Tài Khoản";
+            this.btnLogOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
+            // 
+            // btnHuongDan
+            // 
+            this.btnHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.btnHuongDan.CheckedState.Parent = this.btnHuongDan;
+            this.btnHuongDan.CustomImages.Parent = this.btnHuongDan;
+            this.btnHuongDan.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHuongDan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.btnHuongDan.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnHuongDan.ForeColor = System.Drawing.Color.White;
+            this.btnHuongDan.HoverState.Parent = this.btnHuongDan;
+            this.btnHuongDan.Image = global::QLTSTBKhachSan.Properties.Resources.question_mark_30px1;
+            this.btnHuongDan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHuongDan.Location = new System.Drawing.Point(0, 33);
+            this.btnHuongDan.Name = "btnHuongDan";
+            this.btnHuongDan.ShadowDecoration.Parent = this.btnHuongDan;
+            this.btnHuongDan.Size = new System.Drawing.Size(114, 33);
+            this.btnHuongDan.TabIndex = 19;
+            this.btnHuongDan.Text = "Hướng Dẫn";
+            this.btnHuongDan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHuongDan.Click += new System.EventHandler(this.btnHelp_Click);
+            // 
+            // btnCaiDat
+            // 
+            this.btnCaiDat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.btnCaiDat.CheckedState.Parent = this.btnCaiDat;
+            this.btnCaiDat.CustomImages.Parent = this.btnCaiDat;
+            this.btnCaiDat.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnCaiDat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
+            this.btnCaiDat.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.btnCaiDat.ForeColor = System.Drawing.Color.White;
+            this.btnCaiDat.HoverState.Parent = this.btnCaiDat;
+            this.btnCaiDat.Image = global::QLTSTBKhachSan.Properties.Resources.IconSetting3;
+            this.btnCaiDat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCaiDat.Location = new System.Drawing.Point(0, 0);
+            this.btnCaiDat.Name = "btnCaiDat";
+            this.btnCaiDat.ShadowDecoration.Parent = this.btnCaiDat;
+            this.btnCaiDat.Size = new System.Drawing.Size(114, 33);
+            this.btnCaiDat.TabIndex = 18;
+            this.btnCaiDat.Text = "Cài Đặt";
+            this.btnCaiDat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnCaiDat.Click += new System.EventHandler(this.btnSetting_Click);
             // 
             // TimHienThiThoiGian
             // 
@@ -192,6 +276,18 @@ namespace QLTSTBKhachSan.UI
             this.lbShowBoPhan.TabIndex = 17;
             this.lbShowBoPhan.Text = "Bp";
             // 
+            // guna2CirclePictureBox1
+            // 
+            this.guna2CirclePictureBox1.Image = global::QLTSTBKhachSan.Properties.Resources.department_48px;
+            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(83, 25);
+            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
+            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
+            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(76, 71);
+            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox1.TabIndex = 16;
+            this.guna2CirclePictureBox1.TabStop = false;
+            // 
             // gunaElipsePanel6
             // 
             this.gunaElipsePanel6.BackColor = System.Drawing.Color.Transparent;
@@ -213,6 +309,18 @@ namespace QLTSTBKhachSan.UI
             this.lbShowThietBi.TabIndex = 18;
             this.lbShowThietBi.Text = "Thiết bị";
             // 
+            // guna2CirclePictureBox2
+            // 
+            this.guna2CirclePictureBox2.Image = global::QLTSTBKhachSan.Properties.Resources.product_64px;
+            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(83, 9);
+            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
+            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox2.ShadowDecoration.Parent = this.guna2CirclePictureBox2;
+            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(76, 71);
+            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox2.TabIndex = 18;
+            this.guna2CirclePictureBox2.TabStop = false;
+            // 
             // gunaElipsePanel5
             // 
             this.gunaElipsePanel5.BackColor = System.Drawing.Color.Transparent;
@@ -233,6 +341,18 @@ namespace QLTSTBKhachSan.UI
             this.lbShowNhanVien.Size = new System.Drawing.Size(57, 13);
             this.lbShowNhanVien.TabIndex = 18;
             this.lbShowNhanVien.Text = "Nhân Viên";
+            // 
+            // guna2CirclePictureBox3
+            // 
+            this.guna2CirclePictureBox3.Image = global::QLTSTBKhachSan.Properties.Resources.commercial_development_management_64px;
+            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(82, 14);
+            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
+            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.guna2CirclePictureBox3.ShadowDecoration.Parent = this.guna2CirclePictureBox3;
+            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(76, 71);
+            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.guna2CirclePictureBox3.TabIndex = 18;
+            this.guna2CirclePictureBox3.TabStop = false;
             // 
             // btnChucVu
             // 
@@ -302,6 +422,7 @@ namespace QLTSTBKhachSan.UI
             this.btnHoaDonMuaTB.Size = new System.Drawing.Size(115, 28);
             this.btnHoaDonMuaTB.TabIndex = 103;
             this.btnHoaDonMuaTB.Text = "Hoá Đơn";
+            this.btnHoaDonMuaTB.Click += new System.EventHandler(this.btnHoaDonMuaTB_Click);
             // 
             // btnNhaCungCap
             // 
@@ -380,6 +501,28 @@ namespace QLTSTBKhachSan.UI
             this.pnDropDownTSThietBi.Size = new System.Drawing.Size(200, 130);
             this.pnDropDownTSThietBi.TabIndex = 107;
             // 
+            // btnTaiSanThietBi
+            // 
+            this.btnTaiSanThietBi.CheckedState.Parent = this.btnTaiSanThietBi;
+            this.btnTaiSanThietBi.CustomImages.Parent = this.btnTaiSanThietBi;
+            this.btnTaiSanThietBi.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnTaiSanThietBi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnTaiSanThietBi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTaiSanThietBi.ForeColor = System.Drawing.Color.White;
+            this.btnTaiSanThietBi.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnTaiSanThietBi.HoverState.Parent = this.btnTaiSanThietBi;
+            this.btnTaiSanThietBi.Image = global::QLTSTBKhachSan.Properties.Resources.BtnAdminstrator1;
+            this.btnTaiSanThietBi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTaiSanThietBi.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnTaiSanThietBi.Location = new System.Drawing.Point(0, 268);
+            this.btnTaiSanThietBi.Name = "btnTaiSanThietBi";
+            this.btnTaiSanThietBi.ShadowDecoration.Parent = this.btnTaiSanThietBi;
+            this.btnTaiSanThietBi.Size = new System.Drawing.Size(200, 36);
+            this.btnTaiSanThietBi.TabIndex = 110;
+            this.btnTaiSanThietBi.Text = "TS Thiết Bị";
+            this.btnTaiSanThietBi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnTaiSanThietBi.Click += new System.EventHandler(this.btnTaiSanThietBi_Click);
+            // 
             // pnDropDownHeThong
             // 
             this.pnDropDownHeThong.Controls.Add(this.btnBoPhan);
@@ -391,6 +534,50 @@ namespace QLTSTBKhachSan.UI
             this.pnDropDownHeThong.ShadowDecoration.Parent = this.pnDropDownHeThong;
             this.pnDropDownHeThong.Size = new System.Drawing.Size(200, 89);
             this.pnDropDownHeThong.TabIndex = 107;
+            // 
+            // btnHeThong
+            // 
+            this.btnHeThong.CheckedState.Parent = this.btnHeThong;
+            this.btnHeThong.CustomImages.Parent = this.btnHeThong;
+            this.btnHeThong.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnHeThong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnHeThong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHeThong.ForeColor = System.Drawing.Color.White;
+            this.btnHeThong.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnHeThong.HoverState.Parent = this.btnHeThong;
+            this.btnHeThong.Image = global::QLTSTBKhachSan.Properties.Resources.BtnAdminstrator1;
+            this.btnHeThong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHeThong.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnHeThong.Location = new System.Drawing.Point(0, 143);
+            this.btnHeThong.Name = "btnHeThong";
+            this.btnHeThong.ShadowDecoration.Parent = this.btnHeThong;
+            this.btnHeThong.Size = new System.Drawing.Size(200, 36);
+            this.btnHeThong.TabIndex = 109;
+            this.btnHeThong.Text = "Hệ Thống";
+            this.btnHeThong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
+            // 
+            // btnAdmin
+            // 
+            this.btnAdmin.CheckedState.Parent = this.btnAdmin;
+            this.btnAdmin.CustomImages.Parent = this.btnAdmin;
+            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAdmin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
+            this.btnAdmin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAdmin.ForeColor = System.Drawing.Color.White;
+            this.btnAdmin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnAdmin.HoverState.Parent = this.btnAdmin;
+            this.btnAdmin.Image = global::QLTSTBKhachSan.Properties.Resources.BtnAdminstrator1;
+            this.btnAdmin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAdmin.ImageSize = new System.Drawing.Size(30, 30);
+            this.btnAdmin.Location = new System.Drawing.Point(0, 107);
+            this.btnAdmin.Name = "btnAdmin";
+            this.btnAdmin.ShadowDecoration.Parent = this.btnAdmin;
+            this.btnAdmin.Size = new System.Drawing.Size(200, 36);
+            this.btnAdmin.TabIndex = 108;
+            this.btnAdmin.Text = "Adminstrator";
+            this.btnAdmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
             // guna2Panel2
             // 
@@ -439,6 +626,18 @@ namespace QLTSTBKhachSan.UI
             this.lbUserName.TabIndex = 16;
             this.lbUserName.Text = "Name: ";
             // 
+            // pbAvartar
+            // 
+            this.pbAvartar.Image = global::QLTSTBKhachSan.Properties.Resources.Avatar;
+            this.pbAvartar.Location = new System.Drawing.Point(21, 15);
+            this.pbAvartar.Name = "pbAvartar";
+            this.pbAvartar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
+            this.pbAvartar.ShadowDecoration.Parent = this.pbAvartar;
+            this.pbAvartar.Size = new System.Drawing.Size(80, 77);
+            this.pbAvartar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pbAvartar.TabIndex = 12;
+            this.pbAvartar.TabStop = false;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.gunaControlBox1);
@@ -468,65 +667,6 @@ namespace QLTSTBKhachSan.UI
             this.gunaControlBox1.OnPressedColor = System.Drawing.Color.Black;
             this.gunaControlBox1.Size = new System.Drawing.Size(45, 50);
             this.gunaControlBox1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.gunaElipsePanel2);
-            this.panel2.Controls.Add(this.gunaElipsePanel5);
-            this.panel2.Controls.Add(this.gunaElipsePanel4);
-            this.panel2.Controls.Add(this.gunaElipsePanel6);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(200, 50);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1000, 150);
-            this.panel2.TabIndex = 0;
-            // 
-            // pnContainer
-            // 
-            this.pnContainer.BackColor = System.Drawing.Color.Transparent;
-            this.pnContainer.BaseColor = System.Drawing.Color.White;
-            this.pnContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnContainer.Location = new System.Drawing.Point(200, 200);
-            this.pnContainer.Name = "pnContainer";
-            this.pnContainer.Radius = 10;
-            this.pnContainer.Size = new System.Drawing.Size(1000, 600);
-            this.pnContainer.TabIndex = 1;
-            // 
-            // guna2CirclePictureBox3
-            // 
-            this.guna2CirclePictureBox3.Image = global::QLTSTBKhachSan.Properties.Resources.commercial_development_management_64px;
-            this.guna2CirclePictureBox3.Location = new System.Drawing.Point(82, 14);
-            this.guna2CirclePictureBox3.Name = "guna2CirclePictureBox3";
-            this.guna2CirclePictureBox3.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox3.ShadowDecoration.Parent = this.guna2CirclePictureBox3;
-            this.guna2CirclePictureBox3.Size = new System.Drawing.Size(76, 71);
-            this.guna2CirclePictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox3.TabIndex = 18;
-            this.guna2CirclePictureBox3.TabStop = false;
-            // 
-            // guna2CirclePictureBox1
-            // 
-            this.guna2CirclePictureBox1.Image = global::QLTSTBKhachSan.Properties.Resources.department_48px;
-            this.guna2CirclePictureBox1.Location = new System.Drawing.Point(83, 25);
-            this.guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            this.guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox1.ShadowDecoration.Parent = this.guna2CirclePictureBox1;
-            this.guna2CirclePictureBox1.Size = new System.Drawing.Size(76, 71);
-            this.guna2CirclePictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox1.TabIndex = 16;
-            this.guna2CirclePictureBox1.TabStop = false;
-            // 
-            // guna2CirclePictureBox2
-            // 
-            this.guna2CirclePictureBox2.Image = global::QLTSTBKhachSan.Properties.Resources.product_64px;
-            this.guna2CirclePictureBox2.Location = new System.Drawing.Point(83, 9);
-            this.guna2CirclePictureBox2.Name = "guna2CirclePictureBox2";
-            this.guna2CirclePictureBox2.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.guna2CirclePictureBox2.ShadowDecoration.Parent = this.guna2CirclePictureBox2;
-            this.guna2CirclePictureBox2.Size = new System.Drawing.Size(76, 71);
-            this.guna2CirclePictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.guna2CirclePictureBox2.TabIndex = 18;
-            this.guna2CirclePictureBox2.TabStop = false;
             // 
             // txtSearch
             // 
@@ -588,167 +728,28 @@ namespace QLTSTBKhachSan.UI
             this.btnList.TabIndex = 14;
             this.btnList.Click += new System.EventHandler(this.btnList_Click);
             // 
-            // btnExit
+            // panel2
             // 
-            this.btnExit.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.btnExit.CheckedState.Parent = this.btnExit;
-            this.btnExit.CustomImages.Parent = this.btnExit;
-            this.btnExit.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnExit.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.btnExit.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.HoverState.Parent = this.btnExit;
-            this.btnExit.Image = global::QLTSTBKhachSan.Properties.Resources.exit_26px1;
-            this.btnExit.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnExit.Location = new System.Drawing.Point(0, 99);
-            this.btnExit.Name = "btnExit";
-            this.btnExit.ShadowDecoration.Parent = this.btnExit;
-            this.btnExit.Size = new System.Drawing.Size(114, 33);
-            this.btnExit.TabIndex = 21;
-            this.btnExit.Text = "Thoát";
-            this.btnExit.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            this.panel2.Controls.Add(this.gunaElipsePanel2);
+            this.panel2.Controls.Add(this.gunaElipsePanel5);
+            this.panel2.Controls.Add(this.gunaElipsePanel4);
+            this.panel2.Controls.Add(this.gunaElipsePanel6);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(200, 50);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1000, 150);
+            this.panel2.TabIndex = 0;
             // 
-            // btnLogOut
+            // pnContainer
             // 
-            this.btnLogOut.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.btnLogOut.CheckedState.Parent = this.btnLogOut;
-            this.btnLogOut.CustomImages.Parent = this.btnLogOut;
-            this.btnLogOut.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnLogOut.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.btnLogOut.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnLogOut.ForeColor = System.Drawing.Color.White;
-            this.btnLogOut.HoverState.Parent = this.btnLogOut;
-            this.btnLogOut.Image = global::QLTSTBKhachSan.Properties.Resources.BtnLogOut1;
-            this.btnLogOut.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogOut.Location = new System.Drawing.Point(0, 66);
-            this.btnLogOut.Name = "btnLogOut";
-            this.btnLogOut.ShadowDecoration.Parent = this.btnLogOut;
-            this.btnLogOut.Size = new System.Drawing.Size(114, 33);
-            this.btnLogOut.TabIndex = 20;
-            this.btnLogOut.Text = "Đổi Tài Khoản";
-            this.btnLogOut.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnLogOut.Click += new System.EventHandler(this.btnLogOut_Click);
-            // 
-            // btnHuongDan
-            // 
-            this.btnHuongDan.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.btnHuongDan.CheckedState.Parent = this.btnHuongDan;
-            this.btnHuongDan.CustomImages.Parent = this.btnHuongDan;
-            this.btnHuongDan.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHuongDan.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.btnHuongDan.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnHuongDan.ForeColor = System.Drawing.Color.White;
-            this.btnHuongDan.HoverState.Parent = this.btnHuongDan;
-            this.btnHuongDan.Image = global::QLTSTBKhachSan.Properties.Resources.question_mark_30px1;
-            this.btnHuongDan.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHuongDan.Location = new System.Drawing.Point(0, 33);
-            this.btnHuongDan.Name = "btnHuongDan";
-            this.btnHuongDan.ShadowDecoration.Parent = this.btnHuongDan;
-            this.btnHuongDan.Size = new System.Drawing.Size(114, 33);
-            this.btnHuongDan.TabIndex = 19;
-            this.btnHuongDan.Text = "Hướng Dẫn";
-            this.btnHuongDan.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHuongDan.Click += new System.EventHandler(this.btnHelp_Click);
-            // 
-            // btnCaiDat
-            // 
-            this.btnCaiDat.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.btnCaiDat.CheckedState.Parent = this.btnCaiDat;
-            this.btnCaiDat.CustomImages.Parent = this.btnCaiDat;
-            this.btnCaiDat.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCaiDat.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(9)))), ((int)(((byte)(132)))), ((int)(((byte)(227)))));
-            this.btnCaiDat.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.btnCaiDat.ForeColor = System.Drawing.Color.White;
-            this.btnCaiDat.HoverState.Parent = this.btnCaiDat;
-            this.btnCaiDat.Image = global::QLTSTBKhachSan.Properties.Resources.IconSetting3;
-            this.btnCaiDat.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCaiDat.Location = new System.Drawing.Point(0, 0);
-            this.btnCaiDat.Name = "btnCaiDat";
-            this.btnCaiDat.ShadowDecoration.Parent = this.btnCaiDat;
-            this.btnCaiDat.Size = new System.Drawing.Size(114, 33);
-            this.btnCaiDat.TabIndex = 18;
-            this.btnCaiDat.Text = "Cài Đặt";
-            this.btnCaiDat.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnCaiDat.Click += new System.EventHandler(this.btnSetting_Click);
-            // 
-            // btnTaiSanThietBi
-            // 
-            this.btnTaiSanThietBi.CheckedState.Parent = this.btnTaiSanThietBi;
-            this.btnTaiSanThietBi.CustomImages.Parent = this.btnTaiSanThietBi;
-            this.btnTaiSanThietBi.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnTaiSanThietBi.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnTaiSanThietBi.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnTaiSanThietBi.ForeColor = System.Drawing.Color.White;
-            this.btnTaiSanThietBi.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnTaiSanThietBi.HoverState.Parent = this.btnTaiSanThietBi;
-            this.btnTaiSanThietBi.Image = global::QLTSTBKhachSan.Properties.Resources.BtnAdminstrator1;
-            this.btnTaiSanThietBi.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTaiSanThietBi.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnTaiSanThietBi.Location = new System.Drawing.Point(0, 268);
-            this.btnTaiSanThietBi.Name = "btnTaiSanThietBi";
-            this.btnTaiSanThietBi.ShadowDecoration.Parent = this.btnTaiSanThietBi;
-            this.btnTaiSanThietBi.Size = new System.Drawing.Size(200, 36);
-            this.btnTaiSanThietBi.TabIndex = 110;
-            this.btnTaiSanThietBi.Text = "TS Thiết Bị";
-            this.btnTaiSanThietBi.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnTaiSanThietBi.Click += new System.EventHandler(this.btnTaiSanThietBi_Click);
-            // 
-            // btnHeThong
-            // 
-            this.btnHeThong.CheckedState.Parent = this.btnHeThong;
-            this.btnHeThong.CustomImages.Parent = this.btnHeThong;
-            this.btnHeThong.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnHeThong.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnHeThong.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHeThong.ForeColor = System.Drawing.Color.White;
-            this.btnHeThong.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnHeThong.HoverState.Parent = this.btnHeThong;
-            this.btnHeThong.Image = global::QLTSTBKhachSan.Properties.Resources.BtnAdminstrator1;
-            this.btnHeThong.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHeThong.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnHeThong.Location = new System.Drawing.Point(0, 143);
-            this.btnHeThong.Name = "btnHeThong";
-            this.btnHeThong.ShadowDecoration.Parent = this.btnHeThong;
-            this.btnHeThong.Size = new System.Drawing.Size(200, 36);
-            this.btnHeThong.TabIndex = 109;
-            this.btnHeThong.Text = "Hệ Thống";
-            this.btnHeThong.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnHeThong.Click += new System.EventHandler(this.btnHeThong_Click);
-            // 
-            // btnAdmin
-            // 
-            this.btnAdmin.CheckedState.Parent = this.btnAdmin;
-            this.btnAdmin.CustomImages.Parent = this.btnAdmin;
-            this.btnAdmin.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAdmin.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
-            this.btnAdmin.Font = new System.Drawing.Font("Segoe UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAdmin.ForeColor = System.Drawing.Color.White;
-            this.btnAdmin.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
-            this.btnAdmin.HoverState.Parent = this.btnAdmin;
-            this.btnAdmin.Image = global::QLTSTBKhachSan.Properties.Resources.BtnAdminstrator1;
-            this.btnAdmin.ImageAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdmin.ImageSize = new System.Drawing.Size(30, 30);
-            this.btnAdmin.Location = new System.Drawing.Point(0, 107);
-            this.btnAdmin.Name = "btnAdmin";
-            this.btnAdmin.ShadowDecoration.Parent = this.btnAdmin;
-            this.btnAdmin.Size = new System.Drawing.Size(200, 36);
-            this.btnAdmin.TabIndex = 108;
-            this.btnAdmin.Text = "Adminstrator";
-            this.btnAdmin.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
-            // 
-            // pbAvartar
-            // 
-            this.pbAvartar.Image = global::QLTSTBKhachSan.Properties.Resources.Avatar;
-            this.pbAvartar.Location = new System.Drawing.Point(21, 15);
-            this.pbAvartar.Name = "pbAvartar";
-            this.pbAvartar.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
-            this.pbAvartar.ShadowDecoration.Parent = this.pbAvartar;
-            this.pbAvartar.Size = new System.Drawing.Size(80, 77);
-            this.pbAvartar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbAvartar.TabIndex = 12;
-            this.pbAvartar.TabStop = false;
+            this.pnContainer.BackColor = System.Drawing.Color.Transparent;
+            this.pnContainer.BaseColor = System.Drawing.Color.White;
+            this.pnContainer.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.pnContainer.Location = new System.Drawing.Point(200, 200);
+            this.pnContainer.Name = "pnContainer";
+            this.pnContainer.Radius = 10;
+            this.pnContainer.Size = new System.Drawing.Size(1000, 600);
+            this.pnContainer.TabIndex = 1;
             // 
             // FTrangChu
             // 
@@ -770,21 +771,21 @@ namespace QLTSTBKhachSan.UI
             this.gunaElipsePanel3.PerformLayout();
             this.gunaElipsePanel4.ResumeLayout(false);
             this.gunaElipsePanel4.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
             this.gunaElipsePanel6.ResumeLayout(false);
             this.gunaElipsePanel6.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
             this.gunaElipsePanel5.ResumeLayout(false);
             this.gunaElipsePanel5.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
             this.guna2Panel1.ResumeLayout(false);
             this.pnDropDownTSThietBi.ResumeLayout(false);
             this.pnDropDownHeThong.ResumeLayout(false);
             this.guna2Panel2.ResumeLayout(false);
             this.guna2Panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAvartar)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.guna2CirclePictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pbAvartar)).EndInit();
             this.ResumeLayout(false);
 
         }

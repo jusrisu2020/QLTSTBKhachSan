@@ -133,37 +133,6 @@ GO
 
 DELETE dbo.NhaCungCap WHERE MaNCC = 'NCC13'
 SELECT *FROM dbo.NhaCungCap
--------------------------------------DanhMuc ------------------------------------------------
-CREATE TABLE DanhMuc
-(
-	ID INT IDENTITY,
-	MaDanhMuc NVARCHAR(20) PRIMARY KEY,
-	TenDanhMuc NVARCHAR(255)
-)
-GO
-CREATE PROC USP_ThemDanhMuc
-		@TenDanhMuc NVARCHAR(50)
-	AS
-	BEGIN
-		DECLARE @MaDanhMuc NVARCHAR(20)
-		SET @MaDanhMuc=(SELECT IDENT_CURRENT('dbo.DanhMuc'))
-		IF EXISTS (SELECT * FROM dbo.DanhMuc WHERE ID = @MaDanhMuc)
-			SET @MaDanhMuc=@MaDanhMuc+1
-			SET @MaDanhMuc='DM'+REPLICATE('0',2-LEN(@MaDanhMuc))+@MaDanhMuc
-			INSERT INTO dbo.DanhMuc VALUES(@MaDanhMuc,@TenDanhMuc)
-	END
-GO
-
-EXEC dbo.USP_ThemDanhMuc @TenDanhMuc = N'Bàn'
-EXEC dbo.USP_ThemDanhMuc @TenDanhMuc = N'Ghế'
-EXEC dbo.USP_ThemDanhMuc @TenDanhMuc = N'Thiết bị vệ sinh'
-GO
-
-CREATE PROC USP_SelectDanhMuc
-AS SELECT * FROM dbo.DanhMuc
-GO
-EXEC USP_SelectDanhMuc
-GO
 -------------------------------------ChucVu ------------------------------------------------
 CREATE TABLE ChucVu
 (
@@ -304,6 +273,7 @@ EXEC USP_SelectATaiKhoan
 GO
 
 
+
 CREATE PROC USP_UpdateTaiKhoan
 	@HinhAnh IMAGE,
 	@TenTK NVARCHAR(100),
@@ -365,7 +335,7 @@ CREATE TABLE ChiTietHoaDonMuaTB
 (
 	MaHDMua NVARCHAR(20) CONSTRAINT FK_ChiTietHoaDonMuaTB_HoaDonMuaTB FOREIGN KEY(MaHDMua) REFERENCES dbo.HoaDonMuaTB(MaHDMua),
 	TenTB NVARCHAR(255),
-	MaDanhMuc NVARCHAR(20) CONSTRAINT FK_ChiTietHoaDonMuaTB_DanhMuc FOREIGN KEY(MaDanhMuc) REFERENCES dbo.DanhMuc(MaDanhMuc),
+	TenDanhMuc NVARCHAR(20),
 	MaBP NVARCHAR(20) CONSTRAINT FK_ChiTietHoaDonMuaTB_BoPhan FOREIGN KEY(MaBP) REFERENCES dbo.BoPhan(MaBP),
 	DonVi NVARCHAR(255),
 	SoLuong INT,
@@ -374,10 +344,10 @@ CREATE TABLE ChiTietHoaDonMuaTB
 )
 GO
 CREATE PROC USP_ThemChiTietHoaDonMuaTB
-		@MaHDMua NVARCHAR(20),--FK
+		@MaHDMua NVARCHAR(20),
 		@TenTB NVARCHAR(255),
-		@MaDanhMuc NVARCHAR(20), --FK
-		@MaBP NVARCHAR(20),--FK
+		@TenDanhMuc NVARCHAR(20),
+		@MaBP NVARCHAR(20),
 		@DonVi NVARCHAR(255),
 		@SoLuong INT,
 		@DonGia INT
@@ -385,18 +355,31 @@ CREATE PROC USP_ThemChiTietHoaDonMuaTB
 	BEGIN
 		DECLARE @ThanhTien INT
 		SET @ThanhTien= @DonGia * @SoLuong
-		INSERT INTO dbo.ChiTietHoaDonMuaTB VALUES(@MaHDMua,@TenTB,@MaDanhMuc,@MaBP,@DonVi,@SoLuong,@DonGia,@ThanhTien)
+		INSERT INTO dbo.ChiTietHoaDonMuaTB VALUES(@MaHDMua,@TenTB,@TenDanhMuc,@MaBP,@DonVi,@SoLuong,@DonGia,@ThanhTien)
 	END
 GO
 
-EXEC dbo.USP_ThemChiTietHoaDonMuaTB @MaHDMua = N'HDM01',@TenTB = N'Ghế Dài',@MaDanhMuc = N'DM01',@MaBP = N'BP01',
+EXEC dbo.USP_ThemChiTietHoaDonMuaTB @MaHDMua = N'HDM01',@TenTB = N'Ghế Dài',@TenDanhMuc = N'DM01',@MaBP = N'BP01',
 									@DonVi = 'Cái',@SoLuong = 1 ,@DonGia = 200
-EXEC dbo.USP_ThemChiTietHoaDonMuaTB @MaHDMua = N'HDM02',@TenTB = N'Ghế Dài thòng',@MaDanhMuc = N'DM01',@MaBP = N'BP01',
+EXEC dbo.USP_ThemChiTietHoaDonMuaTB @MaHDMua = N'HDM02',@TenTB = N'Ghế Dài thòng',@TenDanhMuc = N'DM01',@MaBP = N'BP01',
 									@DonVi = 'Cái',@SoLuong = 2 ,@DonGia = 500
 
 
 SELECT * FROM dbo.ChiTietHoaDonMuaTB
 GO
+
+SELECT hdm.Id, hdm.MaHDMua, hdm.MaNV, hdm.MaNCC, cthdm.TenTB, cthdm.MaBP, cthdm.DonVi,cthdm.SoLuong,cthdm.DonGia,cthdm.ThanhTien
+FROM dbo.HoaDonMuaTB AS hdm, dbo.ChiTietHoaDonMuaTB AS cthdm 
+WHERE hdm.MaHDMua = cthdm.MaHDMua
+
+SELECT hdm.Id, hdm.MaHDMua,hdm.NgayMuaTB, nv.MaNV, nv.HoTen, hdm.MaNCC, ncc.TenNCC,cthdm.TenTB, cthdm.TenDanhMuc, cthdm.MaBP, cthdm.DonVi, cthdm.SoLuong, cthdm.DonGia, cthdm.ThanhTien
+FROM dbo.HoaDonMuaTB AS hdm, dbo.ChiTietHoaDonMuaTB AS cthdm, dbo.NhanVien AS nv, dbo.NhaCungCap AS ncc
+WHERE hdm.MaHDMua = cthdm.MaHDMua AND hdm.MaNV = nv.MaNV AND ncc.MaNCC = hdm.MaNCC
+
+SELECT * FROM dbo.NhanVien
+SELECT * FROM dbo.NhaCungCap
+SELECT * FROM dbo.HoaDonMuaTB
+SELECT * FROM dbo.ChiTietHoaDonMuaTB
 
 -------------------------------------------------ThietBi chưa thêm---------------------------------
 CREATE TABLE ThietBi

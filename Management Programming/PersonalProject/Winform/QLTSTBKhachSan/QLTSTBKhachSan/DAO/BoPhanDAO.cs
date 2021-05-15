@@ -25,6 +25,7 @@ namespace QLTSTBKhachSan.DAO
             }
         }
 
+        private BoPhanDAO() { }
         public List<BoPhanDTO> LoadListBoPhan()
         {
             List<BoPhanDTO> BoPhanList = new List<BoPhanDTO>();

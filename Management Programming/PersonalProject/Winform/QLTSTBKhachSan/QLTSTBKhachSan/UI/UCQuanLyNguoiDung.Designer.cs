@@ -506,7 +506,7 @@ namespace QLTSTBKhachSan.UI
             this.panel6.Location = new System.Drawing.Point(0, 0);
             this.panel6.Name = "panel6";
             this.panel6.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.panel6.Size = new System.Drawing.Size(1000, 52);
+            this.panel6.Size = new System.Drawing.Size(1000, 50);
             this.panel6.TabIndex = 27;
             // 
             // lbTitle

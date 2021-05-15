@@ -1,4 +1,5 @@
-﻿using System;
+﻿using QLTSTBKhachSan.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,8 +16,14 @@ namespace QLTSTBKhachSan.UI
         public UCQuanLyBaoCao()
         {
             InitializeComponent();
+            LoadHD();
         }
 
-     
+
+        void LoadHD()
+        {
+            dtgvBaoCao.DataSource = HoaDonMuaTBDAO.Instance.LoadHDM();
+        }
+        
     }
 }
