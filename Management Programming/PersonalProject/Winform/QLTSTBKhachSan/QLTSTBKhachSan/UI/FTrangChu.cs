@@ -178,8 +178,7 @@ namespace QLTSTBKhachSan.UI
         #region Event_Dif
         private void btnNotification_Click(object sender, EventArgs e)
         {
-            FThongBao tb = new FThongBao();
-            tb.Show();
+            
         }
 
         private void btnHelp_Click(object sender, EventArgs e)

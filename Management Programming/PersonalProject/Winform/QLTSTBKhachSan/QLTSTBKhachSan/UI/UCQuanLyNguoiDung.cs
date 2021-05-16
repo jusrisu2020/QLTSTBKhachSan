@@ -173,6 +173,9 @@ namespace QLTSTBKhachSan.UI
             }
         }
 
-        
+        private void pnAddUser_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

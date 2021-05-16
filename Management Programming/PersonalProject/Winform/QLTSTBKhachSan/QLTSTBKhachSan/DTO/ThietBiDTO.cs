@@ -13,8 +13,8 @@ namespace QLTSTBKhachSan.DTO
         private string maTB;
         private string tenTB;
         private string donVi;
-        private int soLuongHienHuu;
-        private string maDanhMuc;
+        private int soluong;
+        private string tenDanhmuc;
         private string maBP;
         private string thoiGianBH;
         private string tinhTrangTB;
@@ -27,8 +27,8 @@ namespace QLTSTBKhachSan.DTO
         public string MaTB { get => maTB; set => maTB = value; }
         public string TenTB { get => tenTB; set => tenTB = value; }
         public string DonVi { get => donVi; set => donVi = value; }
-        public int SoLuongHienHuu { get => soLuongHienHuu; set => soLuongHienHuu = value; }
-        public string MaDanhMuc { get => maDanhMuc; set => maDanhMuc = value; }
+        public int Soluong { get => soluong; set => soluong = value; }
+        public string TenDanhmuc { get => tenDanhmuc; set => tenDanhmuc = value; }
         public string MaBP { get => maBP; set => maBP = value; }
         public string ThoiGianBH { get => thoiGianBH; set => thoiGianBH = value; }
         public string TinhTrangTB { get => tinhTrangTB; set => tinhTrangTB = value; }
@@ -37,7 +37,7 @@ namespace QLTSTBKhachSan.DTO
         public string GhiChu { get => ghiChu; set => ghiChu = value; }
 
         public ThietBiDTO(int id, string matb, string tentb, string donvi,
-                        int soluonghienhuu, string madanhmuc, string mabp, string thoigianbaohanh,
+                        int soluong, string tendanhmuc, string mabp, string thoigianbaohanh,
                         string tinhtrangthietbi, string mancc, string mahdmuatb, string ghichu
                             )
         {
@@ -45,8 +45,8 @@ namespace QLTSTBKhachSan.DTO
             this.MaTB = matb;
             this.TenTB = tentb;
             this.DonVi = donvi;
-            this.SoLuongHienHuu = soluonghienhuu;
-            this.MaDanhMuc = madanhmuc;
+            this.Soluong = soluong;
+            this.TenDanhmuc = tendanhmuc;
             this.MaBP = mabp;
             this.ThoiGianBH = thoigianbaohanh;
             this.TinhTrangTB = tinhtrangthietbi;
@@ -61,8 +61,8 @@ namespace QLTSTBKhachSan.DTO
             this.MaTB = row["matb"].ToString();
             this.TenTB = row["tentb"].ToString();
             this.DonVi = row["donvi"].ToString();
-            this.SoLuongHienHuu = (int)row["SoLuongHienHuu"];
-            this.MaDanhMuc = row["madanhmuc"].ToString();
+            this.Soluong = (int)row["Soluong"];
+            this.TenDanhmuc = row["tendanhmuc"].ToString();
             this.MaBP = row["mabp"].ToString();
             this.ThoiGianBH = row["ThoiGianBH"].ToString();
             this.TinhTrangTB = row["TinhTrangTB"].ToString();

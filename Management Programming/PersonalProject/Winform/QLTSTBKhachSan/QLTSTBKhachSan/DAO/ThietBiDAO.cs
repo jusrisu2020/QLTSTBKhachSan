@@ -51,6 +51,13 @@ namespace QLTSTBKhachSan.DAO
             }
             return ThietBiList;
         }
-        
+
+        public bool InsertThietBi(string tentb,string donvi, int soluong,string tendanhmuc, string mabp, DateTime? thoigianbh, string tinhtrangtb, string mancc, string mahdmuatb , string ghichu)
+        {
+            string Query = "EXEC dbo.USP_ThemThietBi @TenTB , @DonVi , @SoLuong , @TenDanhMuc , @MaBP , @ThoiGianBH , @TinhTrangTB , @MaNCC , @MaHDMuaTB , @GhiChu";
+            int result = DataProvider.Instance.ExecuteNonQuery(Query, new object[] { tentb, donvi, soluong, tendanhmuc, mabp, thoigianbh, tinhtrangtb, mancc, mahdmuatb, ghichu});
+            return result > 0;
+        }
+
     }
 }

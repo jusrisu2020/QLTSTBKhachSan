@@ -22,8 +22,21 @@ namespace QLTSTBKhachSan.UI
 
         void LoadData()
         {
-            LoadBtnBoPhan();
+            //LoadBtnBoPhan();
             //LoadDanhMuc();
+            LoadCB();
+            List<ThietBiDTO> tb = ThietBiDAO.Instance.LoadThietBi();
+            dtgvThietBi.DataSource = tb;
+        }
+
+        void LoadCB()
+        {
+            cbMaBP.DataSource = BoPhanDAO.Instance.LoadListBoPhan();
+            cbMaBP.DisplayMember = "MaBP";
+            cbMaNCC.DataSource = NhaCungCapDAO.Instance.LoadNCC();
+            cbMaNCC.DisplayMember = "MaNCC";
+            cbMaHD.DataSource = HoaDonMuaTBDAO.Instance.LoadHDM();
+            cbMaHD.DisplayMember = "MaHDMua";
         }
         void EditColums()
         {
@@ -46,7 +59,7 @@ namespace QLTSTBKhachSan.UI
             dtgvThietBi.DataSource = tb;
         }
 
-        void LoadBtnBoPhan()
+        /*void LoadBtnBoPhan()
         {
             List<BoPhanDTO> BoPhanList = BoPhanDAO.Instance.LoadListBoPhan();
             foreach (BoPhanDTO item in BoPhanList)
@@ -60,7 +73,7 @@ namespace QLTSTBKhachSan.UI
                 btn.ImageAlign = ContentAlignment.BottomCenter;
                 btn.TextAlign = ContentAlignment.TopCenter;
             }
-        }
+        }*/
         private void btnClick(object sender, EventArgs e)
         {
             string mabp = ((sender as Button).Tag as BoPhanDTO).MaBP;
@@ -83,18 +96,42 @@ namespace QLTSTBKhachSan.UI
             EditColums();
         }
 
-        private void btnThemThietBi_Click(object sender, EventArgs e)
+        private void btnThietBipn_Click(object sender, EventArgs e)
         {
-            if (pnAddUser.Visible == false)
+            if (pnThemThietBi.Visible == false)
             {
-                pnAddUser.Visible = true;
-                btnThemThietBi.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
+                pnThemThietBi.Visible = true;
+                btnThietBipn.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
             }
             else
             {
-                pnAddUser.Visible = false;
-                btnThemThietBi.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
+                pnThemThietBi.Visible = false;
+                btnThietBipn.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
             }
+        }
+
+        private void btnThemTB_Click(object sender, EventArgs e)
+        {
+            string tentb = txtTenTB.Text;
+            string donvi = cbDonVi.Text;
+            int soluong = int.Parse(txtSoLuong.Text);
+            string tendanhmuc = cbTenDM.Text;
+            string mabp = cbMaBP.Text;
+            DateTime? thoigianbh = (DateTime?)dtpThoiGianBH.Value;
+            string tinhtrangtb = cbTTTB.Text;
+            string mancc = cbMaNCC.Text;
+            string mahdmua = cbMaHD.Text;
+            string ghichu = txtGhiChu.Text;
+
+
+                if (ThietBiDAO.Instance.InsertThietBi(tentb,donvi,soluong,tendanhmuc, mabp, thoigianbh, tinhtrangtb, mancc, mahdmua,ghichu))
+                {
+                    MessageBox.Show("Saved");
+                }
+                else
+                {
+                    MessageBox.Show("Không thành công");
+                }
         }
     }
 }

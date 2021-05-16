@@ -78,9 +78,10 @@
     <Compile Include="DAO\ThietBiDAO.cs" />
     <Compile Include="DTO\BoPhanDTO.cs" />
     <Compile Include="DTO\ChucVuDTO.cs" />
+    <Compile Include="DTO\HoaDonDTO.cs" />
     <Compile Include="DTO\NhaCungCapDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
-    <Compile Include="DTO\ShowHoaDonDTO.cs" />
+    <Compile Include="DTO\MenuHoaDonDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="DTO\ThietBiDTO.cs" />
     <Compile Include="UI\FDangNhap.cs">
@@ -118,12 +119,6 @@
     </Compile>
     <Compile Include="UI\FDanhMuc.Designer.cs">
       <DependentUpon>FDanhMuc.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FThongBao.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FThongBao.Designer.cs">
-      <DependentUpon>FThongBao.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -208,9 +203,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FDanhMuc.resx">
       <DependentUpon>FDanhMuc.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FThongBao.resx">
-      <DependentUpon>FThongBao.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

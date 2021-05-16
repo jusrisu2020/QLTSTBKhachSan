@@ -100,7 +100,7 @@ namespace QLTSTBKhachSan.UI
             this.txtUserName.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(152)))), ((int)(((byte)(219)))));
             this.txtUserName.BorderRadius = 5;
             this.txtUserName.Cursor = System.Windows.Forms.Cursors.IBeam;
-            this.txtUserName.DefaultText = "tri";
+            this.txtUserName.DefaultText = "ad";
             this.txtUserName.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
             this.txtUserName.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
             this.txtUserName.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
@@ -116,7 +116,6 @@ namespace QLTSTBKhachSan.UI
             this.txtUserName.PasswordChar = '\0';
             this.txtUserName.PlaceholderText = "User Name";
             this.txtUserName.SelectedText = "";
-            this.txtUserName.SelectionStart = 3;
             this.txtUserName.ShadowDecoration.Parent = this.txtUserName;
             this.txtUserName.Size = new System.Drawing.Size(217, 39);
             this.txtUserName.TabIndex = 0;

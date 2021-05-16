@@ -299,7 +299,7 @@ END
 GO
 EXEC USP_UpdateTaiKhoan @TenTK = 'tri',@TenHienThi='trtr',@Pass='1',@newPass='2'
 
--------------------------------------HoaDonMuaTB CHƯA ------------------------------------------------
+-------------------------------------HoaDonMuaTB ------------------------------------------------
 CREATE TABLE HoaDonMuaTB
 (
 	Id INT IDENTITY,
@@ -388,8 +388,8 @@ CREATE TABLE ThietBi
 	MaTB NVARCHAR(20) PRIMARY KEY,
 	TenTB NVARCHAR(255),
 	DonVi NVARCHAR(50),
-	SoLuongHienHuu INT,
-	MaDanhMuc NVARCHAR(20) CONSTRAINT FK_ThietBi_DanhMuc FOREIGN KEY (MaDanhMuc) REFERENCES dbo.DanhMuc(MaDanhMuc) ,
+	SoLuong INT,
+	TenDanhMuc NVARCHAR(100),
 	MaBP NVARCHAR(20) CONSTRAINT FK_ThietBi_BoPhan FOREIGN KEY(MaBP) REFERENCES dbo.BoPhan(MaBP),
 	ThoiGianBH DATE,
 	TinhTrangTB NVARCHAR(50),
@@ -401,8 +401,8 @@ GO
 CREATE PROC USP_ThemThietBi
 		@TenTB NVARCHAR(255),
 		@DonVi NVARCHAR(50),
-		@SoLuongHienHuu INT,
-		@MaDanhMuc NVARCHAR(20),
+		@SoLuong INT,
+		@TenDanhMuc NVARCHAR(100),
 		@MaBP NVARCHAR(20),
 		@ThoiGianBH DATE,
 		@TinhTrangTB NVARCHAR(50),
@@ -416,13 +416,16 @@ CREATE PROC USP_ThemThietBi
 		IF EXISTS (SELECT * FROM dbo.ThietBi WHERE ID = @MaTB)
 			SET @MaTB=@MaTB+1
 			SET @MaTB='TB'+REPLICATE('0',2-LEN(@MaTB))+@MaTB
-			INSERT INTO dbo.ThietBi VALUES(@MaTB,@TenTB,@DonVi,@SoLuongHienHuu,@MaDanhMuc,@MaBP,@ThoiGianBH,
+			INSERT INTO dbo.ThietBi VALUES(@MaTB,@TenTB,@DonVi,@SoLuong,@TenDanhMuc,@MaBP,@ThoiGianBH,
 			@TinhTrangTB,@MaNCC,@MaHDMuaTB,@GhiChu)
 	END
 GO
-EXEC dbo.USP_ThemThietBi @TenTB = N'Ghế tiếp khách',@DonVi = N'bộ',@SoLuongHienHuu = 10,
-						  @MaDanhMuc = N'DM02',@MaBP = N'BP01',@ThoiGianBH = N'3/3/2025',
-						  @TinhTrangTB= N'Tốt',@MaNCC='NCC01',@MaHDMuaTB='HDM10',@GhiChu=N''
+EXEC dbo.USP_ThemThietBi @TenTB = N'Ghế tiếp khách',@DonVi = N'bộ',@SoLuong = 10,
+						  @TenDanhMuc = N'DM02',@MaBP = N'BP01',@ThoiGianBH = N'3/3/2025',
+						  @TinhTrangTB= N'Tốt',@MaNCC='NCC01',@MaHDMuaTB='HDM01',@GhiChu=N''
+
+SELECT * FROM dbo.ThietBi
+
 EXEC dbo.USP_ThemThietBi @TenTB = N'Bàn tiếp khách',@DonVi = N'bộ',@SoLuongHienHuu = 10,
 						  @MaDanhMuc = N'DM01',@MaBP = N'BP02',@ThoiGianBH = N'3/3/2025',
 						  @TinhTrangTB= N'Tốt',@MaNCC='NCC01',@MaHDMuaTB='HDM10',@GhiChu=N''
@@ -431,10 +434,12 @@ EXEC dbo.USP_ThemThietBi @TenTB = N'Bàn tiếp khách',@DonVi = N'bộ',@SoLuon
 						  @TinhTrangTB= N'Tốt',@MaNCC='NCC01',@MaHDMuaTB='HDM10',@GhiChu=N''
 GO
 
-SELECT * FROM dbo.ThietBi WHERE MaDanhMuc = 'DM01';
+GO
 CREATE PROC USP_SelectAThietBi
 AS SELECT * FROM dbo.ThietBi
+GO
 EXEC USP_SelectAThietBi
+
 
 SELECT * FROM dbo.ThietBi WHERE MaBP = 'BP01';
 SELECT * FROM dbo.DanhMuc

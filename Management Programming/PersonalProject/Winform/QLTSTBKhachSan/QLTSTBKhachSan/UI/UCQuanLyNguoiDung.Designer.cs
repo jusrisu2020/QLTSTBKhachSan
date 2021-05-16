@@ -233,6 +233,7 @@ namespace QLTSTBKhachSan.UI
             this.pnAddUser.Size = new System.Drawing.Size(640, 297);
             this.pnAddUser.TabIndex = 17;
             this.pnAddUser.Visible = false;
+            this.pnAddUser.Paint += new System.Windows.Forms.PaintEventHandler(this.pnAddUser_Paint);
             // 
             // btnShowChucVu
             // 
