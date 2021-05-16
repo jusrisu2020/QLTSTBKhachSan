@@ -36,7 +36,7 @@ namespace QLTSTBKhachSan.UI
             this.pnTitle = new System.Windows.Forms.Panel();
             this.lbTitle2 = new System.Windows.Forms.Label();
             this.lbTitle3 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.lbFooter = new System.Windows.Forms.Label();
             this.chkPassword = new Guna.UI2.WinForms.Guna2ToggleSwitch();
             this.txtPassword = new Guna.UI2.WinForms.Guna2TextBox();
             this.btnMiniMize = new Guna.UI2.WinForms.Guna2ControlBox();
@@ -64,9 +64,11 @@ namespace QLTSTBKhachSan.UI
             this.btnLogIn.BorderRadius = 22;
             this.btnLogIn.CheckedState.Parent = this.btnLogIn;
             this.btnLogIn.CustomImages.Parent = this.btnLogIn;
-            this.btnLogIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.btnLogIn.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(52)))), ((int)(((byte)(73)))), ((int)(((byte)(94)))));
             this.btnLogIn.Font = new System.Drawing.Font("Arial Narrow", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogIn.ForeColor = System.Drawing.Color.White;
+            this.btnLogIn.HoverState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(204)))), ((int)(((byte)(113)))));
+            this.btnLogIn.HoverState.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
             this.btnLogIn.HoverState.Parent = this.btnLogIn;
             this.btnLogIn.Location = new System.Drawing.Point(99, 436);
             this.btnLogIn.Margin = new System.Windows.Forms.Padding(2);
@@ -82,7 +84,7 @@ namespace QLTSTBKhachSan.UI
             this.pnLogin.BackColor = System.Drawing.Color.White;
             this.pnLogin.Controls.Add(this.txtUserName);
             this.pnLogin.Controls.Add(this.pnTitle);
-            this.pnLogin.Controls.Add(this.label1);
+            this.pnLogin.Controls.Add(this.lbFooter);
             this.pnLogin.Controls.Add(this.chkPassword);
             this.pnLogin.Controls.Add(this.txtPassword);
             this.pnLogin.Controls.Add(this.btnLogIn);
@@ -116,6 +118,7 @@ namespace QLTSTBKhachSan.UI
             this.txtUserName.PasswordChar = '\0';
             this.txtUserName.PlaceholderText = "User Name";
             this.txtUserName.SelectedText = "";
+            this.txtUserName.SelectionStart = 2;
             this.txtUserName.ShadowDecoration.Parent = this.txtUserName;
             this.txtUserName.Size = new System.Drawing.Size(217, 39);
             this.txtUserName.TabIndex = 0;
@@ -155,17 +158,17 @@ namespace QLTSTBKhachSan.UI
             this.lbTitle3.TabIndex = 3;
             this.lbTitle3.Text = "Management";
             // 
-            // label1
+            // lbFooter
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
-            this.label1.Location = new System.Drawing.Point(11, 572);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(187, 19);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Infomation Technology";
+            this.lbFooter.AutoSize = true;
+            this.lbFooter.Font = new System.Drawing.Font("Century Gothic", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbFooter.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(22)))), ((int)(((byte)(160)))), ((int)(((byte)(133)))));
+            this.lbFooter.Location = new System.Drawing.Point(11, 572);
+            this.lbFooter.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lbFooter.Name = "lbFooter";
+            this.lbFooter.Size = new System.Drawing.Size(187, 19);
+            this.lbFooter.TabIndex = 2;
+            this.lbFooter.Text = "Infomation Technology";
             // 
             // chkPassword
             // 
@@ -211,6 +214,7 @@ namespace QLTSTBKhachSan.UI
             this.txtPassword.ShadowDecoration.Parent = this.txtPassword;
             this.txtPassword.Size = new System.Drawing.Size(217, 39);
             this.txtPassword.TabIndex = 1;
+            this.txtPassword.UseSystemPasswordChar = true;
             // 
             // btnMiniMize
             // 
@@ -272,7 +276,6 @@ namespace QLTSTBKhachSan.UI
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FDangNhap";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.FDangNhap_KeyDown);
-            this.MouseMove += new System.Windows.Forms.MouseEventHandler(this.FDangNhap_MouseMove);
             this.pnLogin.ResumeLayout(false);
             this.pnLogin.PerformLayout();
             this.pnTitle.ResumeLayout(false);
@@ -293,7 +296,7 @@ namespace QLTSTBKhachSan.UI
         private Guna.UI2.WinForms.Guna2ToggleSwitch chkPassword;
         private System.Windows.Forms.Panel pnTitle;
         private System.Windows.Forms.Label lbTitle3;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label lbFooter;
         private System.Windows.Forms.Label lbTitle2;
         private Guna.UI2.WinForms.Guna2TextBox txtUserName;
     }

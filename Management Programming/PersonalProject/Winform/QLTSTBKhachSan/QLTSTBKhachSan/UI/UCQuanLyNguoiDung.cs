@@ -33,7 +33,7 @@ namespace QLTSTBKhachSan.UI
         void LoadListAccount()
         {
             List<TaiKhoanDTO> tk = TaiKhoanDAO.Instance.LoadListAccount();
-            dtgvQLND.DataSource = tk;
+            dtgvQuanLyND.DataSource = tk;
         }
 
         void LoadCBMaNV()
@@ -50,53 +50,64 @@ namespace QLTSTBKhachSan.UI
             cbMaCV.DisplayMember = "MaCV";
             dtgvChucVu.DataSource = ChucVuList;
         }
-
-
-        private void btnShowChucVu_Click(object sender, EventArgs e)
-        {
-            if (pnShowChucVu.Visible == true)
-            {
-                pnShowChucVu.Visible = false;
-            }
-            else
-            {
-                pnShowChucVu.Visible = true;
-            }
-        }
-
-
-
-
         #endregion
 
         #region Event
+        //Event Button Hover
+        private void btnAddUser_Click(object sender, EventArgs e)
+        {
+            if (pnAddUser.Visible == false)
+            {
+                pnAddUser.Visible = true;
+                btnAddUser.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
+            }
+            else
+            {
+                pnAddUser.Visible = false;
+                btnAddUser.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
+            }
+        }
+        private void btnShowChucVu_Click(object sender, EventArgs e)
+        {
+            if (pnShowChucVu.Visible == false)
+            {
+                pnShowChucVu.Visible = true;
+                btnShowChucVu.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
+            }
+            else
+            {
+                pnShowChucVu.Visible = false;
+                btnShowChucVu.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
+            }
+        }
 
-        private void picAvatar_Click(object sender, EventArgs e)
+        //Mở file Dialog
+        private void btnThemAnh_Click(object sender, EventArgs e)
         {
             OpenFileDialog ofile = new OpenFileDialog();
             if (ofile.ShowDialog() == DialogResult.OK)
             {
-                picInput.ImageLocation = ofile.FileName;
+                picAvatar.ImageLocation = ofile.FileName;
                 this.Text = ofile.FileName;
             }
         }
 
-        Exception ex = new Exception();
+        //Thêm tài khoản từ admin
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
-            string hinhanhb = picInput.ImageLocation;
+            string hinhanh = picAvatar.ImageLocation;
             string manv = cbMaNV.Text;
             string macv = cbMaCV.Text;
-            string tentk = txtPass.Text; 
+            string tentk = txtTenTK.Text; 
             string tenhienthi = txtTenHienThi.Text;
             string pass = txtPass.Text;
-            if (manv.Equals("") || macv.Equals("") || tentk.Equals("") || tenhienthi.Equals("") || pass.Equals("") || picInput.Image.Equals(ex))
+            if (manv.Equals("") || macv.Equals("") || tentk.Equals("") || tenhienthi.Equals("") || pass.Equals("") || hinhanh == null )
             {
                 MessageBox.Show("Hãy nhập đầy đủ thông tin!");
             }
             else
             {
-                if (TaiKhoanDAO.Instance.InsertAccount(hinhanhb, manv, tentk, tenhienthi, pass, macv))
+                if (TaiKhoanDAO.Instance.InsertAccount(hinhanh, manv, tentk, tenhienthi, pass, macv))
                 {
                     MessageBox.Show("Saved");
                     LoadListAccount();
@@ -107,75 +118,44 @@ namespace QLTSTBKhachSan.UI
                 }
             }
         }
-        private void dtgvQLND_Click(object sender, EventArgs e)
-        {
-            DataGridViewRow dr = dtgvQLND.SelectedRows[0];
-            //byte[] b = (byte[])dr.Cells["HinhAnh"].Value;
-            //picInput.Image = TaiKhoanDAO.Instance.ByteArrayToImage(b);
-            /*cbMaNV.Text = dr.Cells["MaNV"].Value.ToString();
-            cbMaCV.Text = dr.Cells["MaCV"].Value.ToString();
-            txtTenTK.Text = dr.Cells["TenTK"].Value.ToString();
-            txtTenHienThi.Text = dr.Cells["TenHienThi"].Value.ToString();
-            txtPass.Text = dr.Cells["Pass"].Value.ToString();*/
-        }
+        //Admin không có quyền sửa thông tin của user
+        //XOÁ TÀI KHOẢN TỪ ADMIN
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            DataGridViewRow dr = dtgvQLND.SelectedRows[0];
+            DataGridViewRow dr = dtgvQuanLyND.SelectedRows[0];
             string matk = dr.Cells["MaTK"].Value.ToString();
-            
-            if (TaiKhoanDAO.Instance.DeleteAccount(matk))
+            string tentk = dr.Cells["TenTK"].Value.ToString();
+
+
+            if (MessageBox.Show("Bạn Muốn Xoá Tài Khoản: " + tentk + "", "Tài Khoản", MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                MessageBox.Show("Đã xóa");
-                LoadListAccount();
-            }
-            else
-            {
-                MessageBox.Show("Không thành công");
+                if (TaiKhoanDAO.Instance.DeleteAccount(matk))
+                {
+                    MessageBox.Show("Đã xóa");
+                    LoadListAccount();
+                }
+                else
+                {
+                    MessageBox.Show("Không thành công");
+                }
             }
         }
 
-
-
-
-
-
-
-
-
-        /*private void btnTimKiem_Click(object sender, EventArgs e)
+        //Tìm kiếm
+        List<TaiKhoanDTO> TKTenTK(string tentk)
         {
-            string TimKiem = txtTimKiem.Text;
-            if (txtTimKiem.Text == "")
-            {
-                LoadListAccount();
-            }
-            else
-            {
-                string SQuery = "SELECT * FROM TaiKhoan WHERE MaTK like '%" + TimKiem + "%' OR MaNV like '%" + TimKiem + "%' OR TenTK like '%" + TimKiem+"%'";
-                dtgvQLND.DataSource = DataProvider.Instance.ExecuteQuery(SQuery);
-                txtTimKiem.Clear();
-                txtTimKiem.Focus();
-            }
-        }*/
+            List<TaiKhoanDTO> TaiKhoanList = TaiKhoanDAO.Instance.TKTenTK(tentk);
+            return TaiKhoanList;
+        }
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string tentk = txtTimKiem.Text;
+            dtgvQuanLyND.DataSource = TKTenTK(tentk);
+        }
+        private void btnRefesh_Click(object sender, EventArgs e)
+        {
+            LoadListAccount();
+        }
         #endregion
-
-        private void btnAddUser_Click(object sender, EventArgs e)
-        {
-            if(pnAddUser.Visible == false)
-            {
-                pnAddUser.Visible = true;
-                btnAddUser.Image = Image.FromFile(@"D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
-            }
-            else
-            {
-                pnAddUser.Visible = false;
-                btnAddUser.Image = Image.FromFile(@"D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
-            }
-        }
-
-        private void pnAddUser_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }

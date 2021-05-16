@@ -19,60 +19,49 @@ namespace QLTSTBKhachSan.UI
             InitializeComponent();
             LoadData();
         }
-        
-       void LoadData()
+        string NhanVien = "Nhân Viên";
+
+        void LoadData()
         {
             LoadNhanVien();
-            LoadChucVu();
-            LoadCBBoPhan();
+            LoadCB();
         }
         void LoadNhanVien()
         {
             List<NhanVienDTO> Table = NhanVienDAO.Instance.LoadNhanVien();
             dtgvQLNV.DataSource = Table;
-            dtgvQLNV.Columns["id"].Visible = false;
-            dtgvQLNV.Columns["Manv"].HeaderText = "Mã Nhân Viên";
-            dtgvQLNV.Columns["Hoten"].HeaderText = "Họ tên";
-            dtgvQLNV.Columns["Gioitinh"].HeaderText = "Giới tính";
-            dtgvQLNV.Columns["NgaySinh"].HeaderText = "Ngày sinh";
-            dtgvQLNV.Columns["Diachi"].HeaderText = "Địa chỉ";
-            dtgvQLNV.Columns["sdt"].HeaderText = "SDT";
-            dtgvQLNV.Columns["Email"].HeaderText = "Email";
-            dtgvQLNV.Columns["TonGiao"].HeaderText = "Tôn giáo";
-            dtgvQLNV.Columns["CMND"].HeaderText = "CMND";
-            dtgvQLNV.Columns["Mabp"].HeaderText = "Mã bộ phận";
-            dtgvQLNV.Columns["Macv"].HeaderText = "Mã chức vụ";
         }
 
-        void LoadChucVu()
+
+        void LoadCB()
         {
+            List<NhanVienDTO> NhanVienList = NhanVienDAO.Instance.LoadNhanVien();
+            cbMaNV.DataSource = NhanVienList;
+            cbMaNV.DisplayMember = "MaNV";
+
             List<ChucVuDTO> ChucVuList = ChucVuDAO.Instance.LoadChucVu();
-            dtgvChucVu.DataSource = ChucVuList;
-            dtgvChucVu.Columns["id"].Visible = false;
-            dtgvChucVu.Columns["MaCV"].HeaderText = "Mã chức vụ";
-            dtgvChucVu.Columns["TenCV"].HeaderText = "Tên chức vụ";
-            cbChucVu.DataSource = ChucVuList;
-            cbChucVu.DisplayMember = "MaCV";
+            cbMaCV.DataSource = ChucVuList;
+            cbMaCV.DisplayMember = "MaCV";
+
+            List<BoPhanDTO> BoPhanList = BoPhanDAO.Instance.LoadListBoPhan();
+            cbMaBP.DataSource = BoPhanList;
+            cbMaBP.DisplayMember = "MaBP";
         }
 
-        void LoadCBBoPhan()
-        {
-            List<BoPhanDTO> BoPhanList = BoPhanDAO.Instance.LoadListBoPhan();
-            cbBoPhan.DataSource = BoPhanList;
-            cbBoPhan.DisplayMember = "MaBP";
-        }
-        private void btnUpdateNV_Click(object sender, EventArgs e)
-        {
-            
-        }
 
         private void dtgvQLNV_Click(object sender, EventArgs e)
         {
             DataGridViewRow dr = dtgvQLNV.SelectedRows[0];
-            txtMaNV.Text = dr.Cells["MaNV"].Value.ToString();
+            cbMaNV.Text = dr.Cells["MaNV"].Value.ToString();
+            cbMaCV.Text = dr.Cells["MaCV"].Value.ToString();
+            cbMaBP.Text = dr.Cells["MaBP"].Value.ToString();
             txtHoTen.Text = dr.Cells["HoTen"].Value.ToString();
-
-            if(dr.Cells["GioiTinh"].Value.ToString() == "Nam")
+            dtpNgaySinh.Text = dr.Cells["NgaySinh"].Value.ToString();
+            txtDiaChi.Text = dr.Cells["DiaChi"].Value.ToString();
+            txtSDT.Text = dr.Cells["SDT"].Value.ToString();
+            txtEmail.Text = dr.Cells["Email"].Value.ToString();
+            txtTonGiao.Text = dr.Cells["TonGiao"].Value.ToString();
+            if (dr.Cells["GioiTinh"].Value.ToString() == "Nam")
             {
                 radNam.Checked = true;
             }
@@ -80,14 +69,147 @@ namespace QLTSTBKhachSan.UI
             {
                 radNu.Checked = true;
             }
-            dtpkNgaySinh.Text = dr.Cells["NgaySinh"].Value.ToString();
-            txtDiaChi.Text = dr.Cells["DiaChi"].Value.ToString();
-            txtSDT.Text = dr.Cells["SDT"].Value.ToString();
-            txtEmail.Text = dr.Cells["Email"].Value.ToString();
-            txtTonGiao.Text = dr.Cells["TonGiao"].Value.ToString();
             txtCMND.Text = dr.Cells["CMND"].Value.ToString();
-            cbBoPhan.Text = dr.Cells["MaBP"].Value.ToString();
-            cbChucVu.Text = dr.Cells["MaCV"].Value.ToString();
         }
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            if (pnNewNV.Visible == false)
+            {
+                pnNewNV.Visible = true;
+                btnNew.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
+            }
+            else
+            {
+                pnNewNV.Visible = false;
+                btnNew.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
+            }
+        }
+
+        private void btnThemNhanVien_Click(object sender, EventArgs e)
+        {
+            string hoten = txtHoTen.Text;
+            string gioitinh;
+            if (radNam.Checked == true)
+            {
+                gioitinh = radNam.Text;
+            }
+            else
+            {
+                gioitinh = radNu.Text;
+            }
+            DateTime? ngaysinh = (DateTime?)dtpNgaySinh.Value;
+            string diachi = txtDiaChi.Text;
+            string sdt = txtSDT.Text;
+            string email = txtEmail.Text;
+            string tongiao = txtTonGiao.Text;
+            string cmnd = txtCMND.Text;
+            string mabp = cbMaBP.Text;
+            string macv = cbMaCV.Text;
+
+
+            if (hoten.Equals("") || gioitinh.Equals("") || ngaysinh.Equals("") || diachi.Equals("") || sdt.Equals("") || cmnd.Equals("") || mabp.Equals("") || macv.Equals(""))
+            {
+                MessageBox.Show("Hãy nhập đầy đủ thông tin, không được bỏ trống!", NhanVien);
+            }
+            else
+            {
+                if(NhanVienDAO.Instance.TestNhanVien(sdt, email, cmnd).Equals(0))
+                {
+                    MessageBox.Show("Bạn hãy kiểm tra lại Phone, Email, CMND!", NhanVien);
+                }
+                else
+                {
+                    if (NhanVienDAO.Instance.InsertNhanVien(hoten, gioitinh, ngaysinh, diachi, sdt, email, tongiao, cmnd, mabp, macv))
+                    {
+                        MessageBox.Show("Thêm Nhân Viên Thành Công!", NhanVien);
+                        LoadNhanVien();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Thêm Nhân Viên Không Thành Công!", NhanVien);
+                    }
+                }
+            }
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dtgvQLNV.SelectedRows[0];
+            string manv = dr.Cells["MaNV"].Value.ToString();
+            string hoten = txtHoTen.Text;
+            string gioitinh;
+            if (radNam.Checked == true)
+            {
+                gioitinh = radNam.Text;
+            }
+            else
+            {
+                gioitinh = radNu.Text;
+            }
+            DateTime? ngaysinh = (DateTime?)dtpNgaySinh.Value;
+            string diachi = txtDiaChi.Text;
+            string sdt = txtSDT.Text;
+            string email = txtEmail.Text;
+            string tongiao = txtTonGiao.Text;
+            string cmnd = txtCMND.Text;
+            string mabp = cbMaBP.Text;
+            string macv = cbMaCV.Text;
+
+
+            if (hoten.Equals("") || gioitinh.Equals("") || ngaysinh.Equals("") || diachi.Equals("") || sdt.Equals("") || cmnd.Equals("") || mabp.Equals("") || macv.Equals(""))
+            {
+                MessageBox.Show("Hãy nhập đầy đủ thông tin, không được bỏ trống!", NhanVien);
+            }
+            else
+            {
+                if (NhanVienDAO.Instance.TestNhanVien(sdt, email, cmnd).Equals(0))
+                {
+                    MessageBox.Show("Bạn hãy kiểm tra lại Phone, Email, CMND!", NhanVien);
+                }
+                else
+                {
+                    if (NhanVienDAO.Instance.UpdateNhanVien(hoten, gioitinh, ngaysinh, diachi, sdt, email, tongiao, cmnd, mabp, macv, manv))
+                    {
+                        MessageBox.Show("Cập Nhật Nhân Viên Thành Công!", NhanVien);
+                        LoadNhanVien();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Cập Nhật Nhân Viên Không Thành Công!", NhanVien);
+                    }
+                }
+            }
+        }
+
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dtgvQLNV.SelectedRows[0];
+            string manv = dr.Cells["MaNV"].Value.ToString();
+            if(MessageBox.Show("Bạn muốn xoá nhân viên có mã nhân viên: " + manv + "", NhanVien, MessageBoxButtons.OKCancel) == DialogResult.OK)
+            {
+                if (NhanVienDAO.Instance.DeleteNhanVien(manv))
+                {
+                    MessageBox.Show("Xoá Nhân Viên có mã số: "+manv+" Thành Công!", NhanVien);
+                    LoadNhanVien();
+                }
+                else
+                {
+                    MessageBox.Show("Xoá Nhân Viên Không Thành Công!", NhanVien);
+                }
+            }
+        }
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

@@ -74,6 +74,7 @@ END
 GO
 EXEC USP_TKTenBoPhan N'a'
 GO
+
 -------------------------------------NhaCungCap ------------------------------------------------
 CREATE TABLE NhaCungCap
 (
@@ -160,6 +161,17 @@ AS SELECT * FROM dbo.ChucVu
 GO
 EXEC USP_SelectChucVu
 GO
+
+
+CREATE PROC USP_TKTenChucVu
+	@TenCV NVARCHAR(100)
+AS
+BEGIN
+	SELECT * FROM dbo.ChucVu WHERE dbo.TimKiemKyTu(@TenCV) LIKE N'%'+dbo.TimKiemKyTu(@TenCV)+'%'
+END
+GO
+EXEC USP_TKTenChucVu N'x'
+GO
 -------------------------------------NhanVien ------------------------------------------------
 CREATE TABLE NhanVien
 (
@@ -214,6 +226,12 @@ AS SELECT * FROM dbo.NhanVien
 GO
 EXEC dbo.USP_SelectNhanVien
 GO
+
+UPDATE dbo.NhanVien SET Hoten = N'Nguyễn Thành Nam', Gioitinh = N'Nữ', NgaySinh = '02/01/1990 00:00:00' , DiaChi = N'Cần Thơ', 
+SDT = N'111222Sdsdsdsds' , Email = N'nam@gmail.comSdsdss', 
+TonGiao = N'Thiên Chúa', CMND = N'121212Adsdsdsss', 
+MaBP = N'BP02', MaCV = 'CV02' WHERE MaNV = N'Nữ'
+
 --------------------------------------------------------Tài khoản
 CREATE TABLE TaiKhoan
 (
@@ -245,9 +263,20 @@ CREATE PROC USP_ThemTaiKhoan
 	END
 GO
 
-EXEC USP_ThemTaiKhoan @HinhAnh = 'D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\Avatar.jpg',@MaNV = 'NV01',@TenTK = 'ad', @TenHienThi='tri',@Pass='1',@MaCV='CV01'
+EXEC USP_ThemTaiKhoan @HinhAnh = N'C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\Avatar.jpg',@MaNV = 'NV01',@TenTK = 'ad3', @TenHienThi='tri',@Pass='1',@MaCV='CV01'
 
-SELECT * FROM dbo.TaiKhoan
+GO
+
+--------------------	Tìm kiếm gần đúng
+CREATE PROC USP_TKTenTK
+	@TenTK NVARCHAR(100)
+AS
+BEGIN
+	SELECT * FROM dbo.TaiKhoan WHERE TenTK LIKE N'%'+@TenTK+'%'
+END
+GO
+EXEC USP_TKTenTK N'a'
+GO
 
 CREATE PROC USP_DangNhap
 	@TenTK NVARCHAR(100),
@@ -271,7 +300,7 @@ GO
 EXEC USP_SelectATaiKhoan
 GO
 
-
+SELECT * FROM dbo.TaiKhoan WHERE Id BETWEEN 9 AND 12
 
 CREATE PROC USP_UpdateTaiKhoan
 	@HinhAnh NVARCHAR(4000),
@@ -296,7 +325,6 @@ BEGIN
 	END
 END
 GO
-EXEC USP_UpdateTaiKhoan @TenTK = 'tri',@TenHienThi='trtr',@Pass='1',@newPass='2'
 
 -------------------------------------HoaDonMuaTB ------------------------------------------------
 CREATE TABLE HoaDonMuaTB

@@ -10,7 +10,7 @@ namespace QLTSTBKhachSan.DTO
     public class NhanVienDTO
     {
         public NhanVienDTO(int id, string manv, string hoten, string gioitinh,
-                           string ngaysinh, string diachi, string sdt, string email, string tongiao,
+                           DateTime? ngaysinh, string diachi, string sdt, string email, string tongiao,
                            string cmnd, string mabp, string macv)
         {
             this.ID = id;
@@ -33,7 +33,7 @@ namespace QLTSTBKhachSan.DTO
             this.MaNV = row["manv"].ToString();
             this.HoTen = row["hoten"].ToString();
             this.GioiTinh = row["gioiTinh"].ToString();
-            this.NgaySinh = row["ngaysinh"].ToString();
+            this.NgaySinh = (DateTime?)row["ngaysinh"];
             this.DiaChi = row["diachi"].ToString();
             this.SDT = row["sdt"].ToString();
             this.Email = row["email"].ToString();
@@ -46,7 +46,7 @@ namespace QLTSTBKhachSan.DTO
         private string maNV;
         private string hoTen;
         private string gioiTinh;
-        private string ngaySinh;
+        private DateTime? ngaySinh;
         private string diaChi;
         private string sDT;
         private string email;
@@ -59,7 +59,7 @@ namespace QLTSTBKhachSan.DTO
         public string MaNV { get => maNV; set => maNV = value; }
         public string HoTen { get => hoTen; set => hoTen = value; }
         public string GioiTinh { get => gioiTinh; set => gioiTinh = value; }
-        public string NgaySinh { get => ngaySinh; set => ngaySinh = value; }
+        public DateTime? NgaySinh { get => ngaySinh; set => ngaySinh = value; }
         public string DiaChi { get => diaChi; set => diaChi = value; }
         public string SDT { get => sDT; set => sDT = value; }
         public string Email { get => email; set => email = value; }

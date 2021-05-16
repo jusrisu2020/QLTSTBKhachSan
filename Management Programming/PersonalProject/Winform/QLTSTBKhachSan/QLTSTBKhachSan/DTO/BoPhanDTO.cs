@@ -15,6 +15,7 @@ namespace QLTSTBKhachSan.DTO
         public int ID { get => iD; set => iD = value; }
         public string MaBP { get => maBP; set => maBP = value; }
         public string TenBP { get => tenBP; set => tenBP = value; }
+        public object TenNCC { get; internal set; }
 
         public BoPhanDTO(int id, string mabp, string tenbp)
         {

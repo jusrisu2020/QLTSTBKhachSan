@@ -109,18 +109,6 @@
     <Compile Include="UI\FSuaTaiKhoan.Designer.cs">
       <DependentUpon>FSuaTaiKhoan.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\FTaoTaiKhoan.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FTaoTaiKhoan.Designer.cs">
-      <DependentUpon>FTaoTaiKhoan.cs</DependentUpon>
-    </Compile>
-    <Compile Include="UI\FDanhMuc.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\FDanhMuc.Designer.cs">
-      <DependentUpon>FDanhMuc.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="UI\FTrangChu.cs">
@@ -198,12 +186,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\FSuaTaiKhoan.resx">
       <DependentUpon>FSuaTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FTaoTaiKhoan.resx">
-      <DependentUpon>FTaoTaiKhoan.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\FDanhMuc.resx">
-      <DependentUpon>FDanhMuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -405,6 +387,18 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\image_file_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\IconSearch1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\refresh_26px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\update_file_filled_50px.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

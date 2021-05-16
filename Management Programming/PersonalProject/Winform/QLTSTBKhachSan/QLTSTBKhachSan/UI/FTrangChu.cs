@@ -31,12 +31,12 @@ namespace QLTSTBKhachSan.UI
         }
 
 
-        public FTrangChu(TaiKhoanDTO tk)
+        public FTrangChu(/*TaiKhoanDTO tk*/)
         {
             InitializeComponent();
             AddLoadToolTip();
             ShowSL();
-            LoginTaiKhoan = tk;
+            //LoginTaiKhoan = tk;
             pnDropDownHeThong.Visible = false;
             pnDropDownTSThietBi.Visible = false;
         }
@@ -57,9 +57,9 @@ namespace QLTSTBKhachSan.UI
 
         void PhanQuyen(string tentk)
         {
-            if (!tentk.Equals("ad"))
+            if (!tentk.Equals("Ad"))
             {
-                //btnUserMss.Enabled = false;
+                btnAdmin.Enabled = false;
             }
         }
         //Xử lí xự kiện Event Cập nhật xong Load trực tiếp

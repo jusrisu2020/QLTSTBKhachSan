@@ -14,124 +14,125 @@ namespace QLTSTBKhachSan.UI
 {
     public partial class UCQuanLiBoPhan : UserControl
     {
-         public UCQuanLiBoPhan()
+        public UCQuanLiBoPhan()
         {
             InitializeComponent();
             LoadData();
         }
-
+        string BoPhan = "Bộ Phận";
         #region Method
-            void LoadData()
-            {
-                LoadListBoPhan();
-                txtMaBP.Enabled = false;
-            }
-            void LoadListBoPhan()
-            {
-                dtgvQLBP.DataSource = BoPhanDAO.Instance.LoadListBoPhan();
-                dtgvQLBP.Columns[0].Visible = false;
-                dtgvQLBP.Columns[1].HeaderText = "Mã Bộ Phận";
-                dtgvQLBP.Columns[2].HeaderText = "Tên Bộ Phận";
-            }
+        void LoadData()
+        {
+            LoadListBoPhan();
+        }
+        void LoadListBoPhan()
+        {
+            dtgvQLBP.DataSource = BoPhanDAO.Instance.LoadListBoPhan();
+        }
 
-            List<BoPhanDTO> SearchTenBoPhan(string name)
-            {
-                List<BoPhanDTO> BoPhanList = BoPhanDAO.Instance.SearchBoPhan(name);
-                return BoPhanList;
-            }
+       
         #endregion
 
         #region Event
         private void dtgvQLBP_Click(object sender, EventArgs e)
         {
             DataGridViewRow dr = dtgvQLBP.SelectedRows[0];
-            txtMaBP.Text = dr.Cells["MaBP"].Value.ToString();
             txtTenBP.Text = dr.Cells["TenBP"].Value.ToString();
         }
 
-        private void btnInsertBP_Click(object sender, EventArgs e)
+        private void btnNewBoPhan_Click(object sender, EventArgs e)
         {
             string tenbp = txtTenBP.Text;
-            if (tenbp == "")
+            if (tenbp == "" || BoPhanDAO.Instance.TestBoPhan(tenbp).Equals(0))
             {
-                MessageBox.Show("Tên phòng không được bỏ trống!");
+                MessageBox.Show("Tên phòng không được bỏ trống và không được trùng!", BoPhan);
             }
             else
             {
                 if (BoPhanDAO.Instance.InsertBoPhan(tenbp))
                 {
-                    MessageBox.Show("Saved!");
+                    MessageBox.Show("Đã thêm một bộ phận", BoPhan);
                     LoadListBoPhan();
                     txtTenBP.Clear();
                     txtTenBP.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("Không thành công");
+                    MessageBox.Show("Không thành công", BoPhan);
                 }
             }
         }
-
-        private void btnUpdateBoPhan_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
+            DataGridViewRow dr = dtgvQLBP.SelectedRows[0];
+            string mabp = dr.Cells["MaBP"].Value.ToString();
             string tenbp = txtTenBP.Text;
-            string mabp = txtMaBP.Text;
-            if (tenbp == "")
+            if (tenbp == "" || BoPhanDAO.Instance.TestBoPhan(tenbp).Equals(0))
             {
-                MessageBox.Show("Tên phòng không được bỏ trống!");
+                MessageBox.Show("Tên phòng không được bỏ trống và không được trùng!", BoPhan);
             }
             else
             {
                 if (BoPhanDAO.Instance.UpdateBoPhan(mabp, tenbp))
                 {
-                    MessageBox.Show("Đã thay đổi!");
+                    MessageBox.Show("Đã thay đổi thông tin mã bộ phận: "+mabp+"", BoPhan);
                     LoadListBoPhan();
                     txtTenBP.Clear();
                     txtTenBP.Focus();
                 }
                 else
                 {
-                    MessageBox.Show("Không thành công");
+                    MessageBox.Show("Không thành công", BoPhan);
                 }
             }
         }
 
-        private void btnDeleteBoPhan_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            if (MessageBox.Show("Bạn thật sự muốn xoá", "Notification", MessageBoxButtons.OKCancel) == DialogResult.OK)
+            if (MessageBox.Show("Bạn thật sự muốn xoá", BoPhan, MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                string mabp = txtMaBP.Text;
+                DataGridViewRow dr = dtgvQLBP.SelectedRows[0];
+                string mabp = dr.Cells["MaBP"].Value.ToString();
                 if (BoPhanDAO.Instance.DeleteBoPhan(mabp))
                 {
                     LoadListBoPhan();
                     txtTenBP.Clear();
                     txtTenBP.Focus();
-                    MessageBox.Show("Đã xoá!", "Notification", MessageBoxButtons.OK);
+                    MessageBox.Show("Đã xoá!", BoPhan, MessageBoxButtons.OK);
                 }
                 else
                 {
-                    MessageBox.Show("Không thành công");
+                    MessageBox.Show("Xoá không thành công", BoPhan);
                 }
             }
         }
 
-        private void btnRefeshBoPhan_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
             txtTenBP.Clear();
             txtTenBP.Focus();
             LoadListBoPhan();
         }
 
-        private void btnSearchBoPhan_Click(object sender, EventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            dtgvQLBP.DataSource = SearchTenBoPhan(txtTKBoPhan.Text);
+            List<BoPhanDTO> BoPhanList = BoPhanDAO.Instance.SearchBoPhan(txtTKBoPhan.Text);
+            dtgvQLBP.DataSource = BoPhanList;
         }
 
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            if (pnNewBP.Visible == false)
+            {
+                pnNewBP.Visible = true;
+                btnNew.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
+            }
+            else
+            {
+                pnNewBP.Visible = false;
+                btnNew.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
+            }
+        }
         #endregion
-
-        private void UCQuanLiBoPhan_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

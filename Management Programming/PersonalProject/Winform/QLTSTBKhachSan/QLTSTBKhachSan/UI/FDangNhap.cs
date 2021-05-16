@@ -20,25 +20,33 @@ namespace QLTSTBKhachSan.UI
         public FDangNhap()
         {
             InitializeComponent();
-            txtPassword.UseSystemPasswordChar = true;
-            txtUserName.Focus();
+            ShowPhimTat();
         }
         
+        void ShowPhimTat()
+        {
+            ToolTip tt = new ToolTip();
+            tt.SetToolTip(btnClose, "Phím Esc");
+            tt.SetToolTip(btnMiniMize, "Phím M");
+            tt.SetToolTip(btnLogIn, "Phím Enter");
+            txtUserName.Focus();
+        }
         private void btnLogIn_Click(object sender, EventArgs e)
         {
             string UserName = txtUserName.Text;
             string PassWord = txtPassword.Text;
 
+
             if (TaiKhoanDAO.Instance.Login(UserName, PassWord))
             {
                 TaiKhoanDTO LoginTaiKhoan = TaiKhoanDAO.Instance.GetAccountByUserName(UserName);
-                FTrangChu Ftc = new FTrangChu(LoginTaiKhoan);
+                FTrangChu Ftc = new FTrangChu(/*LoginTaiKhoan*/);
                 Ftc.Show();
                 this.Hide();
             }
             else
             {
-                MessageBox.Show("Sai thông tin tài khoản");
+                MessageBox.Show("Sai thông tin tài khoản, hãy kiểm tra lại tài khoản", "Tài Khoản");
             }
         }
 
@@ -72,20 +80,6 @@ namespace QLTSTBKhachSan.UI
             {
                 btnLogIn.PerformClick();
             }
-        }
-        private const int WM_NCLBUTTONDOWN = 0xA1;
-        private const int HT_CAPTION = 0x2;
-
-        [DllImport("user32.dll")]
-        public static extern bool ReleaseCapture();
-        [DllImport("user32.dll")]
-        public static extern int SendMessage(IntPtr hWnd, int Msg, int wParam, int lParam);
-
-
-        private void FDangNhap_MouseMove(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION,0);
         }
     }
 }

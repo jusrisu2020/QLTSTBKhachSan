@@ -313,6 +313,16 @@ namespace QLTSTBKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap IconSearch1 {
+            get {
+                object obj = ResourceManager.GetObject("IconSearch1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap IconSetting {
             get {
                 object obj = ResourceManager.GetObject("IconSetting", resourceCulture);
@@ -513,6 +523,16 @@ namespace QLTSTBKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap refresh_26px {
+            get {
+                object obj = ResourceManager.GetObject("refresh_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap report_file_64px {
             get {
                 object obj = ResourceManager.GetObject("report_file_64px", resourceCulture);
@@ -533,9 +553,29 @@ namespace QLTSTBKhachSan.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap search_26px {
+            get {
+                object obj = ResourceManager.GetObject("search_26px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap settings_50px {
             get {
                 object obj = ResourceManager.GetObject("settings_50px", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap update_file_filled_50px {
+            get {
+                object obj = ResourceManager.GetObject("update_file_filled_50px", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -57,12 +57,23 @@ namespace QLTSTBKhachSan.DAO
         
         public bool DeleteBoPhan(string mabp)
         {
-            NhanVienDAO.Instance.DeleteNhanVienByBoPhan(mabp);
             string Query = string.Format("DELETE dbo.BoPhan WHERE MaBP = N'{0}'", mabp);
             int result = DataProvider.Instance.ExecuteNonQuery(Query);
             return result > 0;
         }
-        
+
+        public int TestBoPhan(string tenbp)
+        {
+            List<BoPhanDTO> BoPhanList = BoPhanDAO.Instance.LoadListBoPhan();
+            foreach (BoPhanDTO item in BoPhanList)
+            {
+                if (tenbp.Equals(item.TenBP))
+                {
+                    return 0;
+                }
+            }
+            return 1;
+        }
 
         public List<BoPhanDTO> SearchBoPhan(string name)
         {

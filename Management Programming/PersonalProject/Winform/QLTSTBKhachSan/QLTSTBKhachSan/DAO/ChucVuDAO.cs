@@ -33,5 +33,39 @@ namespace QLTSTBKhachSan.DAO
             }
             return ChucVuList;
         }
+
+        public bool InsertChucVu(string tencv)
+        {
+            string Query = string.Format("EXEC dbo.USP_ThemChucVu N'{0}'", tencv);
+            int result = DataProvider.Instance.ExecuteNonQuery(Query);
+            return result > 0;
+        }
+
+        public bool UpdateChucVu(string macv, string tencv)
+        {
+            string Query = string.Format("UPDATE dbo.ChucVu SET TenCV = N'{0}' WHERE MaCV = N'{1}'", tencv,macv);
+            int result = DataProvider.Instance.ExecuteNonQuery(Query);
+            return result > 0;
+        }
+
+        public bool DeleteChucVu(string macv)
+        {
+            string Query = string.Format("DELETE dbo.ChucVu WHERE MaCV = N'{0}'", macv);
+            int result = DataProvider.Instance.ExecuteNonQuery(Query);
+            return result > 0;
+        }
+
+        public int TestChucVu(string tencv)
+        {
+            List<ChucVuDTO> ChucVuList = ChucVuDAO.Instance.LoadChucVu();
+            foreach (ChucVuDTO item in ChucVuList)
+            {
+                if (tencv.Equals(item.TenCV))
+                {
+                    return 0;
+                }
+            }
+            return 1;
+        }
     }
 }

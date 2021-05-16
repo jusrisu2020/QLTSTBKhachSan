@@ -81,11 +81,7 @@ namespace QLTSTBKhachSan.UI
             EditColums();
         }
 
-        private void btnThemDanhMuc_Click(object sender, EventArgs e)
-        {
-            FDanhMuc dm = new FDanhMuc();
-            dm.Show();
-        }
+       
 
         
         private void btnLoadAllThietBi_Click(object sender, EventArgs e)
