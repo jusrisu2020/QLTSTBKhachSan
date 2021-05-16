@@ -5,7 +5,7 @@ USE TSTBKhachSan
 GO
 
 ------------------------------------  Function TimKiemGanDung ----------------------------------------------------------
-CREATE FUNCTION dbo.fuConvertToUnsign1 ( @strInput NVARCHAR(4000) ) 
+CREATE FUNCTION dbo.TimKiemKyTu ( @strInput NVARCHAR(4000) ) 
 RETURNS NVARCHAR(4000) 
 AS 
 BEGIN 
@@ -69,7 +69,7 @@ CREATE PROC USP_TKTenBoPhan
 	@TenBP NVARCHAR(100)
 AS
 BEGIN
-	SELECT * FROM dbo.BoPhan WHERE dbo.fuConvertToUnsign1(TenBP) LIKE N'%'+dbo.fuConvertToUnsign1(@TenBP)+'%'
+	SELECT * FROM dbo.BoPhan WHERE dbo.TimKiemKyTu(TenBP) LIKE N'%'+dbo.TimKiemKyTu(@TenBP)+'%'
 END
 GO
 EXEC USP_TKTenBoPhan N'a'
@@ -129,10 +129,6 @@ BEGIN
 	UPDATE dbo.NhaCungCap SET TenNCC = @TenNCC,SDT = @SDT,DiaChi = @DiaChi,Email = @Email,STK = @STK,TenCongTy = @TenCongTy WHERE MaNCC = @MaNCC
 END
 GO
-
-
-DELETE dbo.NhaCungCap WHERE MaNCC = 'NCC13'
-SELECT *FROM dbo.NhaCungCap
 -------------------------------------ChucVu ------------------------------------------------
 CREATE TABLE ChucVu
 (
@@ -223,7 +219,7 @@ CREATE TABLE TaiKhoan
 (
 	Id INT IDENTITY,
 	MaTK NVARCHAR(20) PRIMARY KEY,
-	HinhAnh IMAGE,
+	HinhAnh NVARCHAR(4000),
 	MaNV NVARCHAR(20) CONSTRAINT FK_TaiKhoan_NhanVien FOREIGN KEY(MaNV) REFERENCES dbo.NhanVien(MaNV),
 	TenTK NVARCHAR(100),
 	TenHienThi NVARCHAR(100),
@@ -232,7 +228,7 @@ CREATE TABLE TaiKhoan
 )
 GO
 CREATE PROC USP_ThemTaiKhoan
-		@HinhAnh IMAGE,
+		@HinhAnh NVARCHAR(4000),
 		@MaNV NVARCHAR(20),
 		@TenTK NVARCHAR(100),
 		@TenHienThi NVARCHAR(100),
@@ -249,7 +245,10 @@ CREATE PROC USP_ThemTaiKhoan
 	END
 GO
 
- 
+EXEC USP_ThemTaiKhoan @HinhAnh = 'D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\Avatar.jpg',@MaNV = 'NV01',@TenTK = 'ad', @TenHienThi='tri',@Pass='1',@MaCV='CV01'
+
+SELECT * FROM dbo.TaiKhoan
+
 CREATE PROC USP_DangNhap
 	@TenTK NVARCHAR(100),
 	@Pass NVARCHAR(100)
@@ -275,7 +274,7 @@ GO
 
 
 CREATE PROC USP_UpdateTaiKhoan
-	@HinhAnh IMAGE,
+	@HinhAnh NVARCHAR(4000),
 	@TenTK NVARCHAR(100),
 	@TenHienThi NVARCHAR(100),
 	@Pass NVARCHAR(100),
@@ -421,9 +420,8 @@ CREATE PROC USP_ThemThietBi
 	END
 GO
 EXEC dbo.USP_ThemThietBi @TenTB = N'Ghế tiếp khách',@DonVi = N'bộ',@SoLuong = 10,
-						  @TenDanhMuc = N'DM02',@MaBP = N'BP01',@ThoiGianBH = N'3/3/2025',
+						  @TenDanhMuc = N'dsd',@MaBP = N'BP01',@ThoiGianBH = N'3/3/2025',
 						  @TinhTrangTB= N'Tốt',@MaNCC='NCC01',@MaHDMuaTB='HDM01',@GhiChu=N''
-
 SELECT * FROM dbo.ThietBi
 
 EXEC dbo.USP_ThemThietBi @TenTB = N'Bàn tiếp khách',@DonVi = N'bộ',@SoLuongHienHuu = 10,
@@ -503,7 +501,15 @@ CREATE TABLE PhieuBanGiao
 
 
 
+CREATE TABLE TestImg
+(
+	id INT IDENTITY,
+	paths NVARCHAR(2000)
+)
 
+CREATE PROC TestImg
+INSERT INTO dbo.TestImg (paths) VALUES (N'D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\Avatar.jpg' )
 
+	SELECT paths FROM dbo.TestImg
 
-
+	

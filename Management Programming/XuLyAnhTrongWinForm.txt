@@ -1,0 +1,21 @@
+Cách 1: Đưa vào kiểu Image 
+
+//Đưa vào kiểu Image -> Kiêu Byte[] -> Hiển thị vào Datagribview
+public byte[] ImageToByte(Image img)
+        {
+            MemoryStream m = new MemoryStream();
+            img.Save(m, System.Drawing.Imaging.ImageFormat.Png);
+            return m.ToArray();
+        }
+
+// Chuyển byte[] sang image để hiển thị từ csdl ra picturebox
+public Image ByteArrayToImage(byte[] b)
+        {
+            MemoryStream m = new MemoryStream(b);
+            return Image.FromStream(m);
+        }
+
+Cách 2:(Dễ hơn, gọn hơn) Đưa vào kiểu string -> Picturebox.ImageLocation
+	
+	Mở File lấy địa chỉ hình ảnh kiểu string(ImageLocation) -> PictureBox.ImageLocation
+	Thêm sửa xóa bình thường;

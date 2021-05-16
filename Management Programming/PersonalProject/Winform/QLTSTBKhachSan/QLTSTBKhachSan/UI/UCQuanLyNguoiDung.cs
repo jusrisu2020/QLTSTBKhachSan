@@ -76,7 +76,7 @@ namespace QLTSTBKhachSan.UI
             OpenFileDialog ofile = new OpenFileDialog();
             if (ofile.ShowDialog() == DialogResult.OK)
             {
-                picInput.Image = Image.FromFile(ofile.FileName);
+                picInput.ImageLocation = ofile.FileName;
                 this.Text = ofile.FileName;
             }
         }
@@ -84,7 +84,7 @@ namespace QLTSTBKhachSan.UI
         Exception ex = new Exception();
         private void btnThemTaiKhoan_Click(object sender, EventArgs e)
         {
-            byte[] hinhanhb = TaiKhoanDAO.Instance.ImageToByte(picInput.Image); ;
+            string hinhanhb = picInput.ImageLocation;
             string manv = cbMaNV.Text;
             string macv = cbMaCV.Text;
             string tentk = txtPass.Text; 
@@ -110,8 +110,8 @@ namespace QLTSTBKhachSan.UI
         private void dtgvQLND_Click(object sender, EventArgs e)
         {
             DataGridViewRow dr = dtgvQLND.SelectedRows[0];
-            byte[] b = (byte[])dr.Cells["HinhAnh"].Value;
-            picInput.Image = TaiKhoanDAO.Instance.ByteArrayToImage(b);
+            //byte[] b = (byte[])dr.Cells["HinhAnh"].Value;
+            //picInput.Image = TaiKhoanDAO.Instance.ByteArrayToImage(b);
             /*cbMaNV.Text = dr.Cells["MaNV"].Value.ToString();
             cbMaCV.Text = dr.Cells["MaCV"].Value.ToString();
             txtTenTK.Text = dr.Cells["TenTK"].Value.ToString();
@@ -164,12 +164,12 @@ namespace QLTSTBKhachSan.UI
             if(pnAddUser.Visible == false)
             {
                 pnAddUser.Visible = true;
-                btnAddUser.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
+                btnAddUser.Image = Image.FromFile(@"D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
             }
             else
             {
                 pnAddUser.Visible = false;
-                btnAddUser.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
+                btnAddUser.Image = Image.FromFile(@"D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
             }
         }
 

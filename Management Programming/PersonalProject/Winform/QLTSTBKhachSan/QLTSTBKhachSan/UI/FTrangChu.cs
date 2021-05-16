@@ -48,11 +48,11 @@ namespace QLTSTBKhachSan.UI
 
 
         #region Method
-        void LoadInfoUser(string tenhienthi, string machucvu, byte[] b)
+        void LoadInfoUser(string tenhienthi, string machucvu, string hinhanh)
         {
             lbUserName.Text = tenhienthi;
             lbChucVu.Text = machucvu;
-            pbAvartar.Image = TaiKhoanDAO.Instance.ByteArrayToImage(b);
+            pbAvartar.Image = Image.FromFile(hinhanh);
         }
 
         void PhanQuyen(string tentk)
@@ -66,7 +66,7 @@ namespace QLTSTBKhachSan.UI
         void Stk_UpdateAccount(object sender, AccountEvent e)
         {
             lbUserName.Text = e.Tk.TenHienThi;
-            pbAvartar.Image = TaiKhoanDAO.Instance.ByteArrayToImage(e.Tk.HinhAnh);
+            pbAvartar.ImageLocation = e.Tk.HinhAnh;
         }
         void AddLoadToolTip()
         {

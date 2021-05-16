@@ -29,20 +29,12 @@ namespace QLTSTBKhachSan.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.dtgvQLND = new System.Windows.Forms.DataGridView();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HinhAnh = new System.Windows.Forms.DataGridViewImageColumn();
-            this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenTK = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TenHienThi = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Pass = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.MaCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.pnDTGVND = new System.Windows.Forms.Panel();
             this.pnAddUser = new System.Windows.Forms.Panel();
             this.btnShowChucVu = new Guna.UI2.WinForms.Guna2Button();
@@ -82,10 +74,10 @@ namespace QLTSTBKhachSan.UI
             // 
             // btnTimKiem
             // 
-            this.btnTimKiem.Location = new System.Drawing.Point(567, 8);
-            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTimKiem.Location = new System.Drawing.Point(756, 10);
+            this.btnTimKiem.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(64, 30);
+            this.btnTimKiem.Size = new System.Drawing.Size(85, 37);
             this.btnTimKiem.TabIndex = 6;
             this.btnTimKiem.Text = "Search...";
             this.btnTimKiem.UseVisualStyleBackColor = true;
@@ -94,125 +86,57 @@ namespace QLTSTBKhachSan.UI
             // 
             this.dtgvQLND.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvQLND.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvQLND.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvQLND.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dtgvQLND.ColumnHeadersHeight = 50;
             this.dtgvQLND.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dtgvQLND.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.ID,
-            this.MaTK,
-            this.HinhAnh,
-            this.MaNV,
-            this.TenTK,
-            this.TenHienThi,
-            this.Pass,
-            this.MaCV});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.InactiveBorder;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvQLND.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.InactiveBorder;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvQLND.DefaultCellStyle = dataGridViewCellStyle14;
             this.dtgvQLND.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvQLND.GridColor = System.Drawing.Color.White;
             this.dtgvQLND.Location = new System.Drawing.Point(0, 0);
-            this.dtgvQLND.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgvQLND.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgvQLND.Name = "dtgvQLND";
             this.dtgvQLND.ReadOnly = true;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvQLND.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvQLND.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dtgvQLND.RowHeadersVisible = false;
             this.dtgvQLND.RowHeadersWidth = 100;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.dtgvQLND.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            this.dtgvQLND.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dtgvQLND.RowTemplate.Height = 100;
             this.dtgvQLND.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvQLND.Size = new System.Drawing.Size(1000, 474);
+            this.dtgvQLND.Size = new System.Drawing.Size(1333, 583);
             this.dtgvQLND.TabIndex = 7;
             this.dtgvQLND.Click += new System.EventHandler(this.dtgvQLND_Click);
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "ID";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            // 
-            // MaTK
-            // 
-            this.MaTK.DataPropertyName = "MaTK";
-            this.MaTK.HeaderText = "Mã Tài Khoản";
-            this.MaTK.Name = "MaTK";
-            this.MaTK.ReadOnly = true;
-            // 
-            // HinhAnh
-            // 
-            this.HinhAnh.DataPropertyName = "HinhAnh";
-            this.HinhAnh.HeaderText = "Hình Ảnh";
-            this.HinhAnh.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.HinhAnh.Name = "HinhAnh";
-            this.HinhAnh.ReadOnly = true;
-            // 
-            // MaNV
-            // 
-            this.MaNV.DataPropertyName = "MaNV";
-            this.MaNV.HeaderText = "Mã Nhân Viên";
-            this.MaNV.Name = "MaNV";
-            this.MaNV.ReadOnly = true;
-            // 
-            // TenTK
-            // 
-            this.TenTK.DataPropertyName = "TenTK";
-            this.TenTK.HeaderText = "Tên Tài Khoản";
-            this.TenTK.Name = "TenTK";
-            this.TenTK.ReadOnly = true;
-            // 
-            // TenHienThi
-            // 
-            this.TenHienThi.DataPropertyName = "TenHienThi";
-            this.TenHienThi.HeaderText = "Tên Hiển Thị";
-            this.TenHienThi.Name = "TenHienThi";
-            this.TenHienThi.ReadOnly = true;
-            // 
-            // Pass
-            // 
-            this.Pass.DataPropertyName = "Pass";
-            this.Pass.HeaderText = "Pass";
-            this.Pass.Name = "Pass";
-            this.Pass.ReadOnly = true;
-            this.Pass.Visible = false;
-            // 
-            // MaCV
-            // 
-            this.MaCV.DataPropertyName = "MaCV";
-            this.MaCV.HeaderText = "Mã Chức Vụ";
-            this.MaCV.Name = "MaCV";
-            this.MaCV.ReadOnly = true;
             // 
             // pnDTGVND
             // 
             this.pnDTGVND.Controls.Add(this.dtgvQLND);
             this.pnDTGVND.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.pnDTGVND.Location = new System.Drawing.Point(0, 126);
-            this.pnDTGVND.Margin = new System.Windows.Forms.Padding(2);
+            this.pnDTGVND.Location = new System.Drawing.Point(0, 155);
+            this.pnDTGVND.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnDTGVND.Name = "pnDTGVND";
-            this.pnDTGVND.Size = new System.Drawing.Size(1000, 474);
+            this.pnDTGVND.Size = new System.Drawing.Size(1333, 583);
             this.pnDTGVND.TabIndex = 12;
             // 
             // pnAddUser
@@ -227,10 +151,10 @@ namespace QLTSTBKhachSan.UI
             this.pnAddUser.Controls.Add(this.gbTenTK);
             this.pnAddUser.Controls.Add(this.picInput);
             this.pnAddUser.Controls.Add(this.gbMaNV);
-            this.pnAddUser.Location = new System.Drawing.Point(25, 105);
-            this.pnAddUser.Margin = new System.Windows.Forms.Padding(2);
+            this.pnAddUser.Location = new System.Drawing.Point(33, 129);
+            this.pnAddUser.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnAddUser.Name = "pnAddUser";
-            this.pnAddUser.Size = new System.Drawing.Size(640, 297);
+            this.pnAddUser.Size = new System.Drawing.Size(853, 366);
             this.pnAddUser.TabIndex = 17;
             this.pnAddUser.Visible = false;
             this.pnAddUser.Paint += new System.Windows.Forms.PaintEventHandler(this.pnAddUser_Paint);
@@ -244,10 +168,11 @@ namespace QLTSTBKhachSan.UI
             this.btnShowChucVu.ForeColor = System.Drawing.Color.White;
             this.btnShowChucVu.HoverState.Parent = this.btnShowChucVu;
             this.btnShowChucVu.Image = global::QLTSTBKhachSan.Properties.Resources.add_32px;
-            this.btnShowChucVu.Location = new System.Drawing.Point(283, 6);
+            this.btnShowChucVu.Location = new System.Drawing.Point(377, 7);
+            this.btnShowChucVu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnShowChucVu.Name = "btnShowChucVu";
             this.btnShowChucVu.ShadowDecoration.Parent = this.btnShowChucVu;
-            this.btnShowChucVu.Size = new System.Drawing.Size(113, 35);
+            this.btnShowChucVu.Size = new System.Drawing.Size(151, 43);
             this.btnShowChucVu.TabIndex = 37;
             this.btnShowChucVu.Text = "Chức Vụ";
             // 
@@ -260,10 +185,11 @@ namespace QLTSTBKhachSan.UI
             this.btnThemAnh.ForeColor = System.Drawing.Color.White;
             this.btnThemAnh.HoverState.Parent = this.btnThemAnh;
             this.btnThemAnh.Image = global::QLTSTBKhachSan.Properties.Resources.image_file_26px;
-            this.btnThemAnh.Location = new System.Drawing.Point(524, 126);
+            this.btnThemAnh.Location = new System.Drawing.Point(699, 155);
+            this.btnThemAnh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnThemAnh.Name = "btnThemAnh";
             this.btnThemAnh.ShadowDecoration.Parent = this.btnThemAnh;
-            this.btnThemAnh.Size = new System.Drawing.Size(113, 35);
+            this.btnThemAnh.Size = new System.Drawing.Size(151, 43);
             this.btnThemAnh.TabIndex = 36;
             this.btnThemAnh.Text = "Thêm Ảnh";
             // 
@@ -276,10 +202,11 @@ namespace QLTSTBKhachSan.UI
             this.guna2Button2.ForeColor = System.Drawing.Color.White;
             this.guna2Button2.HoverState.Parent = this.guna2Button2;
             this.guna2Button2.Image = global::QLTSTBKhachSan.Properties.Resources.add_32px;
-            this.guna2Button2.Location = new System.Drawing.Point(527, 259);
+            this.guna2Button2.Location = new System.Drawing.Point(703, 319);
+            this.guna2Button2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2Button2.Name = "guna2Button2";
             this.guna2Button2.ShadowDecoration.Parent = this.guna2Button2;
-            this.guna2Button2.Size = new System.Drawing.Size(113, 35);
+            this.guna2Button2.Size = new System.Drawing.Size(151, 43);
             this.guna2Button2.TabIndex = 30;
             this.guna2Button2.Text = "Thêm";
             this.guna2Button2.Click += new System.EventHandler(this.btnThemTaiKhoan_Click);
@@ -291,10 +218,11 @@ namespace QLTSTBKhachSan.UI
             this.gbTenHienThi.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.gbTenHienThi.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTenHienThi.ForeColor = System.Drawing.Color.White;
-            this.gbTenHienThi.Location = new System.Drawing.Point(3, 200);
+            this.gbTenHienThi.Location = new System.Drawing.Point(4, 246);
+            this.gbTenHienThi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbTenHienThi.Name = "gbTenHienThi";
             this.gbTenHienThi.ShadowDecoration.Parent = this.gbTenHienThi;
-            this.gbTenHienThi.Size = new System.Drawing.Size(134, 94);
+            this.gbTenHienThi.Size = new System.Drawing.Size(179, 116);
             this.gbTenHienThi.TabIndex = 35;
             this.gbTenHienThi.Text = "Tên Hiển Thị";
             // 
@@ -311,38 +239,38 @@ namespace QLTSTBKhachSan.UI
             this.txtTenHienThi.FocusedState.Parent = this.txtTenHienThi;
             this.txtTenHienThi.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenHienThi.HoverState.Parent = this.txtTenHienThi;
-            this.txtTenHienThi.Location = new System.Drawing.Point(5, 48);
-            this.txtTenHienThi.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.txtTenHienThi.Location = new System.Drawing.Point(7, 59);
+            this.txtTenHienThi.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
             this.txtTenHienThi.Name = "txtTenHienThi";
             this.txtTenHienThi.PasswordChar = '\0';
             this.txtTenHienThi.PlaceholderText = "";
             this.txtTenHienThi.SelectedText = "";
             this.txtTenHienThi.ShadowDecoration.Parent = this.txtTenHienThi;
-            this.txtTenHienThi.Size = new System.Drawing.Size(124, 35);
+            this.txtTenHienThi.Size = new System.Drawing.Size(165, 43);
             this.txtTenHienThi.TabIndex = 31;
             // 
             // pnShowChucVu
             // 
             this.pnShowChucVu.Controls.Add(this.dtgvChucVu);
-            this.pnShowChucVu.Location = new System.Drawing.Point(283, 42);
-            this.pnShowChucVu.Margin = new System.Windows.Forms.Padding(2);
+            this.pnShowChucVu.Location = new System.Drawing.Point(377, 52);
+            this.pnShowChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.pnShowChucVu.Name = "pnShowChucVu";
-            this.pnShowChucVu.Size = new System.Drawing.Size(166, 130);
+            this.pnShowChucVu.Size = new System.Drawing.Size(221, 160);
             this.pnShowChucVu.TabIndex = 22;
             // 
             // dtgvChucVu
             // 
             this.dtgvChucVu.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvChucVu.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtgvChucVu.Location = new System.Drawing.Point(2, 5);
-            this.dtgvChucVu.Margin = new System.Windows.Forms.Padding(2);
+            this.dtgvChucVu.Location = new System.Drawing.Point(3, 6);
+            this.dtgvChucVu.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dtgvChucVu.Name = "dtgvChucVu";
             this.dtgvChucVu.ReadOnly = true;
             this.dtgvChucVu.RowHeadersVisible = false;
             this.dtgvChucVu.RowHeadersWidth = 51;
             this.dtgvChucVu.RowTemplate.Height = 24;
             this.dtgvChucVu.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvChucVu.Size = new System.Drawing.Size(156, 114);
+            this.dtgvChucVu.Size = new System.Drawing.Size(208, 140);
             this.dtgvChucVu.TabIndex = 21;
             // 
             // guna2GroupBox2
@@ -352,10 +280,11 @@ namespace QLTSTBKhachSan.UI
             this.guna2GroupBox2.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.guna2GroupBox2.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.guna2GroupBox2.ForeColor = System.Drawing.Color.White;
-            this.guna2GroupBox2.Location = new System.Drawing.Point(143, 103);
+            this.guna2GroupBox2.Location = new System.Drawing.Point(191, 127);
+            this.guna2GroupBox2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.guna2GroupBox2.Name = "guna2GroupBox2";
             this.guna2GroupBox2.ShadowDecoration.Parent = this.guna2GroupBox2;
-            this.guna2GroupBox2.Size = new System.Drawing.Size(134, 94);
+            this.guna2GroupBox2.Size = new System.Drawing.Size(179, 116);
             this.guna2GroupBox2.TabIndex = 34;
             this.guna2GroupBox2.Text = "Password";
             // 
@@ -372,14 +301,14 @@ namespace QLTSTBKhachSan.UI
             this.txtPass.FocusedState.Parent = this.txtPass;
             this.txtPass.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtPass.HoverState.Parent = this.txtPass;
-            this.txtPass.Location = new System.Drawing.Point(8, 49);
-            this.txtPass.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.txtPass.Location = new System.Drawing.Point(11, 60);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(7, 10, 7, 10);
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '\0';
             this.txtPass.PlaceholderText = "";
             this.txtPass.SelectedText = "";
             this.txtPass.ShadowDecoration.Parent = this.txtPass;
-            this.txtPass.Size = new System.Drawing.Size(117, 38);
+            this.txtPass.Size = new System.Drawing.Size(156, 47);
             this.txtPass.TabIndex = 31;
             // 
             // gbMaCV
@@ -389,10 +318,11 @@ namespace QLTSTBKhachSan.UI
             this.gbMaCV.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.gbMaCV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMaCV.ForeColor = System.Drawing.Color.White;
-            this.gbMaCV.Location = new System.Drawing.Point(143, 3);
+            this.gbMaCV.Location = new System.Drawing.Point(191, 4);
+            this.gbMaCV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbMaCV.Name = "gbMaCV";
             this.gbMaCV.ShadowDecoration.Parent = this.gbMaCV;
-            this.gbMaCV.Size = new System.Drawing.Size(134, 94);
+            this.gbMaCV.Size = new System.Drawing.Size(179, 116);
             this.gbMaCV.TabIndex = 33;
             this.gbMaCV.Text = "Mã Chức Vụ";
             // 
@@ -409,10 +339,11 @@ namespace QLTSTBKhachSan.UI
             this.cbMaCV.HoverState.Parent = this.cbMaCV;
             this.cbMaCV.ItemHeight = 30;
             this.cbMaCV.ItemsAppearance.Parent = this.cbMaCV;
-            this.cbMaCV.Location = new System.Drawing.Point(11, 48);
+            this.cbMaCV.Location = new System.Drawing.Point(15, 59);
+            this.cbMaCV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbMaCV.Name = "cbMaCV";
             this.cbMaCV.ShadowDecoration.Parent = this.cbMaCV;
-            this.cbMaCV.Size = new System.Drawing.Size(113, 36);
+            this.cbMaCV.Size = new System.Drawing.Size(149, 36);
             this.cbMaCV.TabIndex = 31;
             // 
             // gbTenTK
@@ -422,10 +353,11 @@ namespace QLTSTBKhachSan.UI
             this.gbTenTK.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.gbTenTK.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbTenTK.ForeColor = System.Drawing.Color.White;
-            this.gbTenTK.Location = new System.Drawing.Point(3, 103);
+            this.gbTenTK.Location = new System.Drawing.Point(4, 127);
+            this.gbTenTK.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbTenTK.Name = "gbTenTK";
             this.gbTenTK.ShadowDecoration.Parent = this.gbTenTK;
-            this.gbTenTK.Size = new System.Drawing.Size(134, 94);
+            this.gbTenTK.Size = new System.Drawing.Size(179, 116);
             this.gbTenTK.TabIndex = 34;
             this.gbTenTK.Text = "Tên Tài Khoản";
             // 
@@ -442,22 +374,23 @@ namespace QLTSTBKhachSan.UI
             this.txtTenTK.FocusedState.Parent = this.txtTenTK;
             this.txtTenTK.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTenTK.HoverState.Parent = this.txtTenTK;
-            this.txtTenTK.Location = new System.Drawing.Point(7, 49);
-            this.txtTenTK.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtTenTK.Location = new System.Drawing.Point(9, 60);
+            this.txtTenTK.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
             this.txtTenTK.Name = "txtTenTK";
             this.txtTenTK.PasswordChar = '\0';
             this.txtTenTK.PlaceholderText = "";
             this.txtTenTK.SelectedText = "";
             this.txtTenTK.ShadowDecoration.Parent = this.txtTenTK;
-            this.txtTenTK.Size = new System.Drawing.Size(115, 39);
+            this.txtTenTK.Size = new System.Drawing.Size(153, 48);
             this.txtTenTK.TabIndex = 30;
             // 
             // picInput
             // 
             this.picInput.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.picInput.Location = new System.Drawing.Point(454, 6);
+            this.picInput.Location = new System.Drawing.Point(605, 7);
+            this.picInput.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.picInput.Name = "picInput";
-            this.picInput.Size = new System.Drawing.Size(183, 114);
+            this.picInput.Size = new System.Drawing.Size(244, 140);
             this.picInput.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.picInput.TabIndex = 23;
             this.picInput.TabStop = false;
@@ -471,10 +404,11 @@ namespace QLTSTBKhachSan.UI
             this.gbMaNV.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(126)))), ((int)(((byte)(34)))));
             this.gbMaNV.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbMaNV.ForeColor = System.Drawing.Color.White;
-            this.gbMaNV.Location = new System.Drawing.Point(3, 3);
+            this.gbMaNV.Location = new System.Drawing.Point(4, 4);
+            this.gbMaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.gbMaNV.Name = "gbMaNV";
             this.gbMaNV.ShadowDecoration.Parent = this.gbMaNV;
-            this.gbMaNV.Size = new System.Drawing.Size(134, 94);
+            this.gbMaNV.Size = new System.Drawing.Size(179, 116);
             this.gbMaNV.TabIndex = 32;
             this.gbMaNV.Text = "Mã Nhân Viên";
             // 
@@ -491,10 +425,11 @@ namespace QLTSTBKhachSan.UI
             this.cbMaNV.HoverState.Parent = this.cbMaNV;
             this.cbMaNV.ItemHeight = 30;
             this.cbMaNV.ItemsAppearance.Parent = this.cbMaNV;
-            this.cbMaNV.Location = new System.Drawing.Point(9, 48);
+            this.cbMaNV.Location = new System.Drawing.Point(12, 59);
+            this.cbMaNV.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbMaNV.Name = "cbMaNV";
             this.cbMaNV.ShadowDecoration.Parent = this.cbMaNV;
-            this.cbMaNV.Size = new System.Drawing.Size(113, 36);
+            this.cbMaNV.Size = new System.Drawing.Size(149, 36);
             this.cbMaNV.TabIndex = 30;
             // 
             // panel6
@@ -505,19 +440,21 @@ namespace QLTSTBKhachSan.UI
             this.panel6.Controls.Add(this.txtTimKiem);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 0);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panel6.Name = "panel6";
-            this.panel6.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.panel6.Size = new System.Drawing.Size(1000, 50);
+            this.panel6.Padding = new System.Windows.Forms.Padding(133, 0, 0, 0);
+            this.panel6.Size = new System.Drawing.Size(1333, 62);
             this.panel6.TabIndex = 27;
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
-            this.lbTitle.Font = new System.Drawing.Font("Montserrat", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(20, 13);
+            this.lbTitle.Location = new System.Drawing.Point(27, 16);
+            this.lbTitle.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbTitle.Name = "lbTitle";
-            this.lbTitle.Size = new System.Drawing.Size(166, 25);
+            this.lbTitle.Size = new System.Drawing.Size(183, 31);
             this.lbTitle.TabIndex = 28;
             this.lbTitle.Text = "Adminastrator";
             // 
@@ -536,13 +473,14 @@ namespace QLTSTBKhachSan.UI
             this.txtTimKiem.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtTimKiem.HoverState.Parent = this.txtTimKiem;
             this.txtTimKiem.IconLeft = global::QLTSTBKhachSan.Properties.Resources.IconSearch;
-            this.txtTimKiem.Location = new System.Drawing.Point(269, 8);
+            this.txtTimKiem.Location = new System.Drawing.Point(359, 10);
+            this.txtTimKiem.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.txtTimKiem.Name = "txtTimKiem";
             this.txtTimKiem.PasswordChar = '\0';
             this.txtTimKiem.PlaceholderText = "Search.....";
             this.txtTimKiem.SelectedText = "";
             this.txtTimKiem.ShadowDecoration.Parent = this.txtTimKiem;
-            this.txtTimKiem.Size = new System.Drawing.Size(280, 30);
+            this.txtTimKiem.Size = new System.Drawing.Size(373, 37);
             this.txtTimKiem.TabIndex = 25;
             // 
             // btnXoa
@@ -554,10 +492,11 @@ namespace QLTSTBKhachSan.UI
             this.btnXoa.ForeColor = System.Drawing.Color.White;
             this.btnXoa.HoverState.Parent = this.btnXoa;
             this.btnXoa.Image = global::QLTSTBKhachSan.Properties.Resources.delete_30px;
-            this.btnXoa.Location = new System.Drawing.Point(158, 58);
+            this.btnXoa.Location = new System.Drawing.Point(211, 71);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.ShadowDecoration.Parent = this.btnXoa;
-            this.btnXoa.Size = new System.Drawing.Size(127, 42);
+            this.btnXoa.Size = new System.Drawing.Size(169, 52);
             this.btnXoa.TabIndex = 30;
             this.btnXoa.Text = "Delete";
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -571,26 +510,27 @@ namespace QLTSTBKhachSan.UI
             this.btnAddUser.ForeColor = System.Drawing.Color.White;
             this.btnAddUser.HoverState.Parent = this.btnAddUser;
             this.btnAddUser.Image = global::QLTSTBKhachSan.Properties.Resources.add_32px;
-            this.btnAddUser.Location = new System.Drawing.Point(25, 58);
+            this.btnAddUser.Location = new System.Drawing.Point(33, 71);
+            this.btnAddUser.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnAddUser.Name = "btnAddUser";
             this.btnAddUser.ShadowDecoration.Parent = this.btnAddUser;
-            this.btnAddUser.Size = new System.Drawing.Size(127, 42);
+            this.btnAddUser.Size = new System.Drawing.Size(169, 52);
             this.btnAddUser.TabIndex = 29;
             this.btnAddUser.Text = "Add User";
             this.btnAddUser.Click += new System.EventHandler(this.btnAddUser_Click);
             // 
             // UCQuanLyNguoiDung
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.pnAddUser);
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnAddUser);
             this.Controls.Add(this.panel6);
             this.Controls.Add(this.pnDTGVND);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "UCQuanLyNguoiDung";
-            this.Size = new System.Drawing.Size(1000, 600);
+            this.Size = new System.Drawing.Size(1333, 738);
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQLND)).EndInit();
             this.pnDTGVND.ResumeLayout(false);
             this.pnAddUser.ResumeLayout(false);
@@ -620,14 +560,6 @@ namespace QLTSTBKhachSan.UI
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Label lbTitle;
         private Guna.UI2.WinForms.Guna2Button btnAddUser;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaTK;
-        private System.Windows.Forms.DataGridViewImageColumn HinhAnh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaNV;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenTK;
-        private System.Windows.Forms.DataGridViewTextBoxColumn TenHienThi;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Pass;
-        private System.Windows.Forms.DataGridViewTextBoxColumn MaCV;
         private Guna.UI2.WinForms.Guna2ComboBox cbMaNV;
         private Guna.UI2.WinForms.Guna2ComboBox cbMaCV;
         private Guna.UI2.WinForms.Guna2GroupBox gbMaNV;

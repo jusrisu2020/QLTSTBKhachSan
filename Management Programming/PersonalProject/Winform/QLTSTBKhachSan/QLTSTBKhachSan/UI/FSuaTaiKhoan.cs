@@ -21,7 +21,7 @@ namespace QLTSTBKhachSan.UI
             set
             {
                 loginTaiKhoan = value;
-                LoadFSua(loginTaiKhoan.TenTK, loginTaiKhoan.TenHienThi);
+                LoadFSua(loginTaiKhoan.HinhAnh,loginTaiKhoan.TenTK, loginTaiKhoan.TenHienThi);
             }
         }
 
@@ -31,15 +31,16 @@ namespace QLTSTBKhachSan.UI
             LoginTaiKhoan = tk;
         }
 
-        void LoadFSua(string tentk, string tenhienthi)
+        void LoadFSua(string hinhanh, string tentk, string tenhienthi)
         {
             lbTenTK.Text = tentk;
             txtTenHienThi.Text = tenhienthi;
+            picAvatar.Image = Image.FromFile(hinhanh);
         }
-        
+
         void UpdateUser()
         {
-            byte[] HinhAnh = TaiKhoanDAO.Instance.ImageToByte(picAvatar.Image);
+            string HinhAnh = picAvatar.ImageLocation;
             string TenTK = lbTenTK.Text;
             string TenHienThi = txtTenHienThi.Text;
             string Pass = txtPassword.Text;
@@ -99,7 +100,7 @@ namespace QLTSTBKhachSan.UI
             OpenFileDialog Ofile = new OpenFileDialog();
             if(Ofile.ShowDialog() == DialogResult.OK)
             {
-                picAvatar.Image = Image.FromFile(Ofile.FileName);
+                picAvatar.ImageLocation = Ofile.FileName;
                 this.Text = Ofile.FileName;
             }
         }

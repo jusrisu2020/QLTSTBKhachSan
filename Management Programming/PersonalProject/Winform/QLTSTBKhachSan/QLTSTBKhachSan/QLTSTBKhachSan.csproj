@@ -83,6 +83,7 @@
     <Compile Include="DTO\NhanVienDTO.cs" />
     <Compile Include="DTO\MenuHoaDonDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
+    <Compile Include="DTO\TestImgDTO.cs" />
     <Compile Include="DTO\ThietBiDTO.cs" />
     <Compile Include="UI\FDangNhap.cs">
       <SubType>Form</SubType>
