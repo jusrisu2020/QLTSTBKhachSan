@@ -124,19 +124,22 @@ namespace QLTSTBKhachSan.UI
                 pnContainer.Controls.Clear();
                 UCQuanLiBoPhan bp = new UCQuanLiBoPhan();
                 pnContainer.Controls.Add(bp);
+                bp.Dock = DockStyle.Fill;
             }
 
-            private void btnChucVu_Click(object sender, EventArgs e)
+        private void btnChucVu_Click(object sender, EventArgs e)
             {
                 pnContainer.Controls.Clear();
                 UCQuanLiChucVu cv = new UCQuanLiChucVu();
                 pnContainer.Controls.Add(cv);
+                cv.Dock = DockStyle.Fill;
             }
-            private void btnNhanVien_Click(object sender, EventArgs e)
+        private void btnNhanVien_Click(object sender, EventArgs e)
             {
                 pnContainer.Controls.Clear();
                 UCQuanLyNhanVien nv = new UCQuanLyNhanVien();
                 pnContainer.Controls.Add(nv);
+                nv.Dock = DockStyle.Fill;
             }
 
         private void btnTaiSanThietBi_Click(object sender, EventArgs e)
@@ -159,6 +162,7 @@ namespace QLTSTBKhachSan.UI
             pnContainer.Controls.Clear();
             UCQuanLyThietBi tb = new UCQuanLyThietBi();
             pnContainer.Controls.Add(tb);
+            tb.Dock = DockStyle.Fill;
         }
         /*private void btnReportM_Click(object sender, EventArgs e)
         {
@@ -172,8 +176,9 @@ namespace QLTSTBKhachSan.UI
             pnContainer.Controls.Clear();
             UCQLNhaCungCap ncc = new UCQLNhaCungCap();
             pnContainer.Controls.Add(ncc);
+            ncc.Dock = DockStyle.Fill;
         }
-       
+
         #endregion
         #region Event_Dif
         private void btnNotification_Click(object sender, EventArgs e)
@@ -244,9 +249,8 @@ namespace QLTSTBKhachSan.UI
             pnContainer.Controls.Clear();
             UCLSThongBao lstb = new UCLSThongBao();
             pnContainer.Controls.Add(lstb);
+            lstb.Dock = DockStyle.Fill;
         }
-
-       
 
         private void panel1_MouseDown(object sender, MouseEventArgs e)
         {
@@ -257,8 +261,9 @@ namespace QLTSTBKhachSan.UI
         private void btnHoaDonMuaTB_Click(object sender, EventArgs e)
         {
             pnContainer.Controls.Clear();
-            UCQuanLyBaoCao bc = new UCQuanLyBaoCao();
+            UCQuanLyHoaDon bc = new UCQuanLyHoaDon();
             pnContainer.Controls.Add(bc);
+            bc.Dock = DockStyle.Fill;
         }
     }
 }

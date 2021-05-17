@@ -115,7 +115,6 @@ C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProj
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.Properties.Resources.resources
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.UI.FTrangChu.resources
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.UI.UCQLNhaCungCap.resources
-C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.UI.UCQuanLyBaoCao.resources
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.UI.UCQuanLyNguoiDung.resources
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.UI.UCQuanLyNhanVien.resources
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.UI.UCQuanLiBoPhan.resources
@@ -131,3 +130,4 @@ C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProj
 C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.UI.FCapNhatThongTin.resources
 D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.UI.FCapNhatThongTin.resources
 D:\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.UI.UCLSThongBao.resources
+C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\obj\Debug\QLTSTBKhachSan.UI.UCQuanLyHoaDon.resources

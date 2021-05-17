@@ -235,7 +235,7 @@ namespace QLTSTBKhachSan.UI
             this.lbTTime.AutoSize = true;
             this.lbTTime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTTime.ForeColor = System.Drawing.Color.White;
-            this.lbTTime.Location = new System.Drawing.Point(46, 9);
+            this.lbTTime.Location = new System.Drawing.Point(30, 10);
             this.lbTTime.Name = "lbTTime";
             this.lbTTime.Size = new System.Drawing.Size(111, 16);
             this.lbTTime.TabIndex = 18;

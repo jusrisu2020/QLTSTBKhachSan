@@ -16,58 +16,19 @@ namespace OutputFileLog
         public FFL1()
         {
             InitializeComponent();
-        }
+            string Fpath = @"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\OutputFileLog\OutputFileLog\bin\Debug\FileLog.txt";
 
+            List<string> lines = new List<string>();
+            lines = File.ReadAllLines(Fpath).ToList();
 
-        DateTime dt = new DateTime();
-        string path = Environment.CurrentDirectory + "/" + "FileLog.txt";
-
-        private void btnTaoFile_Click(object sender, EventArgs e)
-        {
-            if (!File.Exists(path))
+            foreach(String line in lines)
             {
-                File.Create(path);
-                MessageBox.Show("Thành công");
+                richTextBox1.Text = line;
             }
-            else
-            {
-                MessageBox.Show("Đã có FileLog");
-            }
-        }
 
-        private void Form1_Load(object sender, EventArgs e)
-        {
-            Label lb = new Label();
+            richTextBox1.ReadLine();
 
         }
 
-        private void btnExit_Click(object sender, EventArgs e)
-        {
-            this.Close();
-            using (StreamWriter sw = new StreamWriter(path))
-            {
-                string time = DateTime.Now.ToString("dd/MM/yyyy , HH:mm:ss");
-                sw.WriteLine("Đã đăng xuất vào lúc:   " + time);
-                sw.WriteLine(lbUserName.Text);
-            }
-        }
-
-        private void btnDocFile_Click(object sender, EventArgs e)
-        {
-            using (StreamReader sr = new StreamReader(path))
-            {
-                textBox1.Text =  sr.ReadLine();
-            }
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lbTime.Text = DateTime.Now.ToString("dd/MM/yyyy , HH:mm:ss");
-        }
-
-        private void btnDeleteFile_Click(object sender, EventArgs e)
-        {
-            File.Delete(path);
-        }
     }
 }

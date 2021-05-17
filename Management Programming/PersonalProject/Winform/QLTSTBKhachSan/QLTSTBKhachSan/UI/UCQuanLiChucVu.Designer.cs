@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dtgvQLCV = new Guna.UI2.WinForms.Guna2DataGridView();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaCV = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -46,53 +46,56 @@
             this.lbTitle = new System.Windows.Forms.Label();
             this.pnNewCV = new System.Windows.Forms.Panel();
             this.pnTitle = new System.Windows.Forms.Panel();
+            this.pnDTGV = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dtgvQLCV)).BeginInit();
             this.gbTenCV.SuspendLayout();
             this.pnButton.SuspendLayout();
             this.pnNewCV.SuspendLayout();
             this.pnTitle.SuspendLayout();
+            this.pnDTGV.SuspendLayout();
             this.SuspendLayout();
             // 
             // dtgvQLCV
             // 
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
-            this.dtgvQLCV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.White;
+            this.dtgvQLCV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dtgvQLCV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvQLCV.BackgroundColor = System.Drawing.Color.White;
             this.dtgvQLCV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvQLCV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvQLCV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvQLCV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvQLCV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dtgvQLCV.ColumnHeadersHeight = 50;
             this.dtgvQLCV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvQLCV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ID,
             this.MaCV,
             this.TenCV});
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvQLCV.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvQLCV.DefaultCellStyle = dataGridViewCellStyle12;
+            this.dtgvQLCV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvQLCV.EnableHeadersVisualStyles = false;
             this.dtgvQLCV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            this.dtgvQLCV.Location = new System.Drawing.Point(159, 127);
+            this.dtgvQLCV.Location = new System.Drawing.Point(0, 0);
             this.dtgvQLCV.Name = "dtgvQLCV";
             this.dtgvQLCV.ReadOnly = true;
             this.dtgvQLCV.RowHeadersVisible = false;
             this.dtgvQLCV.RowTemplate.Height = 50;
             this.dtgvQLCV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtgvQLCV.Size = new System.Drawing.Size(308, 259);
+            this.dtgvQLCV.Size = new System.Drawing.Size(1000, 506);
             this.dtgvQLCV.TabIndex = 45;
             this.dtgvQLCV.Theme = Guna.UI2.WinForms.Enums.DataGridViewPresetThemes.Default;
             this.dtgvQLCV.ThemeStyle.AlternatingRowsStyle.BackColor = System.Drawing.Color.White;
@@ -182,14 +185,15 @@
             this.btnUpdate.BorderRadius = 8;
             this.btnUpdate.CheckedState.Parent = this.btnUpdate;
             this.btnUpdate.CustomImages.Parent = this.btnUpdate;
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
             this.btnUpdate.Image = global::QLTSTBKhachSan.Properties.Resources.update_file_filled_50px;
-            this.btnUpdate.Location = new System.Drawing.Point(124, 7);
+            this.btnUpdate.Location = new System.Drawing.Point(106, 0);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(108, 42);
+            this.btnUpdate.Size = new System.Drawing.Size(108, 33);
             this.btnUpdate.TabIndex = 39;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -199,14 +203,15 @@
             this.btnRefresh.BorderRadius = 8;
             this.btnRefresh.CheckedState.Parent = this.btnRefresh;
             this.btnRefresh.CustomImages.Parent = this.btnRefresh;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.HoverState.Parent = this.btnRefresh;
             this.btnRefresh.Image = global::QLTSTBKhachSan.Properties.Resources.refresh_26px;
-            this.btnRefresh.Location = new System.Drawing.Point(346, 6);
+            this.btnRefresh.Location = new System.Drawing.Point(322, 0);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.ShadowDecoration.Parent = this.btnRefresh;
-            this.btnRefresh.Size = new System.Drawing.Size(106, 42);
+            this.btnRefresh.Size = new System.Drawing.Size(106, 33);
             this.btnRefresh.TabIndex = 38;
             this.btnRefresh.Text = "Refesh";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -216,14 +221,15 @@
             this.btnNew.BorderRadius = 8;
             this.btnNew.CheckedState.Parent = this.btnNew;
             this.btnNew.CustomImages.Parent = this.btnNew;
+            this.btnNew.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.HoverState.Parent = this.btnNew;
             this.btnNew.Image = global::QLTSTBKhachSan.Properties.Resources.add_32px;
-            this.btnNew.Location = new System.Drawing.Point(14, 7);
+            this.btnNew.Location = new System.Drawing.Point(0, 0);
             this.btnNew.Name = "btnNew";
             this.btnNew.ShadowDecoration.Parent = this.btnNew;
-            this.btnNew.Size = new System.Drawing.Size(106, 42);
+            this.btnNew.Size = new System.Drawing.Size(106, 33);
             this.btnNew.TabIndex = 29;
             this.btnNew.Text = "New";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -250,28 +256,29 @@
             this.btnDelete.BorderRadius = 8;
             this.btnDelete.CheckedState.Parent = this.btnDelete;
             this.btnDelete.CustomImages.Parent = this.btnDelete;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
             this.btnDelete.Image = global::QLTSTBKhachSan.Properties.Resources.delete_30px;
-            this.btnDelete.Location = new System.Drawing.Point(236, 7);
+            this.btnDelete.Location = new System.Drawing.Point(214, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
-            this.btnDelete.Size = new System.Drawing.Size(108, 42);
+            this.btnDelete.Size = new System.Drawing.Size(108, 33);
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // pnButton
             // 
-            this.pnButton.Controls.Add(this.btnUpdate);
             this.pnButton.Controls.Add(this.btnRefresh);
-            this.pnButton.Controls.Add(this.btnNew);
             this.pnButton.Controls.Add(this.btnDelete);
+            this.pnButton.Controls.Add(this.btnUpdate);
+            this.pnButton.Controls.Add(this.btnNew);
             this.pnButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnButton.Location = new System.Drawing.Point(0, 67);
+            this.pnButton.Location = new System.Drawing.Point(0, 80);
             this.pnButton.Name = "pnButton";
-            this.pnButton.Size = new System.Drawing.Size(1000, 55);
+            this.pnButton.Size = new System.Drawing.Size(1000, 33);
             this.pnButton.TabIndex = 43;
             // 
             // lbTitle
@@ -279,7 +286,7 @@
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(61, 16);
+            this.lbTitle.Location = new System.Drawing.Point(44, 26);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(118, 31);
             this.lbTitle.TabIndex = 28;
@@ -289,7 +296,7 @@
             // 
             this.pnNewCV.Controls.Add(this.btnNewChucVu);
             this.pnNewCV.Controls.Add(this.gbTenCV);
-            this.pnNewCV.Location = new System.Drawing.Point(14, 127);
+            this.pnNewCV.Location = new System.Drawing.Point(2, 5);
             this.pnNewCV.Margin = new System.Windows.Forms.Padding(2);
             this.pnNewCV.Name = "pnNewCV";
             this.pnNewCV.Size = new System.Drawing.Size(140, 144);
@@ -304,16 +311,25 @@
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.pnTitle.Size = new System.Drawing.Size(1000, 67);
+            this.pnTitle.Size = new System.Drawing.Size(1000, 80);
             this.pnTitle.TabIndex = 42;
+            // 
+            // pnDTGV
+            // 
+            this.pnDTGV.Controls.Add(this.pnNewCV);
+            this.pnDTGV.Controls.Add(this.dtgvQLCV);
+            this.pnDTGV.Dock = System.Windows.Forms.DockStyle.Top;
+            this.pnDTGV.Location = new System.Drawing.Point(0, 113);
+            this.pnDTGV.Name = "pnDTGV";
+            this.pnDTGV.Size = new System.Drawing.Size(1000, 506);
+            this.pnDTGV.TabIndex = 46;
             // 
             // UCQuanLiChucVu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.dtgvQLCV);
+            this.Controls.Add(this.pnDTGV);
             this.Controls.Add(this.pnButton);
-            this.Controls.Add(this.pnNewCV);
             this.Controls.Add(this.pnTitle);
             this.Name = "UCQuanLiChucVu";
             this.Size = new System.Drawing.Size(1000, 600);
@@ -323,6 +339,7 @@
             this.pnNewCV.ResumeLayout(false);
             this.pnTitle.ResumeLayout(false);
             this.pnTitle.PerformLayout();
+            this.pnDTGV.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -343,5 +360,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn MaCV;
         private System.Windows.Forms.DataGridViewTextBoxColumn TenCV;
+        private System.Windows.Forms.Panel pnDTGV;
     }
 }

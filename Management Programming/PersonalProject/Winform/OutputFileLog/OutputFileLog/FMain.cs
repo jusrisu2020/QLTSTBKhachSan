@@ -26,7 +26,7 @@ namespace OutputFileLog
             {
                 while (!sr.EndOfStream)
                 {
-                    ThongBao(sr.ReadToEnd());
+                    sr.ReadToEnd();
                 }
             }
         }
@@ -46,12 +46,17 @@ namespace OutputFileLog
 
             using (StreamWriter sw = new StreamWriter(path))
             {
+                sw.WriteLine("\n");
+                sw.WriteLine("\n");
                 sw.WriteLine("Đăng xuất lúc:  " + DateTime.Now.ToString("hh:mm:ss"));
+                sw.WriteLine("\n");
+                sw.WriteLine("\n");
             }
         }
 
         private void btnExit_Click(object sender, EventArgs e)
         {
+            DocFile();
             /*FDangNhap fdn = new FDangNhap();
             fdn.ShowDialog();*/
             GhiFile();

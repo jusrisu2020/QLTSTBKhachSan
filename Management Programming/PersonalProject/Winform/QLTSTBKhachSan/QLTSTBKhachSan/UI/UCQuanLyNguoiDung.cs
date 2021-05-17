@@ -48,7 +48,6 @@ namespace QLTSTBKhachSan.UI
             List<ChucVuDTO> ChucVuList = ChucVuDAO.Instance.LoadChucVu();
             cbMaCV.DataSource = ChucVuList;
             cbMaCV.DisplayMember = "MaCV";
-            dtgvChucVu.DataSource = ChucVuList;
         }
         #endregion
 
@@ -65,19 +64,6 @@ namespace QLTSTBKhachSan.UI
             {
                 pnAddUser.Visible = false;
                 btnAddUser.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
-            }
-        }
-        private void btnShowChucVu_Click(object sender, EventArgs e)
-        {
-            if (pnShowChucVu.Visible == false)
-            {
-                pnShowChucVu.Visible = true;
-                btnShowChucVu.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
-            }
-            else
-            {
-                pnShowChucVu.Visible = false;
-                btnShowChucVu.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
             }
         }
 

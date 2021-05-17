@@ -20,10 +20,11 @@ namespace QLTSTBKhachSan.UI
             LoadData();
         }
 
+        string ThietBi = "Thiết Bị";
         void LoadData()
         {
-            //LoadBtnBoPhan();
-            //LoadDanhMuc();
+            LoadListThietBi();
+            LoadBtnBoPhan();
             LoadCB();
             List<ThietBiDTO> tb = ThietBiDAO.Instance.LoadThietBi();
             dtgvThietBi.DataSource = tb;
@@ -35,31 +36,25 @@ namespace QLTSTBKhachSan.UI
             cbMaBP.DisplayMember = "MaBP";
             cbMaNCC.DataSource = NhaCungCapDAO.Instance.LoadNCC();
             cbMaNCC.DisplayMember = "MaNCC";
-            cbMaHD.DataSource = HoaDonMuaTBDAO.Instance.LoadHDM();
+            cbMaHD.DataSource = HoaDonMuaTBDAO.Instance.LoadListHoaDon();
             cbMaHD.DisplayMember = "MaHDMua";
         }
-        void EditColums()
-        {
-            dtgvThietBi.Columns["id"].Visible = false;
-            dtgvThietBi.Columns["MaTB"].HeaderText = "Mã Thiết Bị";
-            dtgvThietBi.Columns["TenTB"].HeaderText = "Tên Thiết Bị";
-            dtgvThietBi.Columns["Donvi"].HeaderText = "Đơn vị";
-            dtgvThietBi.Columns["SoLuongHienHuu"].HeaderText = "Số Lượng";
-            dtgvThietBi.Columns["MaDanhMuc"].HeaderText = "Mã Danh Mục";
-            dtgvThietBi.Columns["Mabp"].HeaderText = "Mã Bộ Phận";
-            dtgvThietBi.Columns["ThoiGianBH"].HeaderText = "Bảo Hành";
-            dtgvThietBi.Columns["TinhTrangTB"].HeaderText = "Tình Trạng Thiết Bị";
-            dtgvThietBi.Columns["MaNCC"].HeaderText = "Mã Nhà Cung Cấp";
-            dtgvThietBi.Columns["MaHDMuaTB"].HeaderText = "Ma Hóa Đơn Mua Thiết Bị";
-            dtgvThietBi.Columns["GhiChu"].HeaderText = "Ghi Chú";
-        }
+       
+        
         void ShowThietBiTrongBoPhan(string mabp)
         {
             List<ThietBiDTO> tb = ThietBiDAO.Instance.LoadThietBiTrongBoPhan(mabp);
             dtgvThietBi.DataSource = tb;
         }
 
-        /*void LoadBtnBoPhan()
+        void LoadListThietBi()
+        {
+            dtgvThietBi.Controls.Clear();
+            List<ThietBiDTO> ThietBiList = ThietBiDAO.Instance.LoadThietBi();
+            dtgvThietBi.DataSource = ThietBiList;
+        }
+
+        void LoadBtnBoPhan()
         {
             List<BoPhanDTO> BoPhanList = BoPhanDAO.Instance.LoadListBoPhan();
             foreach (BoPhanDTO item in BoPhanList)
@@ -68,66 +63,118 @@ namespace QLTSTBKhachSan.UI
                 flpBtnBoPhan.Controls.Add(btn);
                 btn.Click += btnClick;
                 btn.Tag = item;
-                btn.Text = item.MaBP +"\n"+ item.TenBP;
-                btn.Image = Image.FromFile(@"QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\Resources\department_50px.png");
+                btn.Text = item.MaBP + "\n" + item.TenBP;
+                btn.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\QLTSTBKhachSan\QLTSTBKhachSan\Resources\department_50px.png");
                 btn.ImageAlign = ContentAlignment.BottomCenter;
                 btn.TextAlign = ContentAlignment.TopCenter;
             }
-        }*/
+        }
         private void btnClick(object sender, EventArgs e)
         {
             string mabp = ((sender as Button).Tag as BoPhanDTO).MaBP;
             ShowThietBiTrongBoPhan(mabp);
-            EditColums();
         }
-
-       
+        
 
         
-        private void btnLoadAllThietBi_Click(object sender, EventArgs e)
-        {
-            dtgvThietBi.Controls.Clear();
-            List<ThietBiDTO> ThietBiList = ThietBiDAO.Instance.LoadThietBi();
-            dtgvThietBi.DataSource = ThietBiList;
-            EditColums();
-        }
 
         private void btnThietBipn_Click(object sender, EventArgs e)
         {
-            if (pnThemThietBi.Visible == false)
+            if (pnNew.Visible == false)
             {
-                pnThemThietBi.Visible = true;
-                btnThietBipn.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
+                pnNew.Visible = true;
+                btnNew.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
             }
             else
             {
-                pnThemThietBi.Visible = false;
-                btnThietBipn.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
+                pnNew.Visible = false;
+                btnNew.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
             }
         }
+
+        private void dtgvThietBi_Click(object sender, EventArgs e)
+        {
+            DataGridViewRow dr = dtgvThietBi.SelectedRows[0];
+            txtTenTB.Text = dr.Cells["TenTB"].Value.ToString();
+            cbDonVi.Text = dr.Cells["DonVi"].Value.ToString();
+            txtSoLuong.Text = dr.Cells["SoLuong"].Value.ToString();
+            cbTenDM.Text = dr.Cells["TenDanhMuc"].Value.ToString();
+            cbMaBP.Text = dr.Cells["MaBP"].Value.ToString();
+            dtpThoiGianBH.Text = dr.Cells["ThoiGianBH"].Value.ToString();
+            if (int.Parse(dr.Cells["TinhTrangTB"].Value.ToString()) == 1)
+            {
+                cbTTTB.SelectedIndex = 0;
+            }
+            else
+            {
+                cbTTTB.SelectedIndex = 1;
+            }
+            cbMaNCC.Text = dr.Cells["MaNCC"].Value.ToString();
+            cbMaHD.Text = dr.Cells["MaHDMuaTB"].Value.ToString();
+            txtGiaTB.Text = dr.Cells["GiaTBMua"].Value.ToString();
+        }
+
 
         private void btnThemTB_Click(object sender, EventArgs e)
         {
             string tentb = txtTenTB.Text;
             string donvi = cbDonVi.Text;
-            int soluong = int.Parse(txtSoLuong.Text);
             string tendanhmuc = cbTenDM.Text;
             string mabp = cbMaBP.Text;
             DateTime? thoigianbh = (DateTime?)dtpThoiGianBH.Value;
-            string tinhtrangtb = cbTTTB.Text;
+            int tinhtrangtb;
+            if (cbTTTB.SelectedIndex == 0)
+            {
+                tinhtrangtb = 1;
+            }
+            else
+            {
+                tinhtrangtb = 0;
+            }
+
             string mancc = cbMaNCC.Text;
             string mahdmua = cbMaHD.Text;
-            string ghichu = txtGhiChu.Text;
 
-
-                if (ThietBiDAO.Instance.InsertThietBi(tentb,donvi,soluong,tendanhmuc, mabp, thoigianbh, tinhtrangtb, mancc, mahdmua,ghichu))
+            if (tentb.Equals("") || donvi.Equals("") || tendanhmuc.Equals("") || mabp.Equals("") || thoigianbh.Equals("") || tinhtrangtb.Equals("") || mancc.Equals("") || mahdmua.Equals("")  || !int.Parse(txtSoLuong.Text).GetType().Equals(typeof(int)) || !int.Parse(txtGiaTB.Text).GetType().Equals(typeof(int)))
+            {
+                MessageBox.Show("Hãy nhập đầy đủ thông tin!", ThietBi);
+            }
+            else
+            {
+                if (ThietBiDAO.Instance.InsertThietBi(tentb, donvi, int.Parse(txtSoLuong.Text), tendanhmuc, mabp, thoigianbh, tinhtrangtb, mancc, mahdmua, int.Parse(txtGiaTB.Text)))
                 {
-                    MessageBox.Show("Saved");
+                    MessageBox.Show("Đã Thêm 1 Thiết Bị Thành Công", ThietBi);
+                    LoadListThietBi();
                 }
                 else
                 {
-                    MessageBox.Show("Không thành công");
+                    MessageBox.Show("Không thành công", ThietBi);
                 }
+            }
         }
+
+        
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
     }
 }

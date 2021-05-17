@@ -23,41 +23,33 @@ namespace QLTSTBKhachSan.DAO
             private set => instance = value; 
         }
 
-        public List<MenuHoaDonDTO> LoadHoaDonChiTiet()
+        public HoaDonMuaTBDAO() { }
+        //Hiển thị danh sách Hoá Đơn
+        public List<HoaDonMuaTBDTO> LoadListHoaDon()
         {
-            List<MenuHoaDonDTO> HDList = new List<MenuHoaDonDTO>();
-            string Query = 
-                "SELECT hdm.Id, hdm.MaHDMua,hdm.NgayMuaTB, nv.MaNV, nv.HoTen, hdm.MaNCC, ncc.TenNCC,cthdm.TenTB, cthdm.TenDanhMuc, cthdm.MaBP, cthdm.DonVi, cthdm.SoLuong, cthdm.DonGia, cthdm.ThanhTien " +
-                "FROM dbo.HoaDonMuaTB AS hdm, dbo.ChiTietHoaDonMuaTB AS cthdm, dbo.NhanVien AS nv, dbo.NhaCungCap AS ncc " +
-                "WHERE hdm.MaHDMua = cthdm.MaHDMua AND hdm.MaNV = nv.MaNV AND ncc.MaNCC = hdm.MaNCC";
+            List<HoaDonMuaTBDTO> HoaDonList = new List<HoaDonMuaTBDTO>();
+            string Query = "EXEC dbo.USP_ShowHoaDon";
             DataTable data = DataProvider.Instance.ExecuteQuery(Query);
             foreach (DataRow item in data.Rows)
             {
-                MenuHoaDonDTO table = new MenuHoaDonDTO(item);
-                HDList.Add(table);
+                HoaDonMuaTBDTO table = new HoaDonMuaTBDTO(item);
+                HoaDonList.Add(table);
             }
-            return HDList;
-        }
-        public List<HoaDonDTO> LoadHDM()
-        {
-            List<HoaDonDTO> HDList = new List<HoaDonDTO>();
-            string Query = "SELECT * FROM HoaDonMuaTB";
-            DataTable data = DataProvider.Instance.ExecuteQuery(Query);
-            foreach (DataRow item in data.Rows)
-            {
-                HoaDonDTO table = new HoaDonDTO(item);
-                HDList.Add(table);
-            }
-            return HDList;
+            return HoaDonList;
         }
 
-
-        public bool InsertHoaDonMua(DateTime? ngaymuatb, string manv, string mancc)
+        public bool InsertHoaDonMua(DateTime? ngaymuatb, string manv, string mancc, int tongsltb)
         {
-            string Query = "EXEC dbo.USP_ThemHoaDonMuaTB @NgayMuaTB , @Manv , @MaNCC";
-            int result = DataProvider.Instance.ExecuteNonQuery(Query, new object[] { ngaymuatb, manv, mancc });
+            string Query = "EXEC dbo.USP_ThemHoaDonMuaTB @NgayMuaTB , @Manv , @MaNCC , @TongSLTB";
+            int result = DataProvider.Instance.ExecuteNonQuery(Query, new object[] { ngaymuatb, manv, mancc, tongsltb });
             return result > 0;
         }
 
+        public bool DeleteHoaDonMua(string mahdmua)
+        {
+            string Query = "EXEC USP_HoaDonMuaTB @MaHDMua ";
+            int result = DataProvider.Instance.ExecuteNonQuery(Query, new object[] { mahdmua });
+            return result > 0;
+        }
     }
 }

@@ -74,5 +74,18 @@ namespace QLTSTBKhachSan.DAO
             }
             return 1;
         }
+
+        public List<NhanVienDTO> SearchTenNV(string tennv)
+        {
+            List<NhanVienDTO> NhanVienList = new List<NhanVienDTO>();
+            string Query = string.Format("EXEC USP_TKTenNhanVien N'{0}'", tennv);
+            DataTable data = DataProvider.Instance.ExecuteQuery(Query);
+            foreach (DataRow item in data.Rows)
+            {
+                NhanVienDTO table = new NhanVienDTO(item);
+                NhanVienList.Add(table);
+            }
+            return NhanVienList;
+        }
     }
 }

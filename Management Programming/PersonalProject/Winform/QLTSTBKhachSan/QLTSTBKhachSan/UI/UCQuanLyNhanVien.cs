@@ -202,14 +202,13 @@ namespace QLTSTBKhachSan.UI
         }
         private void btnRefresh_Click(object sender, EventArgs e)
         {
-
+            LoadNhanVien();
         }
 
         private void btnSearch_Click(object sender, EventArgs e)
         {
-
+            List<NhanVienDTO> NhanVienList = NhanVienDAO.Instance.SearchTenNV(txtSearch.Text);
+            dtgvQLNV.DataSource = NhanVienList;
         }
-
-        
     }
 }

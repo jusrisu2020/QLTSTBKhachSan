@@ -25,6 +25,8 @@ namespace OutputFileLog
             using (StreamWriter sw = new StreamWriter(path))
             {
                 sw.WriteLine("Đăng nhập lúc:  " + DateTime.Now.ToString("hh:mm:ss"));
+                sw.WriteLine("\n");
+                sw.WriteLine("\n");
             }
         }
 

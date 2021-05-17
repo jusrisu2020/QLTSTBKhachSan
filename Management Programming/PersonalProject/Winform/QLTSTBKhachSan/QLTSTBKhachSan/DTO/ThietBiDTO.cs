@@ -16,13 +16,12 @@ namespace QLTSTBKhachSan.DTO
         private int soluong;
         private string tenDanhmuc;
         private string maBP;
-        private string thoiGianBH;
-        private string tinhTrangTB;
+        private DateTime? thoiGianBH;
+        private int tinhTrangTB;
         private string maNCC;
         private string maHDMuaTB;
-        private string ghiChu;
+        private int giaTBMua;
 
-        
         public int ID { get => iD; set => iD = value; }
         public string MaTB { get => maTB; set => maTB = value; }
         public string TenTB { get => tenTB; set => tenTB = value; }
@@ -30,15 +29,15 @@ namespace QLTSTBKhachSan.DTO
         public int Soluong { get => soluong; set => soluong = value; }
         public string TenDanhmuc { get => tenDanhmuc; set => tenDanhmuc = value; }
         public string MaBP { get => maBP; set => maBP = value; }
-        public string ThoiGianBH { get => thoiGianBH; set => thoiGianBH = value; }
-        public string TinhTrangTB { get => tinhTrangTB; set => tinhTrangTB = value; }
+        public DateTime? ThoiGianBH { get => thoiGianBH; set => thoiGianBH = value; }
+        public int TinhTrangTB { get => tinhTrangTB; set => tinhTrangTB = value; }
         public string MaNCC { get => maNCC; set => maNCC = value; }
         public string MaHDMuaTB { get => maHDMuaTB; set => maHDMuaTB = value; }
-        public string GhiChu { get => ghiChu; set => ghiChu = value; }
+        public int GiaTBMua { get => giaTBMua; set => giaTBMua = value; }
 
         public ThietBiDTO(int id, string matb, string tentb, string donvi,
-                        int soluong, string tendanhmuc, string mabp, string thoigianbaohanh,
-                        string tinhtrangthietbi, string mancc, string mahdmuatb, string ghichu
+                        int soluong, string tendanhmuc, string mabp, DateTime? thoigianbaohanh,
+                        int tinhtrangthietbi, string mancc, string mahdmuatb, int giatbmua
                             )
         {
             this.ID = id;
@@ -52,23 +51,23 @@ namespace QLTSTBKhachSan.DTO
             this.TinhTrangTB = tinhtrangthietbi;
             this.MaNCC = mancc;
             this.MaHDMuaTB = mahdmuatb;
-            this.GhiChu = ghichu;
+            this.GiaTBMua = giatbmua;
         }
         
         public ThietBiDTO(DataRow row)
         {
-            this.ID = (int)row["id"];
-            this.MaTB = row["matb"].ToString();
-            this.TenTB = row["tentb"].ToString();
-            this.DonVi = row["donvi"].ToString();
-            this.Soluong = (int)row["Soluong"];
+            this.ID = (int)row["Id"];
+            this.MaTB = row["MaTB"].ToString();
+            this.TenTB = row["TenTB"].ToString();
+            this.DonVi = row["DonVi"].ToString();
+            this.Soluong = (int)row["SoLuong"];
             this.TenDanhmuc = row["tendanhmuc"].ToString();
             this.MaBP = row["mabp"].ToString();
-            this.ThoiGianBH = row["ThoiGianBH"].ToString();
-            this.TinhTrangTB = row["TinhTrangTB"].ToString();
+            this.ThoiGianBH = (DateTime?)row["ThoiGianBH"];
+            this.TinhTrangTB = (int)row["TinhTrangTB"];
             this.MaNCC = row["mancc"].ToString();
             this.MaHDMuaTB = row["MaHDMuaTB"].ToString();
-            this.GhiChu = row["GhiChu"].ToString();
+            this.GiaTBMua = (int)row["GiaTBMua"];
         }
     }
 }

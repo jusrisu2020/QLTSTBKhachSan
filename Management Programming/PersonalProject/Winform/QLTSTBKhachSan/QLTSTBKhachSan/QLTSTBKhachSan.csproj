@@ -78,10 +78,9 @@
     <Compile Include="DAO\ThietBiDAO.cs" />
     <Compile Include="DTO\BoPhanDTO.cs" />
     <Compile Include="DTO\ChucVuDTO.cs" />
-    <Compile Include="DTO\HoaDonDTO.cs" />
+    <Compile Include="DTO\HoaDonMuaTBDTO.cs" />
     <Compile Include="DTO\NhaCungCapDTO.cs" />
     <Compile Include="DTO\NhanVienDTO.cs" />
-    <Compile Include="DTO\MenuHoaDonDTO.cs" />
     <Compile Include="DTO\TaiKhoanDTO.cs" />
     <Compile Include="DTO\TestImgDTO.cs" />
     <Compile Include="DTO\ThietBiDTO.cs" />
@@ -141,11 +140,11 @@
     <Compile Include="UI\UCQuanLiChucVu.Designer.cs">
       <DependentUpon>UCQuanLiChucVu.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\UCQuanLyBaoCao.cs">
+    <Compile Include="UI\UCQuanLyHoaDon.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI\UCQuanLyBaoCao.Designer.cs">
-      <DependentUpon>UCQuanLyBaoCao.cs</DependentUpon>
+    <Compile Include="UI\UCQuanLyHoaDon.Designer.cs">
+      <DependentUpon>UCQuanLyHoaDon.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\UCQuanLyNguoiDung.cs">
       <SubType>UserControl</SubType>
@@ -209,8 +208,8 @@
     <EmbeddedResource Include="UI\UCQuanLiChucVu.resx">
       <DependentUpon>UCQuanLiChucVu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI\UCQuanLyBaoCao.resx">
-      <DependentUpon>UCQuanLyBaoCao.cs</DependentUpon>
+    <EmbeddedResource Include="UI\UCQuanLyHoaDon.resx">
+      <DependentUpon>UCQuanLyHoaDon.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\UCQuanLyNguoiDung.resx">
       <DependentUpon>UCQuanLyNguoiDung.cs</DependentUpon>

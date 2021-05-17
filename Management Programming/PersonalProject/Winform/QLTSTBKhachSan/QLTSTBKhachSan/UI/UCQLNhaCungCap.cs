@@ -14,13 +14,12 @@ namespace QLTSTBKhachSan.UI
 {
     public partial class UCQLNhaCungCap : UserControl
     {
-        Exception ex = new Exception();
         public UCQLNhaCungCap()
         {
             InitializeComponent();
             LoadData();
         }
-
+        string NhaCungCap = "Nhà Cung Cấp";
         void LoadData()
         {
             LoadNCCUC();
@@ -29,15 +28,11 @@ namespace QLTSTBKhachSan.UI
         {
             List<NhaCungCapDTO> NhaCungCapList = NhaCungCapDAO.Instance.LoadNCC();
             dtgvNCC.DataSource = NhaCungCapList;
-            dtgvNCC.Columns[0].Visible = false;
-            dtgvNCC.Columns["MaNCC"].HeaderText = "Mã Nhà Cung Cấp";
-            dtgvNCC.Columns["TenNCC"].HeaderText = "Tên Nhà Cung Cấp";
         }
 
         private void dtgvNCC_Click(object sender, EventArgs e)
         {
             DataGridViewRow dr = dtgvNCC.SelectedRows[0];
-            txtMaNCC.Text = dr.Cells["MaNCC"].Value.ToString();
             txtTenNCC.Text = dr.Cells["TenNCC"].Value.ToString();
             txtSDT.Text = dr.Cells["SDT"].Value.ToString();
             cbDiaChi.Text = dr.Cells["DiaChi"].Value.ToString();
@@ -45,8 +40,21 @@ namespace QLTSTBKhachSan.UI
             txtSTK.Text = dr.Cells["STK"].Value.ToString();
             txtTenCongTy.Text = dr.Cells["TenCongTy"].Value.ToString();
         }
-        
-        private void btnInsertNhaCungCap_Click(object sender, EventArgs e)
+
+        private void btnNew_Click(object sender, EventArgs e)
+        {
+            if (pnNew.Visible == false)
+            {
+                pnNew.Visible = true;
+                btnNew.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\minus_24px.png");
+            }
+            else
+            {
+                pnNew.Visible = false;
+                btnNew.Image = Image.FromFile(@"C:\Users\PC GAMING\Desktop\IT\QLTSTBKhachSan\Management Programming\PersonalProject\Winform\Img\add_32px.png");
+            }
+        }
+        private void btnThemNCC_Click(object sender, EventArgs e)
         {
             string tenncc = txtTenNCC.Text;
             string sdt = txtSDT.Text;
@@ -54,24 +62,35 @@ namespace QLTSTBKhachSan.UI
             string email = txtEmail.Text;
             string stk = txtSTK.Text;
             string tencongty = txtTenCongTy.Text;
-            if (NhaCungCapDAO.Instance.Test(tenncc)==0)
+            if (tenncc.Equals("") || sdt.Equals("") || diachi.Equals("") || email.Equals("") || stk.Equals("") || tencongty.Equals(""))
             {
-                MessageBox.Show("Tên nhà cung cấp đã có trong danh sách");
-            }
-            else if (NhaCungCapDAO.Instance.InsertNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty))
-            {
-                MessageBox.Show("Saved");
-                LoadNCCUC();
+                MessageBox.Show("Hãy nhập đầy đủ thông tin!", NhaCungCap);
             }
             else
             {
-                MessageBox.Show(ex + "Không thành công");
+                if (NhaCungCapDAO.Instance.Test(tenncc,sdt, email,stk,tencongty) == 0)
+                {
+                    MessageBox.Show("Có một số thông tin bị trùng, bạn hãy xem lại Tên nhà cung cấp, số điện thoại, email, số tài khoản, tên công ty!", NhaCungCap);
+                }
+                else
+                {
+                    if (NhaCungCapDAO.Instance.InsertNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty))
+                    {
+                        MessageBox.Show("Thêm Thành Công!", NhaCungCap);
+                        LoadNCCUC();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Không thành công", NhaCungCap);
+                    }
+                }
             }
         }
 
-        private void btnUpdateNCC_Click(object sender, EventArgs e)
+        private void btnUpdate_Click(object sender, EventArgs e)
         {
-            string mancc = txtMaNCC.Text;
+            DataGridViewRow dr = dtgvNCC.SelectedRows[0];
+            string mancc = dr.Cells["MaNCC"].Value.ToString();
             string tenncc = txtTenNCC.Text;
             string sdt = txtSDT.Text;
             string diachi = cbDiaChi.Text;
@@ -79,71 +98,51 @@ namespace QLTSTBKhachSan.UI
             string stk = txtSTK.Text;
             string tencongty = txtTenCongTy.Text;
 
-            if (NhaCungCapDAO.Instance.Test(tenncc) == 0)
+
+            if (tenncc.Equals("") || sdt.Equals("") || diachi.Equals("") || email.Equals("") || stk.Equals("") || tencongty.Equals(""))
             {
-                MessageBox.Show("Tên nhà cung cấp đã có trong danh sách");
-            }
-            else if (NhaCungCapDAO.Instance.UpdateNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty, mancc))
-            {
-                MessageBox.Show("Sửa thành công");
-                LoadNCCUC();
+                MessageBox.Show("Hãy nhập đầy đủ thông tin!", NhaCungCap);
             }
             else
             {
-                MessageBox.Show(ex + "Không thành công");
+                if (NhaCungCapDAO.Instance.UpdateNhaCungCap(tenncc, sdt, diachi, email, stk, tencongty, mancc))
+                {
+                    MessageBox.Show("Sửa thành công", NhaCungCap);
+                    LoadNCCUC();
+                }
+                else
+                {
+                    MessageBox.Show("Không thành công", NhaCungCap);
+                }
             }
         }
 
-        private void btnDeleteNCC_Click(object sender, EventArgs e)
+        private void btnDelete_Click(object sender, EventArgs e)
         {
-            string mancc = txtMaNCC.Text;
-            if (NhaCungCapDAO.Instance.DeleteNhaCungCap(mancc))
+            DataGridViewRow dr = dtgvNCC.SelectedRows[0];
+            string mancc = dr.Cells["MaNCC"].Value.ToString();
+            if(MessageBox.Show("Bạn Muốn Xoá Nhà Cung Cấp Có Mã Số: "+mancc+"",NhaCungCap,MessageBoxButtons.OKCancel) == DialogResult.OK)
             {
-                MessageBox.Show("Xóa thành công");
-                LoadNCCUC();
-            }
-            else
-            {
-                MessageBox.Show(ex + "Không thành công");
+                if (NhaCungCapDAO.Instance.DeleteNhaCungCap(mancc))
+                {
+                    MessageBox.Show("Xóa thành công", NhaCungCap);
+                    LoadNCCUC();
+                }
+                else
+                {
+                    MessageBox.Show("Không thành công", NhaCungCap);
+                }
             }
         }
 
-        
-
-        private void btnRefesh_Click(object sender, EventArgs e)
+        private void btnRefresh_Click(object sender, EventArgs e)
         {
-            txtTenNCC.Clear();
-            txtSDT.Clear();
-            cbDiaChi.SelectedItem = "";
-            txtEmail.Clear();
-            txtSTK.Clear();
-            txtTenCongTy.Clear();
             LoadNCCUC();
         }
 
-       
-        
-
-        private void UCQLNhaCungCap_KeyDown(object sender, KeyEventArgs e)
+        private void btnSearch_Click(object sender, EventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
-            {
-                btnInsertNhaCungCap.PerformClick();
-
-            }
-            if (e.KeyCode == Keys.Delete)
-            {
-                btnDeleteNCC.PerformClick();
-            }
-        }
-
-        private void gbInfo_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void UCQLNhaCungCap_Load(object sender, EventArgs e)
-        {
+            dtgvNCC.DataSource =  NhaCungCapDAO.Instance.SeacrchTenNCC(txtSearch.Text);
         }
     }
 }

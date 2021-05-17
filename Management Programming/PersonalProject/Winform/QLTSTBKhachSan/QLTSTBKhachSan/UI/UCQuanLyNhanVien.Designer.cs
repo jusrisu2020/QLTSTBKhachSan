@@ -29,9 +29,9 @@ namespace QLTSTBKhachSan.UI
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.pnTitle = new System.Windows.Forms.Panel();
             this.btnSearch = new Guna.UI2.WinForms.Guna2Button();
             this.lbTitle = new System.Windows.Forms.Label();
@@ -108,7 +108,7 @@ namespace QLTSTBKhachSan.UI
             this.pnTitle.Location = new System.Drawing.Point(0, 0);
             this.pnTitle.Name = "pnTitle";
             this.pnTitle.Padding = new System.Windows.Forms.Padding(100, 0, 0, 0);
-            this.pnTitle.Size = new System.Drawing.Size(1000, 67);
+            this.pnTitle.Size = new System.Drawing.Size(1000, 80);
             this.pnTitle.TabIndex = 28;
             // 
             // btnSearch
@@ -120,19 +120,20 @@ namespace QLTSTBKhachSan.UI
             this.btnSearch.ForeColor = System.Drawing.Color.White;
             this.btnSearch.HoverState.Parent = this.btnSearch;
             this.btnSearch.Image = global::QLTSTBKhachSan.Properties.Resources.search_26px;
-            this.btnSearch.Location = new System.Drawing.Point(850, 16);
+            this.btnSearch.Location = new System.Drawing.Point(849, 23);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.ShadowDecoration.Parent = this.btnSearch;
             this.btnSearch.Size = new System.Drawing.Size(99, 30);
             this.btnSearch.TabIndex = 38;
             this.btnSearch.Text = "Search";
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
             // 
             // lbTitle
             // 
             this.lbTitle.AutoSize = true;
             this.lbTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbTitle.ForeColor = System.Drawing.Color.White;
-            this.lbTitle.Location = new System.Drawing.Point(61, 16);
+            this.lbTitle.Location = new System.Drawing.Point(60, 23);
             this.lbTitle.Name = "lbTitle";
             this.lbTitle.Size = new System.Drawing.Size(140, 31);
             this.lbTitle.TabIndex = 28;
@@ -153,7 +154,7 @@ namespace QLTSTBKhachSan.UI
             this.txtSearch.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtSearch.HoverState.Parent = this.txtSearch;
             this.txtSearch.IconLeft = global::QLTSTBKhachSan.Properties.Resources.IconSearch;
-            this.txtSearch.Location = new System.Drawing.Point(563, 16);
+            this.txtSearch.Location = new System.Drawing.Point(562, 23);
             this.txtSearch.Margin = new System.Windows.Forms.Padding(4);
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.PasswordChar = '\0';
@@ -165,21 +166,21 @@ namespace QLTSTBKhachSan.UI
             // 
             // dtgvQLNV
             // 
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.White;
-            this.dtgvQLNV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.White;
+            this.dtgvQLNV.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle13;
             this.dtgvQLNV.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dtgvQLNV.BackgroundColor = System.Drawing.Color.White;
             this.dtgvQLNV.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dtgvQLNV.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleHorizontal;
             this.dtgvQLNV.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtgvQLNV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(100)))), ((int)(((byte)(88)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtgvQLNV.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle14;
             this.dtgvQLNV.ColumnHeadersHeight = 50;
             this.dtgvQLNV.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dtgvQLNV.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -195,14 +196,14 @@ namespace QLTSTBKhachSan.UI
             this.TonGiao,
             this.GioiTinh,
             this.CMND});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Segoe UI", 10.5F);
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtgvQLNV.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Segoe UI", 10.5F);
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(71)))), ((int)(((byte)(69)))), ((int)(((byte)(94)))));
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtgvQLNV.DefaultCellStyle = dataGridViewCellStyle15;
             this.dtgvQLNV.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtgvQLNV.EnableHeadersVisualStyles = false;
             this.dtgvQLNV.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(229)))), ((int)(((byte)(255)))));
@@ -326,14 +327,14 @@ namespace QLTSTBKhachSan.UI
             // 
             // pnButton
             // 
-            this.pnButton.Controls.Add(this.btnUpdate);
             this.pnButton.Controls.Add(this.btnRefresh);
-            this.pnButton.Controls.Add(this.btnNew);
             this.pnButton.Controls.Add(this.btnDelete);
+            this.pnButton.Controls.Add(this.btnUpdate);
+            this.pnButton.Controls.Add(this.btnNew);
             this.pnButton.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnButton.Location = new System.Drawing.Point(0, 67);
+            this.pnButton.Location = new System.Drawing.Point(0, 80);
             this.pnButton.Name = "pnButton";
-            this.pnButton.Size = new System.Drawing.Size(1000, 55);
+            this.pnButton.Size = new System.Drawing.Size(1000, 40);
             this.pnButton.TabIndex = 39;
             // 
             // btnUpdate
@@ -341,14 +342,15 @@ namespace QLTSTBKhachSan.UI
             this.btnUpdate.BorderRadius = 8;
             this.btnUpdate.CheckedState.Parent = this.btnUpdate;
             this.btnUpdate.CustomImages.Parent = this.btnUpdate;
+            this.btnUpdate.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnUpdate.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUpdate.ForeColor = System.Drawing.Color.White;
             this.btnUpdate.HoverState.Parent = this.btnUpdate;
             this.btnUpdate.Image = global::QLTSTBKhachSan.Properties.Resources.update_file_filled_50px;
-            this.btnUpdate.Location = new System.Drawing.Point(126, 7);
+            this.btnUpdate.Location = new System.Drawing.Point(106, 0);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.ShadowDecoration.Parent = this.btnUpdate;
-            this.btnUpdate.Size = new System.Drawing.Size(108, 42);
+            this.btnUpdate.Size = new System.Drawing.Size(108, 40);
             this.btnUpdate.TabIndex = 40;
             this.btnUpdate.Text = "Update";
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -358,14 +360,15 @@ namespace QLTSTBKhachSan.UI
             this.btnRefresh.BorderRadius = 8;
             this.btnRefresh.CheckedState.Parent = this.btnRefresh;
             this.btnRefresh.CustomImages.Parent = this.btnRefresh;
+            this.btnRefresh.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnRefresh.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnRefresh.ForeColor = System.Drawing.Color.White;
             this.btnRefresh.HoverState.Parent = this.btnRefresh;
             this.btnRefresh.Image = global::QLTSTBKhachSan.Properties.Resources.refresh_26px;
-            this.btnRefresh.Location = new System.Drawing.Point(354, 6);
+            this.btnRefresh.Location = new System.Drawing.Point(322, 0);
             this.btnRefresh.Name = "btnRefresh";
             this.btnRefresh.ShadowDecoration.Parent = this.btnRefresh;
-            this.btnRefresh.Size = new System.Drawing.Size(106, 42);
+            this.btnRefresh.Size = new System.Drawing.Size(106, 40);
             this.btnRefresh.TabIndex = 38;
             this.btnRefresh.Text = "Refresh";
             this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
@@ -375,14 +378,15 @@ namespace QLTSTBKhachSan.UI
             this.btnNew.BorderRadius = 8;
             this.btnNew.CheckedState.Parent = this.btnNew;
             this.btnNew.CustomImages.Parent = this.btnNew;
+            this.btnNew.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnNew.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNew.ForeColor = System.Drawing.Color.White;
             this.btnNew.HoverState.Parent = this.btnNew;
             this.btnNew.Image = global::QLTSTBKhachSan.Properties.Resources.add_32px;
-            this.btnNew.Location = new System.Drawing.Point(14, 7);
+            this.btnNew.Location = new System.Drawing.Point(0, 0);
             this.btnNew.Name = "btnNew";
             this.btnNew.ShadowDecoration.Parent = this.btnNew;
-            this.btnNew.Size = new System.Drawing.Size(106, 42);
+            this.btnNew.Size = new System.Drawing.Size(106, 40);
             this.btnNew.TabIndex = 29;
             this.btnNew.Text = "New";
             this.btnNew.Click += new System.EventHandler(this.btnNew_Click);
@@ -392,14 +396,15 @@ namespace QLTSTBKhachSan.UI
             this.btnDelete.BorderRadius = 8;
             this.btnDelete.CheckedState.Parent = this.btnDelete;
             this.btnDelete.CustomImages.Parent = this.btnDelete;
+            this.btnDelete.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnDelete.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.ForeColor = System.Drawing.Color.White;
             this.btnDelete.HoverState.Parent = this.btnDelete;
             this.btnDelete.Image = global::QLTSTBKhachSan.Properties.Resources.delete_30px;
-            this.btnDelete.Location = new System.Drawing.Point(240, 6);
+            this.btnDelete.Location = new System.Drawing.Point(214, 0);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.ShadowDecoration.Parent = this.btnDelete;
-            this.btnDelete.Size = new System.Drawing.Size(108, 42);
+            this.btnDelete.Size = new System.Drawing.Size(108, 40);
             this.btnDelete.TabIndex = 30;
             this.btnDelete.Text = "Delete";
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
@@ -418,7 +423,7 @@ namespace QLTSTBKhachSan.UI
             this.pnNewNV.Controls.Add(this.gbMaCV);
             this.pnNewNV.Controls.Add(this.gbHoTen);
             this.pnNewNV.Controls.Add(this.gbMaNV);
-            this.pnNewNV.Location = new System.Drawing.Point(10, 125);
+            this.pnNewNV.Location = new System.Drawing.Point(0, 122);
             this.pnNewNV.Margin = new System.Windows.Forms.Padding(2);
             this.pnNewNV.Name = "pnNewNV";
             this.pnNewNV.Size = new System.Drawing.Size(730, 299);
@@ -850,7 +855,7 @@ namespace QLTSTBKhachSan.UI
             // 
             this.pnDTGVNV.Controls.Add(this.dtgvQLNV);
             this.pnDTGVNV.Dock = System.Windows.Forms.DockStyle.Top;
-            this.pnDTGVNV.Location = new System.Drawing.Point(0, 122);
+            this.pnDTGVNV.Location = new System.Drawing.Point(0, 120);
             this.pnDTGVNV.Name = "pnDTGVNV";
             this.pnDTGVNV.Size = new System.Drawing.Size(1000, 478);
             this.pnDTGVNV.TabIndex = 41;

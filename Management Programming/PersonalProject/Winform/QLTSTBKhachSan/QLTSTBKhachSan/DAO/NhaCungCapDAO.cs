@@ -44,18 +44,6 @@ namespace QLTSTBKhachSan.DAO
             int result = DataProvider.Instance.ExecuteNonQuery(Query);
             return result > 0;
         }
-        public int Test(string tenncc)
-        {
-            List<NhaCungCapDTO> NhaCungCapList = NhaCungCapDAO.Instance.LoadNCC();
-            foreach (NhaCungCapDTO item in NhaCungCapList)
-            {
-                if (tenncc.Equals(item.TenNCC))
-                {
-                    return 0;
-                }
-            }
-            return 1;
-        }
 
         public bool UpdateNhaCungCap(string tenncc, string sdt, string diachi, string email, string stk, string tencongty, string mancc)
         {
@@ -64,11 +52,41 @@ namespace QLTSTBKhachSan.DAO
             return result > 0;
         }
 
+        //Kiểm tra trùng
+        public int Test(string tenncc, string phone, string email, string stk, string tencongty)
+        {
+            List<NhaCungCapDTO> NhaCungCapList = NhaCungCapDAO.Instance.LoadNCC();
+            foreach (NhaCungCapDTO item in NhaCungCapList)
+            {
+                if (tenncc.Equals(item.TenNCC) || phone.Equals(item.SDT) || email.Equals(item.EMail) || stk.Equals(item.STK) || tencongty.Equals(item.TenCongTy))
+                {
+                    return 0;
+                }
+            }
+            return 1;
+        }
+        //Xoá
         public bool DeleteNhaCungCap(string mancc)
         {
             string Query = string.Format("DELETE dbo.NhaCungCap WHERE MaNCC = '{0}'", mancc);
             int result = DataProvider.Instance.ExecuteNonQuery(Query);
             return result > 0;
         }
+
+        //Tìm kiếm
+        public List<NhaCungCapDTO> SeacrchTenNCC(string tenncc)
+        {
+            List<NhaCungCapDTO> NhaCungCapList = new List<NhaCungCapDTO>();
+            string Query = string.Format("EXEC USP_TKTenNCC @TenNCC");
+            DataTable data = DataProvider.Instance.ExecuteQuery(Query, new object[] { tenncc});
+            foreach (DataRow item in data.Rows)
+            {
+                NhaCungCapDTO table = new NhaCungCapDTO(item);
+                NhaCungCapList.Add(table);
+            }
+            return NhaCungCapList;
+        }
+
+        
     }
 }

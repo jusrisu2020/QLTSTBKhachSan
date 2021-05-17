@@ -21,6 +21,8 @@ namespace QLTSTBKhachSan.DAO
             private set => instance = value; 
         }
 
+        public ChucVuDAO() { }
+
         public List<ChucVuDTO> LoadChucVu() 
         {
             List<ChucVuDTO> ChucVuList = new List<ChucVuDTO>();
